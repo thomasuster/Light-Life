@@ -6,6 +6,7 @@ package
 	import Box2D.Common.Math.b2Vec2;
 	import Box2D.Dynamics.b2Body;
 	import Box2D.Dynamics.b2BodyDef;
+	import Box2D.Dynamics.b2DebugDraw;
 	import Box2D.Dynamics.b2Fixture;
 	import Box2D.Dynamics.b2World;
 	
@@ -13,7 +14,9 @@ package
 	
 	import drawables.CustomSprite;
 	
+	import flash.display.Sprite;
 	import flash.geom.Point;
+	import flash.utils.getTimer;
 	
 	import starling.display.DisplayObject;
 	import starling.display.Sprite;
@@ -24,12 +27,22 @@ package
 
 	public class Game extends Sprite
 	{
+        public static var sprite2D:flash.display.Sprite;
+        
 		private var customSprite:CustomSprite;
 		
 		private var mouseX:Number = 0;
 		private var mouseY:Number = 0
             
 		private var controls:Controls = new Controls();
+		private var world:b2World;
+        
+        //Box2D
+        private var m_physScale:Number = 30;
+        public var m_timeStep:Number = 1.0/30.0;
+        public var m_velocityIterations:int = 10;
+        public var m_positionIterations:int = 10;
+        private var WIDTH:int = 640;
 			
 		public function Game()
 		{
@@ -53,58 +66,73 @@ package
             controls.init(stage);
             
             //BOX2D INIT
-            var worldAABB:b2AABB = new b2AABB();
-            worldAABB.lowerBound.Set(-100.0, -100.0);
-            worldAABB.upperBound.Set(100.0, 100.0);
-            
-            var gravity:b2Vec2 = new b2Vec2 (0.0, 0.0);
-            var doSleep:Boolean = true;
-            
-            var world:b2World = new b2World(gravity, doSleep);
-
-            var groundBodyDef:b2BodyDef = new b2BodyDef();
-            groundBodyDef.position.Set(0.0, -10.0);
-            
-            var groundBody:b2Body = world.CreateBody(groundBodyDef);
-            
-            var groundShapeDef:b2PolygonShape = new b2PolygonShape();
-            groundShapeDef.SetAsBox(50.0, 10.0);
-            
-            //groundBody.CreateShape(groundShapeDef);
-            var fixture:b2Fixture = groundBody.CreateFixture2(groundShapeDef);
-            
-            var bodyDef:b2BodyDef = new b2BodyDef();
-            bodyDef.position.Set(0.0, 4.0);
-            
-            var body:b2Body = world.CreateBody(bodyDef);
-            
-            //var shapeDef:b2PolygonDef = new b2PolygonDef();
-            var shapeDef:b2PolygonShape = new b2PolygonShape();
-            shapeDef.SetAsBox(1.0, 1.0);
-            body.CreateFixture2(shapeDef);
-            var massData:b2MassData = new b2MassData();
-            body.SetMassData(massData);
-            
-            //init
-            var timeStep:Number = 1.0 / 60.0;
-            var iterations:Number = 10;
-
-            for (var i:Number = 0; i < 60; ++i)
-                
             {
-                //world.Step(timeStep, iterations);
-                world.Step(timeStep, iterations, iterations);
-                var position:b2Vec2 = body.GetPosition();
-                var angle:Number = body.GetAngle();
-                trace(position.x +','+ position.y +','+ angle);
+                var worldAABB:b2AABB = new b2AABB();
+                worldAABB.lowerBound.Set(-1000.0, -1000.0);
+                worldAABB.upperBound.Set(1000.0, 1000.0);
+                var gravity:b2Vec2 = new b2Vec2(0, 0);
+                var doSleep:Boolean = true;
+                world = new b2World(gravity, doSleep);
+                
+                // set debug draw
+                var dbgDraw:b2DebugDraw = new b2DebugDraw();
+                dbgDraw.SetSprite(sprite2D);
+                dbgDraw.SetDrawScale(30.0);
+                dbgDraw.SetFillAlpha(0.3);
+                dbgDraw.SetLineThickness(1.0);
+                dbgDraw.SetFlags(b2DebugDraw.e_shapeBit | b2DebugDraw.e_jointBit);
+                world.SetDebugDraw(dbgDraw);
+                
+                var wall:b2PolygonShape= new b2PolygonShape();
+                var wallBd:b2BodyDef = new b2BodyDef();
+                var wallB:b2Body;
+                
+                WIDTH = 640;
+                
+                // Left
+                wallBd.position.Set( -95 / m_physScale, 360 / m_physScale / 2);
+                wall.SetAsBox(100/m_physScale, 400/m_physScale/2);
+                wallB = world.CreateBody(wallBd);
+                wallB.CreateFixture2(wall);
+                // Right
+                wallBd.position.Set((WIDTH + 95) / m_physScale, 360 / m_physScale / 2);
+                wallB = world.CreateBody(wallBd);
+                wallB.CreateFixture2(wall);
+                // Top
+                wallBd.position.Set(WIDTH / m_physScale / 2, -95 / m_physScale);
+                wall.SetAsBox(680/m_physScale/2, 100/m_physScale);
+                wallB = world.CreateBody(wallBd);
+                wallB.CreateFixture2(wall);
+                // Bottom
+                wallBd.position.Set(WIDTH / m_physScale / 2, (360 + 95) / m_physScale);
+                wallB = world.CreateBody(wallBd);
+                wallB.CreateFixture2(wall);
             }
-
+            
+            // set debug draw
+            /*var dbgDraw:b2DebugDraw = new b2DebugDraw();
+            dbgDraw.SetSprite(m_sprite);
+            dbgDraw.SetDrawScale(30.0);
+            dbgDraw.SetFillAlpha(0.3);
+            dbgDraw.SetLineThickness(1.0);
+            dbgDraw.SetFlags(b2DebugDraw.e_shapeBit | b2DebugDraw.e_jointBit);
+            world.SetDebugDraw(dbgDraw);*/
 			
 			// when the sprite is touched
 			//customSprite.addEventListener(TouchEvent.TOUCH, onTouchedSprite);
 		}
 		private function onFrame (e:Event):void
 		{
+            // Update physics
+            var physStart:uint = getTimer();
+            world.Step(m_timeStep, m_velocityIterations, m_positionIterations);
+            world.ClearForces();
+            
+            //Main.m_fpsCounter.updatePhys(physStart);
+            
+            // Render
+            world.DrawDebugData();
+            
 			// easing on the custom sprite position
             var xDir:int = getDir(controls.left, controls.right);
             var yDir:int = getDir(controls.up, controls.down);

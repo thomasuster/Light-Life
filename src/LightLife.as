@@ -77,10 +77,14 @@ package
 			//Starling Init
 			stage.align = StageAlign.TOP_LEFT;
 			stage.scaleMode = StageScaleMode.NO_SCALE;
-			
+            
+            var nativeOverlay:Sprite = new Sprite();
+            addChild(nativeOverlay);
+            Game.sprite2D = nativeOverlay;
+            
 			// create our Starling instance
 			mStarling = new Starling(Game, stage);
-			
+            
 			// set anti-aliasing (higher is better quality but slower performance)
 			mStarling.antiAliasing = 1;
 			
