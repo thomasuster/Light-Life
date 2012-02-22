@@ -42,7 +42,8 @@ package
         public var m_timeStep:Number = 1.0/30.0;
         public var m_velocityIterations:int = 10;
         public var m_positionIterations:int = 10;
-        private var WIDTH:int = 640;
+        private var WIDTH:int = 1024;
+        private var HEIGHT:int = 768;
 			
 		public function Game()
 		{
@@ -87,24 +88,27 @@ package
                 var wallBd:b2BodyDef = new b2BodyDef();
                 var wallB:b2Body;
                 
-                WIDTH = 640;
+                var buffer:int = 10;
+                var thickness:int = 100;
                 
+                wall.SetAsBox(100/m_physScale, HEIGHT/m_physScale/2);
                 // Left
-                wallBd.position.Set( -95 / m_physScale, 360 / m_physScale / 2);
-                wall.SetAsBox(100/m_physScale, 400/m_physScale/2);
+                wallBd.position.Set( (-100 + buffer) / m_physScale, HEIGHT/2 / m_physScale);
                 wallB = world.CreateBody(wallBd);
                 wallB.CreateFixture2(wall);
                 // Right
-                wallBd.position.Set((WIDTH + 95) / m_physScale, 360 / m_physScale / 2);
+                wallBd.position.Set((WIDTH + 100 - buffer) / m_physScale, HEIGHT/2 / m_physScale);
                 wallB = world.CreateBody(wallBd);
                 wallB.CreateFixture2(wall);
+                
+                
+                wall.SetAsBox(WIDTH/m_physScale/2, thickness/m_physScale);
                 // Top
-                wallBd.position.Set(WIDTH / m_physScale / 2, -95 / m_physScale);
-                wall.SetAsBox(680/m_physScale/2, 100/m_physScale);
+                wallBd.position.Set(WIDTH / m_physScale / 2, (-1*thickness + buffer) / m_physScale);
                 wallB = world.CreateBody(wallBd);
                 wallB.CreateFixture2(wall);
                 // Bottom
-                wallBd.position.Set(WIDTH / m_physScale / 2, (360 + 95) / m_physScale);
+                wallBd.position.Set(WIDTH / m_physScale / 2, (HEIGHT + thickness - buffer) / m_physScale);
                 wallB = world.CreateBody(wallBd);
                 wallB.CreateFixture2(wall);
             }

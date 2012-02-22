@@ -30,9 +30,22 @@ package
 		private var splash:MovieClip;
 		private var mStarling:Starling;
         private var fpsCounter:FpsCounter = new FpsCounter();
+        
+        public static const WIDTH:int = 1024;
+        public static const HEIGHT:int = 768;
 
         public function LightLife()
         {
+            var square:Sprite = new Sprite();
+            addChild(square);
+            square.graphics.lineStyle(1,0x00ff00);
+            square.graphics.beginFill(0x0000FF);
+            square.graphics.drawRect(0,0,WIDTH,100);
+            square.graphics.endFill();
+            /*square.x = stage.stageWidth/2-square.width/2;
+            square.y = stage.stageHeight/2-square.height/2;*/
+            square.y = stage.stageHeight - 5;
+            
             splash = MovieClip(new EmbeddedAssets.Splash());  
 			loader = Loader(splash.getChildAt(0));
             
