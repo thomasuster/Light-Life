@@ -93,7 +93,7 @@ package
             
             var nativeOverlay:Sprite = new Sprite();
             addChild(nativeOverlay);
-            Game.sprite2D = nativeOverlay;
+            //Game.sprite2D = nativeOverlay;
             
 			// create our Starling instance
 			mStarling = new Starling(Game, stage);
