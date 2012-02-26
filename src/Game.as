@@ -41,6 +41,8 @@ package
 		private var controls:Controls = new Controls();
 
 		private var worldManager:WorldManager = new WorldManager(Starling.current.nativeStage);
+
+		private var fixture:b2Fixture;
         
 			
 		public function Game()
@@ -66,24 +68,13 @@ package
             controls.init(stage);
             
             worldManager.createBounds();
-            worldManager.createFixture(customSprite.x, customSprite.y, customSprite.width, customSprite.height);
+            fixture = worldManager.createFixture(customSprite.x, customSprite.y, customSprite.width, customSprite.height);
+            //fixture.GetBody().ApplyForce(
             worldManager.enableDebug();
-			
+            
 			// when the sprite is touched
 			//customSprite.addEventListener(TouchEvent.TOUCH, onTouchedSprite);
 		}
-        
-        /*private function getFixture(displayObject:DisplayObject):b2Fixture
-        {
-            var wall:b2PolygonShape= new b2PolygonShape();
-            var wallBd:b2BodyDef = new b2BodyDef();
-            var wallB:b2Body;
-            wall.SetAsBox(displayObject.width/2/SCALE, displayObject.height/2/SCALE);
-            // Box
-            wallBd.position.Set(displayObject.x / SCALE, displayObject.y/ SCALE);
-            wallB = world.CreateBody(wallBd);
-            return wallB.CreateFixture2(wall);
-        }*/
         
         private function onFrame (e:Event):void
 		{
@@ -96,16 +87,28 @@ package
             var xDir:int = getDir(controls.left, controls.right);
             var yDir:int = getDir(controls.up, controls.down);
             
-			customSprite.x += ( xDir ) * 10;
-			customSprite.y += ( yDir ) * 10;
+            var xDelta:Number = xDir * 1;
+            var yDelta:Number = yDir * 1;
+            
+            var error:Number = 0.1;
+            if(Math.abs(xDelta) > error || Math.abs(yDelta) > error)
+            {
+                fixture.GetBody().ApplyImpulse(new b2Vec2(xDelta, yDelta), new b2Vec2(0, 0));
+            }
+            else
+            {
+                fixture.GetBody().SetLinearDamping(3);
+            }
+            
+			/*customSprite.x += xDelta;
+			customSprite.y += yDelta;*/
+            
+            var position:b2Vec2 = fixture.GetBody().GetPosition();
+            customSprite.x = position.x * 30; 
+            customSprite.y = position.y * 30;
             
 			// we update our custom sprite 
 			customSprite.update();
-            
-            /*for each (var fixture:b2Fixture in fixtures) 
-            {
-                fixture.GetBody().ApplyForce(new b2Vec2(100, 100), new b2Vec2(10, 30));
-            }*/
 		}
         
         private function getDir(negative:Boolean, positive:Boolean):int

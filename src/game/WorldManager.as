@@ -19,12 +19,12 @@ package game
         private var world:b2World;
         private var sprite2D:Sprite;
         private const SCALE:Number = 30;
-        private var m_timeStep:Number = 1.0/30.0;
-        private var m_velocityIterations:int = 10;
-        private var m_positionIterations:int = 10;
+        private var timeStep:Number = 1.0/30.0;
+        private var velocityIterations:int = 10;
+        private var positionIterations:int = 10;
         private var WIDTH:int = 1024;
         private var HEIGHT:int = 768;
-        private var fixtures:Dictionary = new Dictionary();
+        public var fixtures:Dictionary = new Dictionary();
         
         public function WorldManager(stage:Stage)
         {
@@ -85,18 +85,21 @@ package game
         {
             var wall:b2PolygonShape = new b2PolygonShape();
             var wallBd:b2BodyDef = new b2BodyDef();
+            wallBd.type = b2Body.b2_dynamicBody;
             var wallB:b2Body;
             wall.SetAsBox(width/2/ SCALE, height/2 /SCALE);
             // Box
             wallBd.position.Set(x / SCALE, y / SCALE);
             wallB = world.CreateBody(wallBd);
-            return wallB.CreateFixture2(wall);
+            var fixture:b2Fixture = wallB.CreateFixture2(wall); 
+            fixtures[fixture] = fixture;
+            return fixture;
         }
         
         public function update():void
         {
             var physStart:uint = getTimer();
-            world.Step(m_timeStep, m_velocityIterations, m_positionIterations);
+            world.Step(timeStep, velocityIterations, positionIterations);
             world.ClearForces();
             
             world.DrawDebugData();
