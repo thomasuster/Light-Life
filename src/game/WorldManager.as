@@ -100,7 +100,7 @@ package game
         {
             var physStart:uint = getTimer();
             world.Step(timeStep, velocityIterations, positionIterations);
-            world.ClearForces();
+            //world.ClearForces();
             
             world.DrawDebugData();
         }

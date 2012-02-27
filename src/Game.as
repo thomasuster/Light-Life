@@ -61,7 +61,7 @@ package
 			// show it
 			addChild(customSprite);
 			// we listen to the mouse movement on the stage
-			//stage.addEventListener(TouchEvent.TOUCH, onTouch);
+			stage.addEventListener(TouchEvent.TOUCH, onTouch);
 			// need to comment this one ? ;)q
 			stage.addEventListener(Event.ENTER_FRAME, onFrame);
             
@@ -90,6 +90,7 @@ package
             var xDelta:Number = xDir * 1;
             var yDelta:Number = yDir * 1;
             
+            //Moving
             var error:Number = 0.1;
             if(Math.abs(xDelta) > error || Math.abs(yDelta) > error)
             {
@@ -99,6 +100,24 @@ package
             {
                 fixture.GetBody().SetLinearDamping(3);
             }
+
+            //Rotation
+            var body:b2Body = fixture.GetBody();
+            var mousePosition:b2Vec2 = new b2Vec2(mouseX/30, mouseY/30)
+            mousePosition.Subtract(body.GetPosition());
+            var angle:Number = Math.atan2(mousePosition.y, mousePosition.x);
+            var bodyAngle:Number = body.GetAngle();
+            
+            fixture.GetBody().SetAngle(angle);
+            /*trace("body.GetAngle() " + body.GetAngle() % Math.PI);
+            trace("angle " + angle);
+            body.SetAngularVelocity(bodyAngle-angle);*/
+            
+            //worldManager.createFixture(mousePosition.x, mousePosition.y, 30, 30);
+            /*var sprite:CustomSprite = new CustomSprite(10, 10);
+            addChild(sprite);
+            sprite.x = mousePosition.x;
+            sprite.y = mousePosition.y;*/ 
             
 			/*customSprite.x += xDelta;
 			customSprite.y += yDelta;*/
@@ -127,7 +146,7 @@ package
             }
         }
         
-		/*private function onTouch (e:TouchEvent):void
+		private function onTouch(e:TouchEvent):void
 		{
 			// get the mouse location related to the stage
 			var touch:Touch = e.getTouch(stage);
@@ -137,6 +156,7 @@ package
 			mouseY = pos.y;
 		}
 		
+        /*
 		private function onTouchedSprite(e:TouchEvent):void
 		{
 			// get the touch points (can be multiple because of multitouch)
