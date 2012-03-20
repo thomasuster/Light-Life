@@ -20,6 +20,10 @@ package
 	import flash.utils.getTimer;
 	
 	import game.WorldManager;
+	import game.entities.IEntity;
+	import game.entities.fixture.Fixture;
+	import game.entities.fixture.decorator.ControledMovement;
+	import game.entities.fixture.decorator.MouseRotation;
 	
 	import starling.core.Starling;
 	import starling.display.DisplayObject;
@@ -35,15 +39,13 @@ package
         
 		private var customSprite:CustomSprite;
 		
-		private var mouseX:Number = 0;
-		private var mouseY:Number = 0
-            
 		private var controls:Controls = new Controls();
 
 		private var worldManager:WorldManager = new WorldManager(Starling.current.nativeStage);
 
 		private var fixture:b2Fixture;
-        
+
+		private var hero:IEntity;
 			
 		public function Game()
 		{
@@ -69,6 +71,13 @@ package
             
             worldManager.createBounds();
             fixture = worldManager.createFixture(customSprite.x, customSprite.y, customSprite.width, customSprite.height);
+            
+            var mouseRotation:MouseRotation = new MouseRotation(controls);
+            var controledMovement:ControledMovement = new ControledMovement(controls);
+            mouseRotation.add(controledMovement);
+            controledMovement.add(new Fixture(fixture));
+            hero = mouseRotation;
+            
             //fixture.GetBody().ApplyForce(
             worldManager.enableDebug();
             
@@ -81,34 +90,11 @@ package
             // Update physics
             worldManager.update();
             
+            hero.update();
+            
             //Main.m_fpsCounter.updatePhys(physStart);
             
-			// easing on the custom sprite position
-            var xDir:int = getDir(controls.left, controls.right);
-            var yDir:int = getDir(controls.up, controls.down);
             
-            var xDelta:Number = xDir * 1;
-            var yDelta:Number = yDir * 1;
-            
-            //Moving
-            var error:Number = 0.1;
-            if(Math.abs(xDelta) > error || Math.abs(yDelta) > error)
-            {
-                fixture.GetBody().ApplyImpulse(new b2Vec2(xDelta, yDelta), new b2Vec2(0, 0));
-            }
-            else
-            {
-                fixture.GetBody().SetLinearDamping(3);
-            }
-
-            //Rotation
-            var body:b2Body = fixture.GetBody();
-            var mousePosition:b2Vec2 = new b2Vec2(mouseX/30, mouseY/30)
-            mousePosition.Subtract(body.GetPosition());
-            var angle:Number = Math.atan2(mousePosition.y, mousePosition.x);
-            var bodyAngle:Number = body.GetAngle();
-            
-            fixture.GetBody().SetAngle(angle);
             /*trace("body.GetAngle() " + body.GetAngle() % Math.PI);
             trace("angle " + angle);
             body.SetAngularVelocity(bodyAngle-angle);*/
@@ -130,30 +116,14 @@ package
 			customSprite.update();
 		}
         
-        private function getDir(negative:Boolean, positive:Boolean):int
-        {
-            if(negative && !positive)
-            {
-                return -1;
-            }
-            else if(!negative && positive)
-            {
-                return 1;
-            }
-            else
-            {
-                return 0;
-            }
-        }
-        
 		private function onTouch(e:TouchEvent):void
 		{
 			// get the mouse location related to the stage
 			var touch:Touch = e.getTouch(stage);
 			var pos:Point = touch.getLocation(stage);
 			// store the mouse coordinates
-			mouseX = pos.x;
-			mouseY = pos.y;
+			controls.mouseX = pos.x;
+            controls.mouseY = pos.y;
 		}
 		
         /*
