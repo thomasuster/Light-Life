@@ -21,7 +21,7 @@ package
     /**
      * Entry swf for Light Life 
      */    
-    [SWF(width="1024", height="768", frameRate="60", backgroundColor="#AABBCC")]
+    [SWF(width="1024", height="768", frameRate="60", backgroundColor="#000000")]
     public class LightLife extends Sprite
     {
 		private var assetManager:AssetManager = AssetManager.instance;

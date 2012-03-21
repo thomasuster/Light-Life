@@ -13,6 +13,9 @@ package game
     import flash.display.Stage;
     import flash.utils.Dictionary;
     import flash.utils.getTimer;
+    
+    import render.IRenderFactory;
+    import render.starling.StarlingRenderFactory;
 
     public class WorldManager
     {
@@ -91,7 +94,8 @@ package game
             // Box
             wallBd.position.Set(x / SCALE, y / SCALE);
             wallB = world.CreateBody(wallBd);
-            var fixture:b2Fixture = wallB.CreateFixture2(wall); 
+            var fixture:b2Fixture = wallB.CreateFixture2(wall);
+            
             fixtures[fixture] = fixture;
             return fixture;
         }

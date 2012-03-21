@@ -4,7 +4,7 @@ package game.entities.fixture.decorator
     
     import game.entities.fixture.IFixture;
 
-    public class AFixtureDecorator implements IFixture
+    public class AFixtureDecorator implements IFixture, IFixtureDecorator
     {
         protected var decoratedFixture:IFixture;
         

@@ -12,8 +12,6 @@ package
 	
 	import General.FpsCounter;
 	
-	import drawables.CustomSprite;
-	
 	import flash.display.Sprite;
 	import flash.geom.Point;
 	import flash.utils.Dictionary;
@@ -22,8 +20,15 @@ package
 	import game.WorldManager;
 	import game.entities.IEntity;
 	import game.entities.fixture.Fixture;
-	import game.entities.fixture.decorator.ControledMovement;
-	import game.entities.fixture.decorator.MouseRotation;
+	import game.entities.fixture.IFixture;
+	import game.entities.fixture.decorator.KeyboardMove;
+	import game.entities.fixture.decorator.MouseLook;
+	
+	import render.IRenderFactory;
+	import render.IRenderer;
+	import render.starling.StarlingRenderFactory;
+	import render.starling.decorator.HeroDecorator;
+	import render.starling.decorator.StarlingRenderer;
 	
 	import starling.core.Starling;
 	import starling.display.DisplayObject;
@@ -37,15 +42,13 @@ package
 	{
         //public static var sprite2D:flash.display.Sprite;
         
-		private var customSprite:CustomSprite;
-		
 		private var controls:Controls = new Controls();
 
 		private var worldManager:WorldManager = new WorldManager(Starling.current.nativeStage);
 
 		private var fixture:b2Fixture;
 
-		private var hero:IEntity;
+		private var hero:IFixture;
 			
 		public function Game()
 		{
@@ -53,15 +56,6 @@ package
 		}
 		private function onAdded ( e:Event ):void
 		{
-			// create the custom sprite
-			customSprite = new CustomSprite(200, 200);
-			// positions it by default in the center of the stage
-			// we add half width because of the registration point of the custom sprite (middle)
-			customSprite.x = (stage.stageWidth - customSprite.width >> 1 ) + (customSprite.width >> 1);
-			customSprite.y = (stage.stageHeight - customSprite.height >> 1) + (customSprite.height >> 1);
-            
-			// show it
-			addChild(customSprite);
 			// we listen to the mouse movement on the stage
 			stage.addEventListener(TouchEvent.TOUCH, onTouch);
 			// need to comment this one ? ;)q
@@ -70,13 +64,18 @@ package
             controls.init(stage);
             
             worldManager.createBounds();
-            fixture = worldManager.createFixture(customSprite.x, customSprite.y, customSprite.width, customSprite.height);
+            fixture = worldManager.createFixture(500, 500, 100, 100);
             
-            var mouseRotation:MouseRotation = new MouseRotation(controls);
-            var controledMovement:ControledMovement = new ControledMovement(controls);
+            var mouseRotation:MouseLook = new MouseLook(controls);
+            var controledMovement:KeyboardMove = new KeyboardMove(controls);
             mouseRotation.add(controledMovement);
             controledMovement.add(new Fixture(fixture));
             hero = mouseRotation;
+            
+            //Rendering
+            var renderFactory:IRenderFactory = new StarlingRenderFactory();
+            var renderer:IRenderer = new StarlingRenderer(stage);
+            hero = renderer.addDrawHero(hero);
             
             //fixture.GetBody().ApplyForce(
             worldManager.enableDebug();
@@ -107,13 +106,6 @@ package
             
 			/*customSprite.x += xDelta;
 			customSprite.y += yDelta;*/
-            
-            var position:b2Vec2 = fixture.GetBody().GetPosition();
-            customSprite.x = position.x * 30; 
-            customSprite.y = position.y * 30;
-            
-			// we update our custom sprite 
-			customSprite.update();
 		}
         
 		private function onTouch(e:TouchEvent):void
