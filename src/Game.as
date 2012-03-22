@@ -74,8 +74,10 @@ package
             
             //Rendering
             var renderFactory:IRenderFactory = new StarlingRenderFactory();
-            var renderer:IRenderer = new StarlingRenderer(stage);
+            var renderer:StarlingRenderer = new StarlingRenderer(stage);
             hero = renderer.addDrawHero(hero);
+            
+            renderer.addBackground();
             
             //fixture.GetBody().ApplyForce(
             worldManager.enableDebug();

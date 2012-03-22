@@ -4,6 +4,7 @@ package render
 
     public interface IRenderer
     {
-        function addDrawHero(fixture:IFixture):IFixture;
+        /*function addDrawHero(fixture:IFixture):IFixture;
+        function addBackGround(fixture:IFixture):IFixture;*/
     }
 }

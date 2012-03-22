@@ -14,21 +14,4 @@
 	<natures>
 		<nature>com.adobe.flexbuilder.project.actionscriptnature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>[source path] Box2DFlashAS3_2_1a</name>
-			<type>2</type>
-			<locationURI>Box2DFlashAS3_2_1a</locationURI>
-		</link>
-		<link>
-			<name>[source path] starling</name>
-			<type>2</type>
-			<locationURI>starling</locationURI>
-		</link>
-		<link>
-			<name>[source path] uster</name>
-			<type>2</type>
-			<locationURI>uster</locationURI>
-		</link>
-	</linkedResources>
 </projectDescription>
