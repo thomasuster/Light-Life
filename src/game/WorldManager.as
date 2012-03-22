@@ -9,6 +9,7 @@ package game
     import Box2D.Dynamics.b2Fixture;
     import Box2D.Dynamics.b2World;
     
+    import flash.display.DisplayObject;
     import flash.display.Sprite;
     import flash.display.Stage;
     import flash.utils.Dictionary;
@@ -21,7 +22,7 @@ package game
     {
         private var world:b2World;
         private var sprite2D:Sprite;
-        private const SCALE:Number = 30;
+        public static const SCALE:Number = 30;
         private var timeStep:Number = 1.0/30.0;
         private var velocityIterations:int = 10;
         private var positionIterations:int = 10;
@@ -34,6 +35,16 @@ package game
             sprite2D = new Sprite();
             stage.addChild(sprite2D);
             createWorld();
+        }
+        
+        public function set debugCameraX(value:Number):void
+        {
+            sprite2D.x = value;
+        }
+        
+        public function set debugCameraY(value:Number):void
+        {
+            sprite2D.y = value;
         }
         
         private function createWorld():void

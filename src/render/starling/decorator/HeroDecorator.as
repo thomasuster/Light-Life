@@ -84,6 +84,9 @@ package render.starling.decorator
             x = position.x * 30; 
             y = position.y * 30;
             
+            var rotation:Number= fixture.GetBody().GetAngle();
+            this.rotation = rotation;
+            
 			// easing on the components
 			r -= (r - rDest) * .01;
 			g -= (g - gDest) * .01;

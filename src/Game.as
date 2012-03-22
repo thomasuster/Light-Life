@@ -13,7 +13,9 @@ package
 	import General.FpsCounter;
 	
 	import flash.display.Sprite;
+	import flash.display.Stage;
 	import flash.geom.Point;
+	import flash.media.Camera;
 	import flash.utils.Dictionary;
 	import flash.utils.getTimer;
 	
@@ -68,18 +70,21 @@ package
             
             var mouseRotation:MouseLook = new MouseLook(controls);
             var controledMovement:KeyboardMove = new KeyboardMove(controls);
+            var cameraFollow:CameraFollow = new CameraFollow(this, worldManager);
+            cameraFollow.add(mouseRotation);
             mouseRotation.add(controledMovement);
             controledMovement.add(new Fixture(fixture));
-            hero = mouseRotation;
+            
+            hero = cameraFollow;
+            
+
             
             //Rendering
-            var renderFactory:IRenderFactory = new StarlingRenderFactory();
-            var renderer:StarlingRenderer = new StarlingRenderer(stage);
-            hero = renderer.addDrawHero(hero);
-            
-            renderer.addBackground();
-            
-            //fixture.GetBody().ApplyForce(
+            {
+                var renderer:StarlingRenderer = new StarlingRenderer(this);
+                renderer.addBackground();
+                hero = renderer.addDrawHero(hero);
+            }
             worldManager.enableDebug();
             
 			// when the sprite is touched
