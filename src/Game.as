@@ -15,7 +15,6 @@ package
 	import flash.display.Sprite;
 	import flash.display.Stage;
 	import flash.geom.Point;
-	import flash.media.Camera;
 	import flash.utils.Dictionary;
 	import flash.utils.getTimer;
 	
@@ -26,8 +25,12 @@ package
 	import game.entities.fixture.decorator.KeyboardMove;
 	import game.entities.fixture.decorator.MouseLook;
 	
+	import render.Camera;
+	import render.ICamera;
 	import render.IRenderFactory;
 	import render.IRenderer;
+	import render.flash.FlashCamera;
+	import render.starling.StarlingCamera;
 	import render.starling.StarlingRenderFactory;
 	import render.starling.decorator.HeroDecorator;
 	import render.starling.decorator.StarlingRenderer;
@@ -46,18 +49,25 @@ package
         
 		private var controls:Controls = new Controls();
 
-		private var worldManager:WorldManager = new WorldManager(Starling.current.nativeStage);
+		private var worldManager:WorldManager;
 
 		private var fixture:b2Fixture;
 
 		private var hero:IFixture;
-			
+
+		private var flashContainer:flash.display.Sprite = new flash.display.Sprite();
+
+		private var mouseFixture:b2Fixture;
+
 		public function Game()
 		{
 			addEventListener(Event.ADDED_TO_STAGE, onAdded);
 		}
 		private function onAdded ( e:Event ):void
 		{
+            Starling.current.nativeStage.addChild(flashContainer);
+            worldManager = new WorldManager(flashContainer)
+                
 			// we listen to the mouse movement on the stage
 			stage.addEventListener(TouchEvent.TOUCH, onTouch);
 			// need to comment this one ? ;)q
@@ -66,18 +76,24 @@ package
             controls.init(stage);
             
             worldManager.createBounds();
-            fixture = worldManager.createFixture(500, 500, 100, 100);
+            fixture = worldManager.createFixture(0, 0, 100, 100, b2Body.b2_dynamicBody);
+
+            mouseFixture = worldManager.createFixture(0, 0, 50, 50);
             
-            var mouseRotation:MouseLook = new MouseLook(controls);
+            var flashCamera:FlashCamera = new FlashCamera(flashContainer);
+            var starlingCamera:StarlingCamera = new StarlingCamera(this);
+            var camera:render.Camera = new render.Camera();
+            camera.add(flashCamera);
+            camera.add(starlingCamera);
+            
+            var mouseRotation:MouseLook = new MouseLook(controls, camera);
             var controledMovement:KeyboardMove = new KeyboardMove(controls);
-            var cameraFollow:CameraFollow = new CameraFollow(this, worldManager);
+            var cameraFollow:CameraFollow = new CameraFollow(camera);
             cameraFollow.add(mouseRotation);
             mouseRotation.add(controledMovement);
             controledMovement.add(new Fixture(fixture));
             
             hero = cameraFollow;
-            
-
             
             //Rendering
             {
@@ -91,10 +107,18 @@ package
 			//customSprite.addEventListener(TouchEvent.TOUCH, onTouchedSprite);
 		}
         
+        /*mouseFixture.GetBody().GetPosition().x = 
+        mouseFixture.GetBody().GetPosition().y = (controls.mouseY + flashCamera.y - LightLife.HEIGHT/2) / WorldManager.SCALE;*/
+        
         private function onFrame (e:Event):void
 		{
             // Update physics
             worldManager.update();
+            
+            /*mouseFixture.GetBody().GetPosition().x = (controls.mouseX + flashCamera.x - LightLife.WIDTH/2) / WorldManager.SCALE;
+            mouseFixture.GetBody().GetPosition().y = (controls.mouseY + flashCamera.y - LightLife.HEIGHT/2) / WorldManager.SCALE;*/
+            
+            //trace(camerafixture.GetBody().GetPosition().x);
             
             hero.update();
             

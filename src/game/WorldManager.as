@@ -15,6 +15,8 @@ package game
     import flash.utils.Dictionary;
     import flash.utils.getTimer;
     
+    import flashx.textLayout.debug.assert;
+    
     import render.IRenderFactory;
     import render.starling.StarlingRenderFactory;
 
@@ -30,21 +32,10 @@ package game
         private var HEIGHT:int = 768;
         public var fixtures:Dictionary = new Dictionary();
         
-        public function WorldManager(stage:Stage)
+        public function WorldManager(camera:Sprite)
         {
-            sprite2D = new Sprite();
-            stage.addChild(sprite2D);
+            sprite2D = camera;
             createWorld();
-        }
-        
-        public function set debugCameraX(value:Number):void
-        {
-            sprite2D.x = value;
-        }
-        
-        public function set debugCameraY(value:Number):void
-        {
-            sprite2D.y = value;
         }
         
         private function createWorld():void
@@ -58,7 +49,7 @@ package game
         {
             var dbgDraw:b2DebugDraw = new b2DebugDraw();
             dbgDraw.SetSprite(sprite2D);
-            dbgDraw.SetDrawScale(30.0);
+            dbgDraw.SetDrawScale(SCALE);
             dbgDraw.SetFillAlpha(0.3);
             dbgDraw.SetLineThickness(1.0);
             dbgDraw.SetFlags(b2DebugDraw.e_shapeBit | b2DebugDraw.e_jointBit);
@@ -76,30 +67,30 @@ package game
             
             wall.SetAsBox(100/SCALE, HEIGHT/SCALE/2);
             // Left
-            wallBd.position.Set( (-100 + buffer) / SCALE, HEIGHT/2 / SCALE);
+            wallBd.position.Set( (-100 + buffer - WIDTH/2) / SCALE, 0);
             wallB = world.CreateBody(wallBd);
             wallB.CreateFixture2(wall);
             // Right
-            wallBd.position.Set((WIDTH + 100 - buffer) / SCALE, HEIGHT/2 / SCALE);
+            /*wallBd.position.Set((WIDTH/2 + 100 - buffer) / SCALE, 0);
             wallB = world.CreateBody(wallBd);
-            wallB.CreateFixture2(wall);
+            wallB.CreateFixture2(wall);*/
             
             wall.SetAsBox(WIDTH/SCALE/2, thickness/SCALE);
             // Top
-            wallBd.position.Set(WIDTH / SCALE / 2, (-1*thickness + buffer) / SCALE);
+            wallBd.position.Set(0, (-1*thickness + buffer - HEIGHT/2) / SCALE);
             wallB = world.CreateBody(wallBd);
             wallB.CreateFixture2(wall);
             // Bottom
-            wallBd.position.Set(WIDTH / SCALE / 2, (HEIGHT + thickness - buffer) / SCALE);
+            /*wallBd.position.Set(0, (HEIGHT/2 + thickness - buffer) / SCALE);
             wallB = world.CreateBody(wallBd);
-            wallB.CreateFixture2(wall);
+            wallB.CreateFixture2(wall);*/
         }
         
-        public function createFixture(x:Number, y:Number, width:Number, height:Number):b2Fixture
+        public function createFixture(x:Number, y:Number, width:Number, height:Number, type:uint = 0):b2Fixture
         {
             var wall:b2PolygonShape = new b2PolygonShape();
             var wallBd:b2BodyDef = new b2BodyDef();
-            wallBd.type = b2Body.b2_dynamicBody;
+            wallBd.type = type;
             var wallB:b2Body;
             wall.SetAsBox(width/2/ SCALE, height/2 /SCALE);
             // Box
