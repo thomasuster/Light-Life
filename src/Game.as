@@ -22,10 +22,12 @@ package
 	import game.entities.IEntity;
 	import game.entities.fixture.Fixture;
 	import game.entities.fixture.IFixture;
+	import game.entities.fixture.decorator.CameraFollow;
+	import game.entities.fixture.decorator.DynamicBackground;
 	import game.entities.fixture.decorator.KeyboardMove;
 	import game.entities.fixture.decorator.MouseLook;
 	
-	import render.Camera;
+	import render.CameraComposite;
 	import render.ICamera;
 	import render.IRenderFactory;
 	import render.IRenderer;
@@ -51,13 +53,13 @@ package
 
 		private var worldManager:WorldManager;
 
-		private var fixture:b2Fixture;
-
 		private var hero:IFixture;
 
 		private var flashContainer:flash.display.Sprite = new flash.display.Sprite();
 
 		private var mouseFixture:b2Fixture;
+
+		private var background:DynamicBackground;
 
 		public function Game()
 		{
@@ -73,34 +75,46 @@ package
 			// need to comment this one ? ;)q
 			stage.addEventListener(Event.ENTER_FRAME, onFrame);
             
-            controls.init(stage);
+            controls.init(stage, Starling.current.nativeStage);
             
-            worldManager.createBounds();
-            fixture = worldManager.createFixture(0, 0, 100, 100, b2Body.b2_dynamicBody);
-
-            mouseFixture = worldManager.createFixture(0, 0, 50, 50);
             
-            var flashCamera:FlashCamera = new FlashCamera(flashContainer);
-            var starlingCamera:StarlingCamera = new StarlingCamera(this);
-            var camera:render.Camera = new render.Camera();
-            camera.add(flashCamera);
-            camera.add(starlingCamera);
+            //creating stuff
+            {
+                worldManager.createBounds();
+                var fixture:b2Fixture = worldManager.createFixture(0, 0, 100, 100, b2Body.b2_dynamicBody);
+    
+                mouseFixture = worldManager.createFixture(0, 0, 50, 50);
+                
+                var flashCamera:FlashCamera = new FlashCamera(flashContainer);
+                var starlingCamera:StarlingCamera = new StarlingCamera(this);
+                var cameraComposite:render.CameraComposite = new render.CameraComposite();
+                cameraComposite.add(flashCamera);
+                cameraComposite.add(starlingCamera);
+                cameraComposite.width = LightLife.WIDTH;
+                cameraComposite.height = LightLife.HEIGHT;
+                
+                var mouseRotation:MouseLook = new MouseLook(controls, cameraComposite);
+                var controledMovement:KeyboardMove = new KeyboardMove(controls);
+                var cameraFollow:CameraFollow = new CameraFollow(cameraComposite);
+                cameraFollow.add(mouseRotation);
+                mouseRotation.add(controledMovement);
+                controledMovement.add(new Fixture(fixture));
+                
+                hero = cameraFollow;
+            }
             
-            var mouseRotation:MouseLook = new MouseLook(controls, camera);
-            var controledMovement:KeyboardMove = new KeyboardMove(controls);
-            var cameraFollow:CameraFollow = new CameraFollow(camera);
-            cameraFollow.add(mouseRotation);
-            mouseRotation.add(controledMovement);
-            controledMovement.add(new Fixture(fixture));
-            
-            hero = cameraFollow;
+            //var camera:ICamera = background;
             
             //Rendering
             {
-                var renderer:StarlingRenderer = new StarlingRenderer(this);
-                renderer.addBackground();
+                var renderer:IRenderer = new StarlingRenderer(this);
+                renderer.addBackGround(0, 0, LightLife.WIDTH * 1.2, LightLife.HEIGHT * 1.2);
                 hero = renderer.addDrawHero(hero);
+                
+                background = new DynamicBackground(renderer);
+                background.add(cameraComposite);
             }
+            
             worldManager.enableDebug();
             
 			// when the sprite is touched
@@ -114,6 +128,8 @@ package
 		{
             // Update physics
             worldManager.update();
+            
+            background.update();
             
             /*mouseFixture.GetBody().GetPosition().x = (controls.mouseX + flashCamera.x - LightLife.WIDTH/2) / WorldManager.SCALE;
             mouseFixture.GetBody().GetPosition().y = (controls.mouseY + flashCamera.y - LightLife.HEIGHT/2) / WorldManager.SCALE;*/

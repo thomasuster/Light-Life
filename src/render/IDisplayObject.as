@@ -1,6 +1,6 @@
 package render
 {
-    public interface ICamera
+    public interface IDisplayObject
     {
         function get height():Number;
         function set height(value:Number):void;

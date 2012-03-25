@@ -21,16 +21,9 @@ package game.entities.fixture.decorator
             this.camera = camera;
         }
         
-        public override function update():void
-        {
-            super.update();
-            roate();
-        }
-        
-        private function roate():void
+        protected override function behavior():void
         {
             //Rotation
-            trace(camera.x + " " + camera.y);
             
             var body:b2Body = fixture.GetBody();
             var bodyPosition:b2Vec2 = body.GetPosition();

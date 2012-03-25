@@ -1,11 +1,15 @@
 package render.starling.decorator
 {
     import flash.display.Bitmap;
+    import flash.utils.Dictionary;
     
     import game.entities.fixture.IFixture;
     
+    import render.IDisplayObject;
     import render.IRenderer;
+    import render.starling.StarlingDisplayObject;
     
+    import starling.display.DisplayObject;
     import starling.display.DisplayObjectContainer;
     import starling.display.Image;
     import starling.display.Stage;
@@ -18,6 +22,7 @@ package render.starling.decorator
         private var stars:Bitmap = new Stars();
         
         private var container:DisplayObjectContainer;
+        private var displayObjects:Dictionary = new Dictionary();
         
         public function StarlingRenderer(container:DisplayObjectContainer)
         {
@@ -32,13 +37,36 @@ package render.starling.decorator
             return customSprite;
         }
         
-        public function addBackground():void
+        public function addBackGround(x:Number, y:Number, width:Number, height:Number):IDisplayObject
         {
             var texture:Texture = Texture.fromBitmap(stars);
             var image:Image = new Image(texture);
-            image.width = LightLife.WIDTH * 1.2;
-            image.height= LightLife.HEIGHT * 1.2;
-            container.addChild(image);
+            image.x = x;
+            image.y = y;
+            image.width = width;
+            image.height= height;
+            var displayObject:IDisplayObject = new StarlingDisplayObject(image);
+            addChild(displayObject, image);
+            return displayObject;
+        }
+        
+        public function remove(displayObject:IDisplayObject):void
+        {
+            removeChild(displayObject);
+            delete displayObjects[displayObject];
+        }
+        
+        private function addChild(displayObject:IDisplayObject, starlingDisplayObject:DisplayObject):void
+        {
+            container.addChild(starlingDisplayObject);
+            displayObjects[displayObject] = starlingDisplayObject;
+        }
+        
+        private function removeChild(displayObject:IDisplayObject):void
+        {
+            var starlingDisplayObject:DisplayObject = displayObjects[displayObject];
+            container.removeChild(starlingDisplayObject);
+            delete displayObjects[displayObject];
         }
     }
 }

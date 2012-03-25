@@ -25,6 +25,15 @@ package game.entities.fixture.decorator
         public function update():void
         {
             decoratedFixture.update();
+            behavior();
+        }
+        
+        /**
+         * Template method 
+         */        
+        protected function behavior():void
+        {
+            
         }
     }
 }

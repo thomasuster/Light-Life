@@ -1,5 +1,8 @@
 package
 {
+    import flash.display.Stage;
+    import flash.events.MouseEvent;
+    
     import starling.display.Stage;
     import starling.events.KeyboardEvent;
 
@@ -15,10 +18,16 @@ package
         
         private var _mouseX:Number = 0;
         private var _mouseY:Number = 0;
+        private var _mouseDown:Boolean;
         
 		public function Controls()
 		{
 		}
+        
+        public function get mouseDown():Boolean
+        {
+            return _mouseDown;
+        }
         
         public function get mouseY():Number
         {
@@ -60,10 +69,22 @@ package
             return _left;
         }
         
-        public function init(stage:Stage):void
+        public function init(stage:starling.display.Stage, flashStage:flash.display.Stage):void
         {
             stage.addEventListener(KeyboardEvent.KEY_UP, stage_keyUpHandler);
             stage.addEventListener(KeyboardEvent.KEY_DOWN, stage_keyDownHandler);
+            flashStage.addEventListener(MouseEvent.MOUSE_DOWN, flashStage_mouseDownHandler);
+            flashStage.addEventListener(MouseEvent.MOUSE_UP, flashStage_mouseUpHandler);
+        }
+        
+        private function flashStage_mouseUpHandler(event:MouseEvent):void
+        {
+            _mouseDown = false;
+        }
+        
+        private function flashStage_mouseDownHandler(event:MouseEvent):void
+        {
+            _mouseDown = true;
         }
         
         private function stage_keyDownHandler(event:KeyboardEvent):void

@@ -5,14 +5,44 @@ package render
     /**
      * Composite camera. 
      */    
-    public class Camera implements ICamera
+    public class CameraComposite implements ICamera
     {
         private var cameras:Dictionary = new Dictionary();
+        private var _width:Number;
+        private var _height:Number;
         
-        public function Camera()
+        public function CameraComposite()
         {
         }
         
+        public function get height():Number
+        {
+            return _height;
+        }
+
+        public function set height(value:Number):void
+        {
+            _height = value;
+            for each (var camera:ICamera in cameras) 
+            {
+                camera.height = value;
+            }
+        }
+
+        public function get width():Number
+        {
+            return _width;
+        }
+
+        public function set width(value:Number):void
+        {
+            _width = value;
+            for each (var camera:ICamera in cameras) 
+            {
+                camera.width = value;
+            }
+        }
+
         public function add(camera:ICamera):void
         {
             cameras[camera] = camera;

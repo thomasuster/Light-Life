@@ -1,10 +1,8 @@
-package
+package game.entities.fixture.decorator
 {
     import Box2D.Common.Math.b2Vec2;
     
     import game.WorldManager;
-    import game.entities.fixture.decorator.AFixtureDecorator;
-    import game.entities.fixture.decorator.IFixtureDecorator;
     
     import render.ICamera;
     
@@ -17,9 +15,8 @@ package
             this.camera = camera;
         }
         
-        public override function update():void
+        protected override function behavior():void
         {
-            super.update();
             var position:b2Vec2 = fixture.GetBody().GetPosition();
             //camera.x = position.x;
             //camera.x = position.x;

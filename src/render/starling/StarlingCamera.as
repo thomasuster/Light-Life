@@ -9,12 +9,34 @@ package render.starling
         private var camera:DisplayObject;
         private var _x:Number = 0;
         private var _y:Number = 0;
+        private var _width:Number = 0;
+        private var _height:Number = 0;
         
         public function StarlingCamera(camera:DisplayObject)
         {
             this.camera = camera; 
         }
         
+        public function get height():Number
+        {
+            return _height;
+        }
+
+        public function set height(value:Number):void
+        {
+            _height = value;
+        }
+
+        public function get width():Number
+        {
+            return _width;
+        }
+
+        public function set width(value:Number):void
+        {
+            _width = value;
+        }
+
         public function get y():Number
         {
             return _y;
