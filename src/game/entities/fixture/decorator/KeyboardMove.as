@@ -20,7 +20,7 @@ package game.entities.fixture.decorator
             var yDir:int = controls.getYDir();
 
             var speed:Number;
-            if(controls.mouseDown)
+            if(controls.rightMouseDown)
             {
                 speed = 10;
             }

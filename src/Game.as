@@ -108,51 +108,20 @@ package
             //Rendering
             {
                 var renderer:IRenderer = new StarlingRenderer(this);
-                renderer.addBackGround(0, 0, LightLife.WIDTH * 1.2, LightLife.HEIGHT * 1.2);
-                hero = renderer.addDrawHero(hero);
-                
                 background = new DynamicBackground(renderer);
                 background.add(cameraComposite);
+                
+                hero = renderer.addDrawHero(hero);
             }
             
             worldManager.enableDebug();
-            
-			// when the sprite is touched
-			//customSprite.addEventListener(TouchEvent.TOUCH, onTouchedSprite);
 		}
-        
-        /*mouseFixture.GetBody().GetPosition().x = 
-        mouseFixture.GetBody().GetPosition().y = (controls.mouseY + flashCamera.y - LightLife.HEIGHT/2) / WorldManager.SCALE;*/
         
         private function onFrame (e:Event):void
 		{
-            // Update physics
             worldManager.update();
-            
             background.update();
-            
-            /*mouseFixture.GetBody().GetPosition().x = (controls.mouseX + flashCamera.x - LightLife.WIDTH/2) / WorldManager.SCALE;
-            mouseFixture.GetBody().GetPosition().y = (controls.mouseY + flashCamera.y - LightLife.HEIGHT/2) / WorldManager.SCALE;*/
-            
-            //trace(camerafixture.GetBody().GetPosition().x);
-            
             hero.update();
-            
-            //Main.m_fpsCounter.updatePhys(physStart);
-            
-            
-            /*trace("body.GetAngle() " + body.GetAngle() % Math.PI);
-            trace("angle " + angle);
-            body.SetAngularVelocity(bodyAngle-angle);*/
-            
-            //worldManager.createFixture(mousePosition.x, mousePosition.y, 30, 30);
-            /*var sprite:CustomSprite = new CustomSprite(10, 10);
-            addChild(sprite);
-            sprite.x = mousePosition.x;
-            sprite.y = mousePosition.y;*/ 
-            
-			/*customSprite.x += xDelta;
-			customSprite.y += yDelta;*/
 		}
         
 		private function onTouch(e:TouchEvent):void
@@ -164,19 +133,5 @@ package
 			controls.mouseX = pos.x;
             controls.mouseY = pos.y;
 		}
-		
-        /*
-		private function onTouchedSprite(e:TouchEvent):void
-		{
-			// get the touch points (can be multiple because of multitouch)
-			var touch:Touch = e.getTouch(stage);
-			var clicked:DisplayObject = e.currentTarget as DisplayObject;
-			// detect the click/release phase
-			if ( touch.phase == TouchPhase.ENDED )
-			{
-				// remove the clicked object
-				removeChild(clicked, true);
-			}
-		}*/
 	}
 }

@@ -18,6 +18,7 @@ package
         
         private var _mouseX:Number = 0;
         private var _mouseY:Number = 0;
+        private var _rightMouseDown:Boolean;
         private var _mouseDown:Boolean;
         
 		public function Controls()
@@ -27,6 +28,11 @@ package
         public function get mouseDown():Boolean
         {
             return _mouseDown;
+        }
+        
+        public function get rightMouseDown():Boolean
+        {
+            return _rightMouseDown;
         }
         
         public function get mouseY():Number
@@ -73,18 +79,31 @@ package
         {
             stage.addEventListener(KeyboardEvent.KEY_UP, stage_keyUpHandler);
             stage.addEventListener(KeyboardEvent.KEY_DOWN, stage_keyDownHandler);
+            
             flashStage.addEventListener(MouseEvent.MOUSE_DOWN, flashStage_mouseDownHandler);
             flashStage.addEventListener(MouseEvent.MOUSE_UP, flashStage_mouseUpHandler);
+            flashStage.addEventListener(MouseEvent.RIGHT_MOUSE_DOWN, flashStage_rightMouseDownHandler);
+            flashStage.addEventListener(MouseEvent.RIGHT_MOUSE_UP, flashStage_rightMouseUpHandler);
         }
         
-        private function flashStage_mouseUpHandler(event:MouseEvent):void
+        private function flashStage_rightMouseDownHandler(event:MouseEvent):void
         {
-            _mouseDown = false;
+            _rightMouseDown = true;
+        }
+        
+        private function flashStage_rightMouseUpHandler(event:MouseEvent):void
+        {
+            _rightMouseDown = false;
         }
         
         private function flashStage_mouseDownHandler(event:MouseEvent):void
         {
             _mouseDown = true;
+        }
+        
+        private function flashStage_mouseUpHandler(event:MouseEvent):void
+        {
+            _mouseDown = false;
         }
         
         private function stage_keyDownHandler(event:KeyboardEvent):void

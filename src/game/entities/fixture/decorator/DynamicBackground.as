@@ -56,7 +56,7 @@ package game.entities.fixture.decorator
             var hashY:int = y / tileHeight;
             var newHash:String = hash(hashX, hashY);
             var displayObject:IDisplayObject;
-            trace(newHash);
+//            trace(newHash);
             if(newHash != currentHash)
             {
                 var newTiles:Object = {};
@@ -75,7 +75,7 @@ package game.entities.fixture.decorator
                         {
                             var _x:Number = getX(tileX);
                             var _y:Number = getY(tileY);
-                            trace(_x + " " + _y);
+//                            trace(_x + " " + _y);
                             displayObject = renderer.addBackGround(_x, _y, tileWidth, tileHeight);
                             newTiles[hash] = displayObject;
                         }

@@ -46,7 +46,7 @@ package render.starling.decorator
             image.width = width;
             image.height= height;
             var displayObject:IDisplayObject = new StarlingDisplayObject(image);
-            addChild(displayObject, image);
+            addChild(displayObject, image, 0);
             return displayObject;
         }
         
@@ -56,9 +56,16 @@ package render.starling.decorator
             delete displayObjects[displayObject];
         }
         
-        private function addChild(displayObject:IDisplayObject, starlingDisplayObject:DisplayObject):void
+        private function addChild(displayObject:IDisplayObject, starlingDisplayObject:DisplayObject, zIndex:int = -1):void
         {
-            container.addChild(starlingDisplayObject);
+            if(zIndex == -1)
+            {
+                container.addChild(starlingDisplayObject);
+            }
+            else
+            {
+                container.addChildAt(starlingDisplayObject, zIndex);
+            }
             displayObjects[displayObject] = starlingDisplayObject;
         }
         

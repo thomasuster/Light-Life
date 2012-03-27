@@ -14,6 +14,7 @@ package starling.events
     import flash.geom.Point;
     
     import starling.display.DisplayObject;
+    import starling.display.Sprite;
 
     /** A Touch object contains information about the presence or movement of a finger 
      *  or the mouse on the screen.
@@ -53,7 +54,7 @@ package starling.events
             mGlobalY = mPreviousGlobalY = globalY;
             mTapCount = 0;
             mPhase = phase;
-            mTarget = target;
+            setTarget(target);
         }
         
         /** Converts the current location of a touch to the local coordinate system of a display 
@@ -131,7 +132,17 @@ package starling.events
         internal function setTapCount(value:int):void { mTapCount = value; }
         
         /** @private */
-        internal function setTarget(value:DisplayObject):void { mTarget = value; }
+        internal function setTarget(value:DisplayObject):void
+        { 
+            if(value == null)
+            {
+                mTarget = new Sprite();
+            }
+            else
+            {
+                mTarget = value;
+            }
+        }
         
         /** @private */
         internal function setTimestamp(value:Number):void { mTimestamp = value; }
