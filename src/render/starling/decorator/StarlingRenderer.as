@@ -31,7 +31,7 @@ package render.starling.decorator
         
         public function addDrawHero(fixture:IFixture):IFixture
         {
-            var sprite:HeroDecorator = new HeroDecorator(200, 200);
+            var sprite:HeroDecorator = new HeroDecorator(100, 100);
             sprite.add(fixture);
             container.addChild(sprite);
             return sprite;

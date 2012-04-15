@@ -15,45 +15,31 @@ package render.starling.decorator
 
 	public class HeroDecorator extends Sprite implements IFixtureDecorator
 	{
-		private var quad:Quad;
-		private var legend:TextField;
-		private var quadWidth:uint;
-		private var quadHeight:uint;
-		private var r:Number = 0;
-		private var g:Number = 0;
-		private var b:Number = 0;
-		private var rDest:Number;
-		private var gDest:Number;
-		private var bDest:Number;
-		private var decoratedFixture:IFixture;
+        private var simpleQuadDecorator:SimpleQuadDecorator;
+        private var rDest:Number;
+        private var gDest:Number;
+        private var bDest:Number;
+        private var r:Number = 0;
+        private var g:Number = 0;
+        private var b:Number = 0;
         
 		public function HeroDecorator(width:Number, height:Number, color:uint=16777215)
 		{
+            simpleQuadDecorator = new SimpleQuadDecorator(width, height, color, "HERO!");
+            addChild(simpleQuadDecorator);
 			resetColors();
-			quadWidth = width;
-			quadHeight = height;
-			addEventListener(Event.ADDED_TO_STAGE, activate);
 		}
         
         public function add(decoratedFixture:IFixture):void
         {
-            this.decoratedFixture = decoratedFixture;   
+            simpleQuadDecorator.add(decoratedFixture);   
         }
         
         public function get fixture():b2Fixture
         {
-            return decoratedFixture.fixture;
+            return simpleQuadDecorator.fixture;
         }
         
-		private function activate(e:Event):void
-		{
-			quad = new Quad(quadWidth, quadHeight);
-			legend = new TextField(100, 20, "Hello Starling!", "Arial", 14, 0xFFFFFF);
-			addChild(quad);
-			addChild(legend);
-			pivotX = width >> 1;
-			pivotY = height >> 1;
-		}
 		private function resetColors():void
 		{
 			// pick random color components
@@ -67,14 +53,7 @@ package render.starling.decorator
 		 */
 		public function update():void
 		{
-            decoratedFixture.update();
-            
-            var position:b2Vec2 = fixture.GetBody().GetPosition();
-            x = position.x * WorldManager.SCALE; 
-            y = position.y * WorldManager.SCALE;
-            
-            var rotation:Number= fixture.GetBody().GetAngle();
-            this.rotation = rotation;
+            simpleQuadDecorator.update();
             
 			// easing on the components
 			r -= (r - rDest) * .01;
@@ -82,7 +61,7 @@ package render.starling.decorator
 			b -= (b - bDest) * .01
 			// assemble the color
 			var color:uint = r << 16 | g << 8 | b;
-			quad.color = color;
+			simpleQuadDecorator.color = color;
 			// when reaching the color, pick another one
 			if ( Math.abs( r - rDest) < 1 && Math.abs( g - gDest) < 1 && Math.abs( b - bDest) )
 				resetColors();

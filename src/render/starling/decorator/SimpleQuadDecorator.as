@@ -17,7 +17,7 @@ package render.starling.decorator
     {
         private var quadWidth:Number;
         private var quadHeight:Number;
-        private var color:uint;
+        private var _quadColor:uint;
         private var quad:Quad;
         private var label:String;
         private var legend:TextField;
@@ -27,11 +27,16 @@ package render.starling.decorator
         {
             this.quadWidth = quadWidth;
             this.quadHeight = quadHeight;
-            this.color = color;
+            this._quadColor = color;
             this.label = label;
             addEventListener(Event.ADDED_TO_STAGE, activate);
         }
         
+        public function set color(value:uint):void
+        {
+            quad.color = value;
+        }
+
         public function get fixture():b2Fixture
         {       
             return decoratedFixture.fixture;   
@@ -46,7 +51,7 @@ package render.starling.decorator
         {
             quad = new Quad(quadWidth, quadHeight);
             legend = new TextField(100, 20, label, "Arial", 14, 0xFFFFFF);
-            quad.color = color;
+            quad.color = _quadColor;
             addChild(quad);
             addChild(legend);
             pivotX = quadWidth >> 1;
