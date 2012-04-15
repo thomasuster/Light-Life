@@ -1,4 +1,4 @@
-package game.entities.fixture.decorator
+package game.entities.camera.decorator
 {
     import Box2D.Common.Math.b2Vec2;
     

@@ -22,7 +22,7 @@ package game.entities.fixture.decorator
             var speed:Number;
             if(controls.rightMouseDown)
             {
-                speed = 10;
+                speed = 4;
             }
             else
             {

@@ -1,7 +1,6 @@
-package game.entities.fixture.decorator
+package game.entities.camera.decorator
 {
     import game.entities.IEntity;
-    import game.entities.camera.decorator.ICameraDecorator;
     
     import render.ICamera;
     

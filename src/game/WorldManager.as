@@ -1,6 +1,7 @@
 package game
 {
     import Box2D.Collision.Shapes.b2PolygonShape;
+    import Box2D.Collision.Shapes.b2Shape;
     import Box2D.Collision.b2AABB;
     import Box2D.Common.Math.b2Vec2;
     import Box2D.Dynamics.b2Body;
@@ -88,15 +89,24 @@ package game
         
         public function createFixture(x:Number, y:Number, width:Number, height:Number, type:uint = 0):b2Fixture
         {
-            var wall:b2PolygonShape = new b2PolygonShape();
-            var wallBd:b2BodyDef = new b2BodyDef();
-            wallBd.type = type;
-            var wallB:b2Body;
-            wall.SetAsBox(width/2/ SCALE, height/2 /SCALE);
-            // Box
-            wallBd.position.Set(x / SCALE, y / SCALE);
-            wallB = world.CreateBody(wallBd);
-            var fixture:b2Fixture = wallB.CreateFixture2(wall);
+            var bodyDef:b2BodyDef = new b2BodyDef();
+            bodyDef.type = type;
+            bodyDef.position.Set(x, y);
+            
+            var polygonShape:b2PolygonShape = new b2PolygonShape();
+            polygonShape.SetAsBox(width/2/ SCALE, height/2 /SCALE);
+
+            var body:b2Body;
+            body = world.CreateBody(bodyDef);
+            
+            
+            //var shape:b2Shape = body.
+            /*var filterData:b2FilterData = new b2FilterData();
+            filterData.categoryBits = 0;
+            filterData.maskBits = 1;
+            fire.SetFilterData(filterData);*/
+            
+            var fixture:b2Fixture = body.CreateFixture2(polygonShape);
             
             fixtures[fixture] = fixture;
             return fixture;

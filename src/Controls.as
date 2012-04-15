@@ -171,11 +171,11 @@ package
                     break;
                 }
             }
-            trace("Controls.changeKey(charCode, keyUp)");
+            /*trace("Controls.changeKey(charCode, keyUp)");
             trace("_up: " + _up);
             trace("_down: " + _down);
             trace("_left: " + _left);
-            trace("_right: " + _right);
+            trace("_right: " + _right);*/
         }
     }
 }

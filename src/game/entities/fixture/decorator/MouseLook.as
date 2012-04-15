@@ -13,23 +13,24 @@ package game.entities.fixture.decorator
     public class MouseLook extends AFixtureDecorator
     {
         private var controls:Controls;
-        private var camera:ICamera;
+        private var _game:Game;
         
-        public function MouseLook(controls:Controls, camera:ICamera)
+        public function MouseLook(controls:Controls, game:Game)
         {
             this.controls = controls;
-            this.camera = camera;
+            this._game = game;
         }
         
         protected override function behavior():void
         {
             //Rotation
-            
             var body:b2Body = fixture.GetBody();
             var bodyPosition:b2Vec2 = body.GetPosition();
-            var mousePosition:b2Vec2 = new b2Vec2((controls.mouseX + camera.x - LightLife.WIDTH/2) / WorldManager.SCALE, (controls.mouseY + camera.y - LightLife.HEIGHT/2) / WorldManager.SCALE);
-                
+            
+            var mousePosition:b2Vec2 = _game.cameraToWorld(controls.mouseX, controls.mouseY);
+            
             mousePosition.Subtract(bodyPosition);
+            
             var angle:Number = Math.atan2(mousePosition.y, mousePosition.x);
             var bodyAngle:Number = body.GetAngle();
             fixture.GetBody().SetAngle(angle);
