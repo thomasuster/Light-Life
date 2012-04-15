@@ -29,12 +29,9 @@ package render.starling.decorator
         
 		public function HeroDecorator(width:Number, height:Number, color:uint=16777215)
 		{
-			// reset the destination color component 
 			resetColors();
-			// set the width and height
 			quadWidth = width;
 			quadHeight = height;
-			// when added to stage, activate it
 			addEventListener(Event.ADDED_TO_STAGE, activate);
 		}
         
@@ -48,21 +45,12 @@ package render.starling.decorator
             return decoratedFixture.fixture;
         }
         
-        /*public function update():void
-        {
-            decoratedFixture.update();
-        }*/
-        
 		private function activate(e:Event):void
 		{
-			// create a quad of the specified width
 			quad = new Quad(quadWidth, quadHeight);
-			// add the legend
 			legend = new TextField(100, 20, "Hello Starling!", "Arial", 14, 0xFFFFFF);
-			// add the children
 			addChild(quad);
 			addChild(legend);
-			// change the registration point
 			pivotX = width >> 1;
 			pivotY = height >> 1;
 		}

@@ -22,7 +22,7 @@ package game.entities.fixture.decorator
             return decoratedFixture.fixture;
         }
         
-        public function update():void
+        final public function update():void
         {
             decoratedFixture.update();
             behavior();

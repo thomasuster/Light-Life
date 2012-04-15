@@ -1,8 +1,6 @@
 package game
 {
     import Box2D.Collision.Shapes.b2PolygonShape;
-    import Box2D.Collision.Shapes.b2Shape;
-    import Box2D.Collision.b2AABB;
     import Box2D.Common.Math.b2Vec2;
     import Box2D.Dynamics.b2Body;
     import Box2D.Dynamics.b2BodyDef;
@@ -10,16 +8,9 @@ package game
     import Box2D.Dynamics.b2Fixture;
     import Box2D.Dynamics.b2World;
     
-    import flash.display.DisplayObject;
     import flash.display.Sprite;
-    import flash.display.Stage;
     import flash.utils.Dictionary;
     import flash.utils.getTimer;
-    
-    import flashx.textLayout.debug.assert;
-    
-    import render.IRenderFactory;
-    import render.starling.StarlingRenderFactory;
 
     public class WorldManager
     {
@@ -59,32 +50,21 @@ package game
         
         public function createBounds():void
         {
-            var wall:b2PolygonShape= new b2PolygonShape();
-            var wallBd:b2BodyDef = new b2BodyDef();
-            var wallB:b2Body;
-            
+            var polygonShape:b2PolygonShape= new b2PolygonShape();
+            var bodyDef:b2BodyDef = new b2BodyDef();
+            var body:b2Body;
             var buffer:int = 10;
             var thickness:int = 100;
             
-            wall.SetAsBox(100/SCALE, HEIGHT/SCALE/2);
-            // Left
-            wallBd.position.Set( (-100 + buffer - WIDTH/2) / SCALE, 0);
-            wallB = world.CreateBody(wallBd);
-            wallB.CreateFixture2(wall);
-            // Right
-            /*wallBd.position.Set((WIDTH/2 + 100 - buffer) / SCALE, 0);
-            wallB = world.CreateBody(wallBd);
-            wallB.CreateFixture2(wall);*/
+            polygonShape.SetAsBox(100/SCALE, HEIGHT/SCALE/2);
+            bodyDef.position.Set( (-100 + buffer - WIDTH/2) / SCALE, 0);
+            body = world.CreateBody(bodyDef);
+            body.CreateFixture2(polygonShape);
             
-            wall.SetAsBox(WIDTH/SCALE/2, thickness/SCALE);
-            // Top
-            wallBd.position.Set(0, (-1*thickness + buffer - HEIGHT/2) / SCALE);
-            wallB = world.CreateBody(wallBd);
-            wallB.CreateFixture2(wall);
-            // Bottom
-            /*wallBd.position.Set(0, (HEIGHT/2 + thickness - buffer) / SCALE);
-            wallB = world.CreateBody(wallBd);
-            wallB.CreateFixture2(wall);*/
+            polygonShape.SetAsBox(WIDTH/SCALE/2, thickness/SCALE);
+            bodyDef.position.Set(0, (-1*thickness + buffer - HEIGHT/2) / SCALE);
+            body = world.CreateBody(bodyDef);
+            body.CreateFixture2(polygonShape);
         }
         
         public function createFixture(x:Number, y:Number, width:Number, height:Number, type:uint = 0):b2Fixture
@@ -98,7 +78,6 @@ package game
 
             var body:b2Body;
             body = world.CreateBody(bodyDef);
-            
             
             //var shape:b2Shape = body.
             /*var filterData:b2FilterData = new b2FilterData();

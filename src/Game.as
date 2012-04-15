@@ -46,6 +46,8 @@ package
 
 		private var cameraComposite:render.CameraComposite;
 
+		private var badGuy:IFixture;
+
 		public function Game()
 		{
 			addEventListener(Event.ADDED_TO_STAGE, onAdded);
@@ -88,6 +90,8 @@ package
                 rapidFire.add(new Fixture(fixture));
                 
                 hero = cameraFollow;
+                
+                badGuy = new Fixture(worldManager.createFixture(10, 10, 133, 133, b2Body.b2_dynamicBody)); 
             }
             
             //var camera:ICamera = background;
@@ -99,6 +103,8 @@ package
                 background.add(cameraComposite);
                 
                 hero = renderer.addDrawHero(hero);
+                
+                badGuy = renderer.addBadGuy(badGuy);
             }
             
             worldManager.enableDebug();
@@ -109,6 +115,7 @@ package
             worldManager.update();
             background.update();
             hero.update();
+            badGuy.update();
 		}
         
 		private function onTouch(e:TouchEvent):void

@@ -31,10 +31,18 @@ package render.starling.decorator
         
         public function addDrawHero(fixture:IFixture):IFixture
         {
-            var customSprite:HeroDecorator = new HeroDecorator(200, 200);
-            customSprite.add(fixture);
-            container.addChild(customSprite);
-            return customSprite;
+            var sprite:HeroDecorator = new HeroDecorator(200, 200);
+            sprite.add(fixture);
+            container.addChild(sprite);
+            return sprite;
+        }
+        
+        public function addBadGuy(fixture:IFixture):IFixture
+        {
+            var sprite:SimpleQuadDecorator = new SimpleQuadDecorator(100, 100, 0xFF0000, "Bad Guy");
+            sprite.add(fixture);
+            container.addChild(sprite);
+            return sprite;
         }
         
         public function addBackGround(x:Number, y:Number, width:Number, height:Number):IDisplayObject
