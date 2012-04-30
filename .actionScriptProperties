@@ -4,6 +4,7 @@
     <compilerSourcePath>
       <compilerSourcePathEntry kind="1" linkType="1" path="sources/Box2DFlashAS3 2.1a/Source"/>
       <compilerSourcePathEntry kind="1" linkType="1" path="sources/PrimaryFeather-Starling-Framework-v0.9.1-0-g46f3151/PrimaryFeather-Starling-Framework-46f3151/starling/src"/>
+      <compilerSourcePathEntry kind="1" linkType="1" path="sources/console_2.6/src"/>
     </compilerSourcePath>
     <libraryPath defaultLinkType="0">
       <libraryPathEntry kind="4" path="">

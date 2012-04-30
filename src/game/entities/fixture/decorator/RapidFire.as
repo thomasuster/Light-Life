@@ -20,6 +20,7 @@ package game.entities.fixture.decorator
         private var timer:Timer;
         private var rate:Number = 100;
         private var _game:Game;
+        private var speed:Number = 7.5/2;
         
         public function RapidFire(controls:Controls, worldManager:WorldManager, game:Game)
         {
@@ -82,7 +83,7 @@ package game.entities.fixture.decorator
             var impusle:b2Vec2 = fixture.GetBody().GetLinearVelocity().Copy();
             
             
-            directionVector.Multiply(20);
+            directionVector.Multiply(speed);
             
             impusle.Add(directionVector);
             

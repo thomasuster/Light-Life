@@ -16,7 +16,7 @@ package game
     {
         private var world:b2World;
         private var sprite2D:Sprite;
-        public static const SCALE:Number = 30;
+        public static const SCALE:Number = 50;
         private var timeStep:Number = 1.0/30.0;
         private var velocityIterations:int = 10;
         private var positionIterations:int = 10;
