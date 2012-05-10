@@ -5,7 +5,7 @@ package game.entities.fixture.decorator
     
     import flash.display.DisplayObject;
     
-    import game.WorldManager;
+    import game.entities.fixture.FixtureManager;
     import game.entities.fixture.IFixture;
     
     import render.ICamera;

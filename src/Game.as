@@ -7,7 +7,7 @@ package
 	import flash.display.Sprite;
 	import flash.geom.Point;
 	
-	import game.WorldManager;
+	import game.entities.fixture.FixtureManager;
 	import game.entities.camera.decorator.DynamicBackground;
 	import game.entities.fixture.Fixture;
 	import game.entities.fixture.IFixture;
@@ -34,13 +34,13 @@ package
         
 		private var controls:Controls = new Controls();
 
-		private var worldManager:WorldManager;
+		private var worldManager:FixtureManager;
 
 		private var hero:IFixture;
 
 		private var flashContainer:flash.display.Sprite = new flash.display.Sprite();
 
-		private var mouseFixture:b2Fixture;
+		//private var mouseFixture:b2Fixture;
 
 		private var background:DynamicBackground;
 
@@ -55,7 +55,7 @@ package
 		private function onAdded ( e:Event ):void
 		{
             Starling.current.nativeStage.addChild(flashContainer);
-            worldManager = new WorldManager(flashContainer)
+            worldManager = new FixtureManager(flashContainer)
                 
 			// we listen to the mouse movement on the stage
 			stage.addEventListener(TouchEvent.TOUCH, onTouch);
@@ -68,9 +68,8 @@ package
             //creating stuff
             {
                 worldManager.createBounds();
-                var fixture:b2Fixture = worldManager.createFixture(0, 0, 100, 100, b2Body.b2_dynamicBody);
-    
-                mouseFixture = worldManager.createFixture(10, 0, 50, 50);
+                
+//                mouseFixture = worldManager.createFixture(10, 0, 50, 50);
                 
                 var flashCamera:FlashCamera = new FlashCamera(flashContainer);
                 var starlingCamera:StarlingCamera = new StarlingCamera(this);
@@ -80,18 +79,8 @@ package
                 cameraComposite.width = LightLife.WIDTH;
                 cameraComposite.height = LightLife.HEIGHT;
                 
-                var mouseRotation:MouseLook = new MouseLook(controls, this);
-                var controledMovement:KeyboardMove = new KeyboardMove(controls);
-                var cameraFollow:CameraFollow = new CameraFollow(cameraComposite);
-                var rapidFire:RapidFire = new RapidFire(controls, worldManager, this);
-                cameraFollow.add(mouseRotation);
-                mouseRotation.add(controledMovement);
-                controledMovement.add(rapidFire);
-                rapidFire.add(new Fixture(fixture));
-                
-                hero = cameraFollow;
-                
-                badGuy = new Fixture(worldManager.createFixture(10, 10, 133, 133, b2Body.b2_dynamicBody)); 
+                hero = worldManager.createHero(controls, cameraComposite, this);
+                badGuy = worldManager.createBadGuy(); 
             }
             
             //var camera:ICamera = background;
@@ -130,7 +119,7 @@ package
         
         public function cameraToWorld(x:Number, y:Number):b2Vec2
         {
-            return new b2Vec2((x + cameraComposite.x - LightLife.WIDTH/2) / WorldManager.SCALE, (y + cameraComposite.y - LightLife.HEIGHT/2) / WorldManager.SCALE);
+            return new b2Vec2((x + cameraComposite.x - LightLife.WIDTH/2) / FixtureManager.SCALE, (y + cameraComposite.y - LightLife.HEIGHT/2) / FixtureManager.SCALE);
         }
     }
 }

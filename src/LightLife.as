@@ -46,11 +46,10 @@ package
             Cc.config.tracing = true; // also send traces to flash's normal trace()
             Cc.config.maxLines = 2000; // change maximum log lines to 2000, default is 1000
             Cc.config.rememberFilterSettings = true;
-            Cc.startOnStage(container, "");
+            Cc.startOnStage(container, "~");
             Cc.log("Hello world");
             Cc.width = WIDTH - 200;
             container.transform.colorTransform = new ColorTransform(-1, -1, -1, 1, 255, 255, 255, 1);
-            
             
             var square:Sprite = new Sprite();
             addChild(square);

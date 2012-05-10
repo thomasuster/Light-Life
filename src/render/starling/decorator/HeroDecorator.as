@@ -3,7 +3,7 @@ package render.starling.decorator
 	import Box2D.Common.Math.b2Vec2;
 	import Box2D.Dynamics.b2Fixture;
 	
-	import game.WorldManager;
+	import game.entities.fixture.FixtureManager;
 	import game.entities.IEntity;
 	import game.entities.fixture.IFixture;
 	import game.entities.fixture.decorator.IFixtureDecorator;
