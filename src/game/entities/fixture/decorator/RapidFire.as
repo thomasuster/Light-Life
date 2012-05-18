@@ -4,13 +4,13 @@ package game.entities.fixture.decorator
     import Box2D.Dynamics.b2Body;
     import Box2D.Dynamics.b2Fixture;
     
-    import game.entities.fixture.FixtureManager;
+    import game.entities.fixture.WorldManager;
     import game.entities.fixture.IFixture;
 
     public class RapidFire extends AFixtureDecorator
     {
         private var controls:Controls;
-        private var worldManager:FixtureManager;
+        private var worldManager:WorldManager;
         
         private var fireStarted:Boolean = false;
         private var rateCounter:int = 0; 
@@ -18,7 +18,7 @@ package game.entities.fixture.decorator
         private var _game:Game;
         private var speed:Number = 7.5/2;
         
-        public function RapidFire(controls:Controls, worldManager:FixtureManager, game:Game)
+        public function RapidFire(controls:Controls, worldManager:WorldManager, game:Game)
         {
             this.controls = controls;
             this.worldManager = worldManager;

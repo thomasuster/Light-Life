@@ -37,20 +37,6 @@ package
 
         public function LightLife()
         {
-            //Console integration
-            import com.junkbyte.console.Cc;
-            var container:Sprite = new Sprite();
-            addChild(container);
-            Cc.config.style.backgroundColor = 0x000000;
-            Cc.config.commandLineAllowed = true // Enables full commandLine features
-            Cc.config.tracing = true; // also send traces to flash's normal trace()
-            Cc.config.maxLines = 2000; // change maximum log lines to 2000, default is 1000
-            Cc.config.rememberFilterSettings = true;
-            Cc.startOnStage(container, "~");
-            Cc.log("Hello world");
-            Cc.width = WIDTH - 200;
-            container.transform.colorTransform = new ColorTransform(-1, -1, -1, 1, 255, 255, 255, 1);
-            
             var square:Sprite = new Sprite();
             addChild(square);
             square.graphics.lineStyle(1,0x00ff00);
@@ -66,7 +52,7 @@ package
             
 			loader.contentLoaderInfo.addEventListener(Event.COMPLETE, loader_completeHandler);
         }
-		
+        
 		private function loader_completeHandler(event:Event):void
 		{
 			loader.removeEventListener(Event.COMPLETE, loader_completeHandler);

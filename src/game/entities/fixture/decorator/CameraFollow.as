@@ -2,7 +2,7 @@ package game.entities.fixture.decorator
 {
     import Box2D.Common.Math.b2Vec2;
     
-    import game.entities.fixture.FixtureManager;
+    import game.entities.fixture.WorldManager;
     
     import render.ICamera;
     
@@ -23,8 +23,8 @@ package game.entities.fixture.decorator
             /*camera.x = -1 * position.x * WorldManager.SCALE + LightLife.WIDTH / 2;
             camera.y = -1 * position.y * WorldManager.SCALE + LightLife.HEIGHT / 2;*/
             
-            camera.x = position.x * FixtureManager.SCALE;
-            camera.y = position.y * FixtureManager.SCALE;
+            camera.x = position.x * WorldManager.SCALE;
+            camera.y = position.y * WorldManager.SCALE;
         }
     }
 }

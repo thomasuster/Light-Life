@@ -1,9 +1,13 @@
 package render.starling.decorator
 {
+    import Box2D.Collision.b2AABB;
+    import Box2D.Common.Math.b2Vec2;
+    
     import flash.display.Bitmap;
     import flash.utils.Dictionary;
     
     import game.entities.fixture.IFixture;
+    import game.entities.fixture.WorldManager;
     
     import render.IDisplayObject;
     import render.IRenderer;
@@ -12,7 +16,6 @@ package render.starling.decorator
     import starling.display.DisplayObject;
     import starling.display.DisplayObjectContainer;
     import starling.display.Image;
-    import starling.display.Stage;
     import starling.textures.Texture;
     
     public class StarlingRenderer implements IRenderer
@@ -41,6 +44,23 @@ package render.starling.decorator
         {
             var sprite:SimpleQuadDecorator = new SimpleQuadDecorator(100, 100, 0xFF0000, "Bad Guy");
             sprite.add(fixture);
+            container.addChild(sprite);
+            return sprite;
+        }
+        
+        public function addSimpleQuadDecorator(fixture:IFixture, name:String="", color:uint=0xFF5555):IFixture
+        {
+            var aabb:b2AABB = fixture.fixture.GetAABB();
+            var lowerBound:b2Vec2 = aabb.lowerBound.Copy();
+            var upperBound:b2Vec2 = aabb.upperBound.Copy();
+            upperBound.Subtract(lowerBound);
+            var width:Number = Math.abs(upperBound.x * WorldManager.SCALE);
+            var height:Number = Math.abs(upperBound.y * WorldManager.SCALE);
+            var sprite:SimpleQuadDecorator = new SimpleQuadDecorator(width, height, color, name);
+            var position:b2Vec2 = fixture.fixture.GetBody().GetPosition();
+            sprite.add(fixture);
+            sprite.x = position.x;
+            sprite.y = position.y;
             container.addChild(sprite);
             return sprite;
         }

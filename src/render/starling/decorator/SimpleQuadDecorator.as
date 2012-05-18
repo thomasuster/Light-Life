@@ -3,7 +3,7 @@ package render.starling.decorator
     import Box2D.Common.Math.b2Vec2;
     import Box2D.Dynamics.b2Fixture;
     
-    import game.entities.fixture.FixtureManager;
+    import game.entities.fixture.WorldManager;
     import game.entities.fixture.IFixture;
     import game.entities.fixture.decorator.AFixtureDecorator;
     import game.entities.fixture.decorator.IFixtureDecorator;
@@ -56,17 +56,22 @@ package render.starling.decorator
             addChild(legend);
             pivotX = quadWidth >> 1;
             pivotY = quadHeight >> 1;
+            position();
+        }
+        
+        private function position():void
+        {
+            var position:b2Vec2 = fixture.GetBody().GetPosition();
+            x = position.x * WorldManager.SCALE; 
+            y = position.y * WorldManager.SCALE;
+            var rotation:Number= fixture.GetBody().GetAngle();
+            this.rotation = rotation;
         }
         
         public function update():void
         {
             decoratedFixture.update();
-            
-            var position:b2Vec2 = fixture.GetBody().GetPosition();
-            x = position.x * FixtureManager.SCALE; 
-            y = position.y * FixtureManager.SCALE;
-            var rotation:Number= fixture.GetBody().GetAngle();
-            this.rotation = rotation;
+            position();
         }
     }
 }

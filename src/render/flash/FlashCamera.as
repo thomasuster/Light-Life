@@ -2,7 +2,7 @@ package render.flash
 {
     import flash.display.DisplayObject;
     
-    import game.entities.fixture.FixtureManager;
+    import game.entities.fixture.WorldManager;
     
     import render.ICamera;
     

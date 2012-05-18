@@ -4,13 +4,15 @@ package
 	import Box2D.Dynamics.b2Body;
 	import Box2D.Dynamics.b2Fixture;
 	
+	import com.junkbyte.console.Cc;
+	
 	import flash.display.Sprite;
 	import flash.geom.Point;
 	
-	import game.entities.fixture.FixtureManager;
 	import game.entities.camera.decorator.DynamicBackground;
 	import game.entities.fixture.Fixture;
 	import game.entities.fixture.IFixture;
+	import game.entities.fixture.WorldManager;
 	import game.entities.fixture.decorator.CameraFollow;
 	import game.entities.fixture.decorator.KeyboardMove;
 	import game.entities.fixture.decorator.MouseLook;
@@ -34,7 +36,7 @@ package
         
 		private var controls:Controls = new Controls();
 
-		private var worldManager:FixtureManager;
+		private var worldManager:WorldManager;
 
 		private var hero:IFixture;
 
@@ -50,12 +52,28 @@ package
 
 		public function Game()
 		{
+            //Console integration
+            Cc.config.style.backgroundColor = 0x000000;
+            Cc.config.commandLineAllowed = true // Enables full commandLine features
+            Cc.config.tracing = true; // also send traces to flash's normal trace()
+            Cc.config.maxLines = 2000; // change maximum log lines to 2000, default is 1000
+            Cc.config.rememberFilterSettings = true;
+            Cc.startOnStage(flashContainer, "`");
+            Cc.addMenu("Debug Draw", debugDraw);
+            
 			addEventListener(Event.ADDED_TO_STAGE, onAdded);
 		}
+        
+        private function debugDraw():void
+        {
+            worldManager.toggleDebug();
+        }
+        
 		private function onAdded ( e:Event ):void
 		{
+            var renderer:IRenderer = new StarlingRenderer(this);
             Starling.current.nativeStage.addChild(flashContainer);
-            worldManager = new FixtureManager(flashContainer)
+            worldManager = new WorldManager(flashContainer, renderer)
                 
 			// we listen to the mouse movement on the stage
 			stage.addEventListener(TouchEvent.TOUCH, onTouch);
@@ -64,13 +82,9 @@ package
             
             controls.init(stage, Starling.current.nativeStage);
             
-            
             //creating stuff
             {
                 worldManager.createBounds();
-                
-//                mouseFixture = worldManager.createFixture(10, 0, 50, 50);
-                
                 var flashCamera:FlashCamera = new FlashCamera(flashContainer);
                 var starlingCamera:StarlingCamera = new StarlingCamera(this);
                 cameraComposite = new render.CameraComposite();
@@ -83,28 +97,19 @@ package
                 badGuy = worldManager.createBadGuy(); 
             }
             
-            //var camera:ICamera = background;
-            
             //Rendering
             {
-                var renderer:IRenderer = new StarlingRenderer(this);
                 background = new DynamicBackground(renderer);
                 background.add(cameraComposite);
-                
-                hero = renderer.addDrawHero(hero);
-                
-                badGuy = renderer.addBadGuy(badGuy);
             }
-            
-            worldManager.enableDebug();
 		}
         
         private function onFrame (e:Event):void
 		{
             worldManager.update();
             background.update();
-            hero.update();
-            badGuy.update();
+//            hero.update();
+//            badGuy.update();
 		}
         
 		private function onTouch(e:TouchEvent):void
@@ -119,7 +124,7 @@ package
         
         public function cameraToWorld(x:Number, y:Number):b2Vec2
         {
-            return new b2Vec2((x + cameraComposite.x - LightLife.WIDTH/2) / FixtureManager.SCALE, (y + cameraComposite.y - LightLife.HEIGHT/2) / FixtureManager.SCALE);
+            return new b2Vec2((x + cameraComposite.x - LightLife.WIDTH/2) / WorldManager.SCALE, (y + cameraComposite.y - LightLife.HEIGHT/2) / WorldManager.SCALE);
         }
     }
 }

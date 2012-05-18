@@ -12,14 +12,16 @@ package game.entities.fixture
     import flash.utils.Dictionary;
     import flash.utils.getTimer;
     
+    import game.entities.IEntity;
     import game.entities.fixture.decorator.CameraFollow;
     import game.entities.fixture.decorator.KeyboardMove;
     import game.entities.fixture.decorator.MouseLook;
     import game.entities.fixture.decorator.RapidFire;
     
     import render.ICamera;
+    import render.IRenderer;
 
-    public class FixtureManager
+    public class WorldManager
     {
         private var world:b2World;
         private var sprite2D:Sprite;
@@ -30,9 +32,13 @@ package game.entities.fixture
         private var WIDTH:int = 1024;
         private var HEIGHT:int = 768;
         private var fixtures:Dictionary = new Dictionary();
+        private var renderer:IRenderer;
+
+        private var debugDraw:Boolean = false;
         
-        public function FixtureManager(camera:Sprite)
+        public function WorldManager(camera:Sprite, renderer:IRenderer)
         {
+            this.renderer = renderer;
             sprite2D = camera;
             createWorld();
         }
@@ -44,15 +50,24 @@ package game.entities.fixture
             world = new b2World(gravity, doSleep);
         }
         
-        public function enableDebug(value:Boolean = true):void
+        public function toggleDebug():void
         {
-            var dbgDraw:b2DebugDraw = new b2DebugDraw();
-            dbgDraw.SetSprite(sprite2D);
-            dbgDraw.SetDrawScale(SCALE);
-            dbgDraw.SetFillAlpha(0.3);
-            dbgDraw.SetLineThickness(1.0);
-            dbgDraw.SetFlags(b2DebugDraw.e_shapeBit | b2DebugDraw.e_jointBit);
-            world.SetDebugDraw(dbgDraw);
+            if(debugDraw)
+            {
+                debugDraw = false;
+                world.SetDebugDraw(null);
+            }
+            else
+            {
+                debugDraw = true;
+                var dbgDraw:b2DebugDraw = new b2DebugDraw();
+                dbgDraw.SetSprite(sprite2D);
+                dbgDraw.SetDrawScale(SCALE);
+                dbgDraw.SetFillAlpha(0.3);
+                dbgDraw.SetLineThickness(1.0);
+                dbgDraw.SetFlags(b2DebugDraw.e_shapeBit | b2DebugDraw.e_jointBit);
+                world.SetDebugDraw(dbgDraw);
+            }
         }
         
         private function createFixture(x:Number, y:Number, width:Number, height:Number, type:uint = 0):b2Fixture
@@ -69,7 +84,6 @@ package game.entities.fixture
             
             var fixture:b2Fixture = body.CreateFixture2(polygonShape);
             
-            fixtures[fixture] = fixture;
             return fixture;
         }
         
@@ -78,16 +92,14 @@ package game.entities.fixture
             var physStart:uint = getTimer();
             world.Step(timeStep, velocityIterations, positionIterations);
             //world.ClearForces();
-            
             world.DrawDebugData();
+            
+            for each (var entity:IEntity in fixtures) 
+            {
+                entity.update();
+            }
         }
         
-        
-        
-        
-        
-        
-        //MOVE FACTORY STUFF INTO ANOTHER CLASS?
         public function createBounds():void
         {
             var polygonShape:b2PolygonShape= new b2PolygonShape();
@@ -100,11 +112,14 @@ package game.entities.fixture
             bodyDef.position.Set( (-100 + buffer - WIDTH/2) / SCALE, 0);
             body = world.CreateBody(bodyDef);
             body.CreateFixture2(polygonShape);
+            var fixture:b2Fixture = body.CreateFixture2(polygonShape);
+            renderer.addSimpleQuadDecorator(new Fixture(fixture), "", 0xAABBCC);
             
             polygonShape.SetAsBox(WIDTH/SCALE/2, thickness/SCALE);
             bodyDef.position.Set(0, (-1*thickness + buffer - HEIGHT/2) / SCALE);
             body = world.CreateBody(bodyDef);
-            body.CreateFixture2(polygonShape);
+            fixture = body.CreateFixture2(polygonShape);
+            renderer.addSimpleQuadDecorator(new Fixture(fixture), "", 0xAABBDD);
         }
         
         public function createHero(controls:Controls, camera:ICamera, game:Game):IFixture
@@ -118,17 +133,26 @@ package game.entities.fixture
             mouseRotation.add(controledMovement);
             controledMovement.add(rapidFire);
             rapidFire.add(new Fixture(fixture));
-            return cameraFollow;
+            var render:IFixture = renderer.addDrawHero(cameraFollow); 
+            fixtures[render] = render;
+            return render;
         }
         
         public function createBadGuy():IFixture
         {
-            return new Fixture(createFixture(10, 10, 133, 133, b2Body.b2_dynamicBody));
+            var fixture:IFixture = new Fixture(createFixture(10, 10, 133, 133, b2Body.b2_dynamicBody));
+            var render:IFixture = renderer.addBadGuy(fixture); 
+            fixtures[render] = render;
+            return render;
         }
         
         public function createFire(x:int, y:int):IFixture
         {
-            return new Fixture(createFixture(x, y, 20, 20, b2Body.b2_dynamicBody));
+            trace(x + " " + y);            
+            var fixture:IFixture = new Fixture(createFixture(x, y, 20, 20, b2Body.b2_dynamicBody));
+            var render:IFixture = renderer.addSimpleQuadDecorator(fixture, "");
+            fixtures[render] = render;
+            return render;
         }
     }
 }
