@@ -53,6 +53,11 @@ package
 			loader.contentLoaderInfo.addEventListener(Event.COMPLETE, loader_completeHandler);
         }
         
+        public function spawnBadGuy():void
+        {
+            trace("local_var: !");
+        }
+        
 		private function loader_completeHandler(event:Event):void
 		{
 			loader.removeEventListener(Event.COMPLETE, loader_completeHandler);

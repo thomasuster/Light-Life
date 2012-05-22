@@ -60,6 +60,8 @@ package
             Cc.config.rememberFilterSettings = true;
             Cc.startOnStage(flashContainer, "`");
             Cc.addMenu("Debug Draw", debugDraw);
+            Cc.width = LightLife.WIDTH;
+            Cc.height = 4/5 * LightLife.HEIGHT;
             
 			addEventListener(Event.ADDED_TO_STAGE, onAdded);
 		}
@@ -74,6 +76,9 @@ package
             var renderer:IRenderer = new StarlingRenderer(this);
             Starling.current.nativeStage.addChild(flashContainer);
             worldManager = new WorldManager(flashContainer, renderer)
+                
+            Cc.addSlashCommand("spawnBadGuy", worldManager.createBadGuy );
+            Cc.commandLine = true;
                 
 			// we listen to the mouse movement on the stage
 			stage.addEventListener(TouchEvent.TOUCH, onTouch);
