@@ -99,7 +99,10 @@ package
                 cameraComposite.height = LightLife.HEIGHT;
                 
                 hero = worldManager.createHero(controls, cameraComposite, this);
-                badGuy = worldManager.createBadGuy(); 
+                for (var i:int = 0; i < 7; i++) 
+                {
+                    badGuy = worldManager.createBadGuy();
+                }
             }
             
             //Rendering
@@ -113,8 +116,6 @@ package
 		{
             worldManager.update();
             background.update();
-//            hero.update();
-//            badGuy.update();
 		}
         
 		private function onTouch(e:TouchEvent):void

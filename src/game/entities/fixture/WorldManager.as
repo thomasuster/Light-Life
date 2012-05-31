@@ -13,9 +13,11 @@ package game.entities.fixture
     import flash.utils.getTimer;
     
     import game.entities.IEntity;
+    import game.entities.fixture.decorator.AFixtureDecorator;
     import game.entities.fixture.decorator.CameraFollow;
     import game.entities.fixture.decorator.KeyboardMove;
     import game.entities.fixture.decorator.MouseLook;
+    import game.entities.fixture.decorator.MoveToward;
     import game.entities.fixture.decorator.RapidFire;
     
     import render.ICamera;
@@ -35,6 +37,7 @@ package game.entities.fixture
         private var renderer:IRenderer;
 
         private var debugDraw:Boolean = false;
+        private var hero:IFixture = new Fixture(new b2Fixture());
         
         public function WorldManager(camera:Sprite, renderer:IRenderer)
         {
@@ -135,15 +138,18 @@ package game.entities.fixture
             rapidFire.add(new Fixture(fixture));
             var render:IFixture = renderer.addDrawHero(cameraFollow); 
             fixtures[render] = render;
+            hero = render;
             return render;
         }
         
         public function createBadGuy():IFixture
         {
             var fixture:IFixture = new Fixture(createFixture(10, 10, 133, 133, b2Body.b2_dynamicBody));
-            var render:IFixture = renderer.addBadGuy(fixture); 
-            fixtures[render] = render;
-            return render;
+            fixture = renderer.addBadGuy(fixture);
+            var decoration:AFixtureDecorator = new MoveToward(hero.fixture.GetBody());
+            decoration.add(fixture);
+            fixtures[decoration] = decoration;
+            return decoration;
         }
         
         public function createFire(x:int, y:int):IFixture
