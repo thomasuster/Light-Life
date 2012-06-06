@@ -1,13 +1,16 @@
 package render
 {
-    import game.entities.fixture.IFixture;
+    import Box2D.Dynamics.b2Fixture;
+    
+    import game.entities.fixture.IFixtureEntity;
 
     public interface IRenderer
     {
-        function addDrawHero(fixture:IFixture):IFixture;
-        function addBadGuy(fixture:IFixture):IFixture;
-        function addSimpleQuadDecorator(fixture:IFixture, name:String="", color:uint=0xFF5555):IFixture
+        function addDrawHero(fixture:IFixtureEntity):IFixtureEntity;
+        function addBadGuy(fixture:IFixtureEntity):IFixtureEntity;
+        function addSimpleQuadDecorator(fixture:IFixtureEntity, name:String="", color:uint=0xFF5555):IFixtureEntity
         function addBackGround(x:Number, y:Number, width:Number, height:Number):IDisplayObject;
         function remove(displayObject:IDisplayObject):void;
+        function removeByFixture(fixture:b2Fixture):void;
     }
 }

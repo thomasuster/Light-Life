@@ -2,17 +2,17 @@ package game.entities.fixture.decorator
 {
     import Box2D.Dynamics.b2Fixture;
     
-    import game.entities.fixture.IFixture;
+    import game.entities.fixture.IFixtureEntity;
 
-    public class AFixtureDecorator implements IFixture, IFixtureDecorator
+    public class AFixtureDecorator implements IFixtureEntity, IFixtureEntityDecorator
     {
-        protected var decoratedFixture:IFixture;
+        protected var decoratedFixture:IFixtureEntity;
         
         public function AFixtureDecorator()
         {
         }
         
-        public function add(decoratedFixture:IFixture):void
+        public function add(decoratedFixture:IFixtureEntity):void
         {
             this.decoratedFixture = decoratedFixture;   
         }

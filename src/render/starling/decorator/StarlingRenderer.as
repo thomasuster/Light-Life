@@ -2,17 +2,20 @@ package render.starling.decorator
 {
     import Box2D.Collision.b2AABB;
     import Box2D.Common.Math.b2Vec2;
+    import Box2D.Dynamics.b2Fixture;
     
     import flash.display.Bitmap;
     import flash.utils.Dictionary;
     
-    import game.entities.fixture.IFixture;
+    import game.entities.fixture.IFixtureEntity;
     import game.entities.fixture.WorldManager;
+    import game.entities.fixture.decorator.IFixtureEntityDecorator;
     
     import render.IDisplayObject;
     import render.IRenderer;
     import render.starling.StarlingDisplayObject;
     
+    import starling.core.Starling;
     import starling.display.DisplayObject;
     import starling.display.DisplayObjectContainer;
     import starling.display.Image;
@@ -26,42 +29,46 @@ package render.starling.decorator
         
         private var container:DisplayObjectContainer;
         private var displayObjects:Dictionary = new Dictionary();
+        private var fixtureEntityDecorators:Dictionary = new Dictionary();
         
         public function StarlingRenderer(container:DisplayObjectContainer)
         {
             this.container = container;
         }
         
-        public function addDrawHero(fixture:IFixture):IFixture
+        public function addDrawHero(fixtureEntity:IFixtureEntity):IFixtureEntity
         {
             var sprite:HeroDecorator = new HeroDecorator(100, 100);
-            sprite.add(fixture);
-            container.addChild(sprite);
+            sprite.add(fixtureEntity);
+            
+            addFixtureChild(fixtureEntity.fixture, sprite, sprite);
             return sprite;
         }
         
-        public function addBadGuy(fixture:IFixture):IFixture
+        public function addBadGuy(fixtureEntity:IFixtureEntity):IFixtureEntity
         {
             var sprite:SimpleQuadDecorator = new SimpleQuadDecorator(100, 100, 0xFF0000, "Bad Guy");
-            sprite.add(fixture);
-            container.addChild(sprite);
+            sprite.add(fixtureEntity);
+            
+            addFixtureChild(fixtureEntity.fixture, sprite, sprite);
             return sprite;
         }
         
-        public function addSimpleQuadDecorator(fixture:IFixture, name:String="", color:uint=0xFF5555):IFixture
+        public function addSimpleQuadDecorator(fixtureEntity:IFixtureEntity, name:String="", color:uint=0xFF5555):IFixtureEntity
         {
-            var aabb:b2AABB = fixture.fixture.GetAABB();
+            var aabb:b2AABB = fixtureEntity.fixture.GetAABB();
             var lowerBound:b2Vec2 = aabb.lowerBound.Copy();
             var upperBound:b2Vec2 = aabb.upperBound.Copy();
             upperBound.Subtract(lowerBound);
             var width:Number = Math.abs(upperBound.x * WorldManager.SCALE);
             var height:Number = Math.abs(upperBound.y * WorldManager.SCALE);
             var sprite:SimpleQuadDecorator = new SimpleQuadDecorator(width, height, color, name);
-            var position:b2Vec2 = fixture.fixture.GetBody().GetPosition();
-            sprite.add(fixture);
+            var position:b2Vec2 = fixtureEntity.fixture.GetBody().GetPosition();
+            sprite.add(fixtureEntity);
             sprite.x = position.x;
             sprite.y = position.y;
-            container.addChild(sprite);
+            
+            addFixtureChild(fixtureEntity.fixture, sprite, sprite);
             return sprite;
         }
         
@@ -84,6 +91,19 @@ package render.starling.decorator
             delete displayObjects[displayObject];
         }
         
+        //Fixture add/remove
+        private function addFixtureChild(fixture:b2Fixture, displayObject:IDisplayObject, starlingDisplayObject:DisplayObject):void
+        {
+            fixtureEntityDecorators[fixture] = displayObject;
+            addChild(displayObject, starlingDisplayObject);
+        }
+        public function removeByFixture(fixture:b2Fixture):void
+        {
+            var displayObject:IDisplayObject = fixtureEntityDecorators[fixture];
+            removeChild(displayObject);
+        }
+
+        //Render only add/remove
         private function addChild(displayObject:IDisplayObject, starlingDisplayObject:DisplayObject, zIndex:int = -1):void
         {
             if(zIndex == -1)
@@ -96,7 +116,6 @@ package render.starling.decorator
             }
             displayObjects[displayObject] = starlingDisplayObject;
         }
-        
         private function removeChild(displayObject:IDisplayObject):void
         {
             var starlingDisplayObject:DisplayObject = displayObjects[displayObject];

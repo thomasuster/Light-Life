@@ -1,7 +1,7 @@
 package game.entities.camera.decorator
 {
     import game.entities.IEntity;
-    import game.entities.fixture.IFixture;
+    import game.entities.fixture.IFixtureEntity;
     
     import render.ICamera;
 

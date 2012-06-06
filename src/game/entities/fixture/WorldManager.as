@@ -4,6 +4,7 @@ package game.entities.fixture
     import Box2D.Common.Math.b2Vec2;
     import Box2D.Dynamics.b2Body;
     import Box2D.Dynamics.b2BodyDef;
+    import Box2D.Dynamics.b2ContactListener;
     import Box2D.Dynamics.b2DebugDraw;
     import Box2D.Dynamics.b2Fixture;
     import Box2D.Dynamics.b2World;
@@ -14,30 +15,34 @@ package game.entities.fixture
     
     import game.entities.IEntity;
     import game.entities.fixture.decorator.AFixtureDecorator;
-    import game.entities.fixture.decorator.CameraFollow;
-    import game.entities.fixture.decorator.KeyboardMove;
-    import game.entities.fixture.decorator.MouseLook;
-    import game.entities.fixture.decorator.MoveToward;
-    import game.entities.fixture.decorator.RapidFire;
+    import game.entities.fixture.decorator.IFixtureEntityDecorator;
+    import game.entities.fixture.decorator.decorations.CameraFollow;
+    import game.entities.fixture.decorator.decorations.CullEventually;
+    import game.entities.fixture.decorator.decorations.KeyboardMove;
+    import game.entities.fixture.decorator.decorations.MouseLook;
+    import game.entities.fixture.decorator.decorations.MoveToward;
+    import game.entities.fixture.decorator.decorations.RapidFire;
     
     import render.ICamera;
     import render.IRenderer;
 
     public class WorldManager
     {
+        public static const SCALE:Number = 50;
+        public static const FIRE:String = "fire";
+        
         private var world:b2World;
         private var sprite2D:Sprite;
-        public static const SCALE:Number = 50;
         private var timeStep:Number = 1.0/30.0;
         private var velocityIterations:int = 10;
         private var positionIterations:int = 10;
         private var WIDTH:int = 1024;
         private var HEIGHT:int = 768;
-        private var fixtures:Dictionary = new Dictionary();
         private var renderer:IRenderer;
-
         private var debugDraw:Boolean = false;
-        private var hero:IFixture = new Fixture(new b2Fixture());
+        private var hero:IFixtureEntity = new FixtureEntity(new b2Fixture());
+        
+        private var fixtureEntitys:Dictionary = new Dictionary(); /*b2Fixture -> IFixture */
         
         public function WorldManager(camera:Sprite, renderer:IRenderer)
         {
@@ -51,6 +56,8 @@ package game.entities.fixture
             var gravity:b2Vec2 = new b2Vec2(0, 0);
             var doSleep:Boolean = true;
             world = new b2World(gravity, doSleep);
+            var fireContactListener:b2ContactListener = new FireContactListener(this);
+            world.SetContactListener(fireContactListener);
         }
         
         public function toggleDebug():void
@@ -97,7 +104,7 @@ package game.entities.fixture
             //world.ClearForces();
             world.DrawDebugData();
             
-            for each (var entity:IEntity in fixtures) 
+            for each (var entity:IEntity in fixtureEntitys) 
             {
                 entity.update();
             }
@@ -116,18 +123,19 @@ package game.entities.fixture
             body = world.CreateBody(bodyDef);
             body.CreateFixture2(polygonShape);
             var fixture:b2Fixture = body.CreateFixture2(polygonShape);
-            renderer.addSimpleQuadDecorator(new Fixture(fixture), "", 0xAABBCC);
+            renderer.addSimpleQuadDecorator(new FixtureEntity(fixture), "", 0xAABBCC);
             
             polygonShape.SetAsBox(WIDTH/SCALE/2, thickness/SCALE);
             bodyDef.position.Set(0, (-1*thickness + buffer - HEIGHT/2) / SCALE);
             body = world.CreateBody(bodyDef);
             fixture = body.CreateFixture2(polygonShape);
-            renderer.addSimpleQuadDecorator(new Fixture(fixture), "", 0xAABBDD);
+            renderer.addSimpleQuadDecorator(new FixtureEntity(fixture), "", 0xAABBDD);
         }
         
-        public function createHero(controls:Controls, camera:ICamera, game:Game):IFixture
+        public function createHero(controls:Controls, camera:ICamera, game:Game):IFixtureEntity
         {
             var fixture:b2Fixture = createFixture(0, 0, 100, 100, b2Body.b2_dynamicBody);
+            
             var mouseRotation:MouseLook = new MouseLook(controls, game);
             var controledMovement:KeyboardMove = new KeyboardMove(controls);
             var cameraFollow:CameraFollow = new CameraFollow(camera);
@@ -135,30 +143,45 @@ package game.entities.fixture
             cameraFollow.add(mouseRotation);
             mouseRotation.add(controledMovement);
             controledMovement.add(rapidFire);
-            rapidFire.add(new Fixture(fixture));
-            var render:IFixture = renderer.addDrawHero(cameraFollow); 
-            fixtures[render] = render;
+            rapidFire.add(new FixtureEntity(fixture));
+            var render:IFixtureEntity = renderer.addDrawHero(cameraFollow);
+            
+            fixtureEntitys[fixture] = render;
             hero = render;
             return render;
         }
         
-        public function createBadGuy():IFixture
+        public function createBadGuy():IFixtureEntity
         {
-            var fixture:IFixture = new Fixture(createFixture(10, 10, 133, 133, b2Body.b2_dynamicBody));
-            fixture = renderer.addBadGuy(fixture);
+            var fixture:b2Fixture = createFixture(10, 10, 133, 133, b2Body.b2_dynamicBody);
+            
+            var fixtureEntity:IFixtureEntity = new FixtureEntity(fixture);
+            fixtureEntity = renderer.addBadGuy(fixtureEntity);
             var decoration:AFixtureDecorator = new MoveToward(hero.fixture.GetBody());
-            decoration.add(fixture);
-            fixtures[decoration] = decoration;
+            decoration.add(fixtureEntity);
+            
+            fixtureEntitys[fixture] = decoration;
             return decoration;
         }
         
-        public function createFire(x:int, y:int):IFixture
+        public function createFire(x:int, y:int):IFixtureEntity
         {
-            trace(x + " " + y);            
-            var fixture:IFixture = new Fixture(createFixture(x, y, 20, 20, b2Body.b2_dynamicBody));
-            var render:IFixture = renderer.addSimpleQuadDecorator(fixture, "");
-            fixtures[render] = render;
-            return render;
+            var fixture:b2Fixture = createFixture(x, y, 20, 20, b2Body.b2_dynamicBody);
+            fixture.SetUserData(FIRE);
+            
+            var fixtureEntity:IFixtureEntity = new FixtureEntity(fixture);
+            fixtureEntity = renderer.addSimpleQuadDecorator(fixtureEntity, "");
+            var decoration:IFixtureEntityDecorator = new CullEventually(this);
+            decoration.add(fixtureEntity);
+            
+            fixtureEntitys[fixture] = decoration;
+            return decoration;
+        }
+        
+        public function cull(fixture:b2Fixture):void
+        {
+            renderer.removeByFixture(fixture);
+            delete fixtureEntitys[fixture];
         }
     }
 }

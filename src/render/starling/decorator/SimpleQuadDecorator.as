@@ -3,17 +3,19 @@ package render.starling.decorator
     import Box2D.Common.Math.b2Vec2;
     import Box2D.Dynamics.b2Fixture;
     
+    import game.entities.fixture.IFixtureEntity;
     import game.entities.fixture.WorldManager;
-    import game.entities.fixture.IFixture;
     import game.entities.fixture.decorator.AFixtureDecorator;
-    import game.entities.fixture.decorator.IFixtureDecorator;
+    import game.entities.fixture.decorator.IFixtureEntityDecorator;
+    
+    import render.IDisplayObject;
     
     import starling.display.Quad;
     import starling.display.Sprite;
     import starling.events.Event;
     import starling.text.TextField;
     
-    public class SimpleQuadDecorator extends Sprite implements IFixtureDecorator
+    public class SimpleQuadDecorator extends Sprite implements IFixtureEntityDecorator, IDisplayObject
     {
         private var quadWidth:Number;
         private var quadHeight:Number;
@@ -21,7 +23,7 @@ package render.starling.decorator
         private var quad:Quad;
         private var label:String;
         private var legend:TextField;
-        private var decoratedFixture:IFixture;
+        private var decoratedFixture:IFixtureEntity;
         
         public function SimpleQuadDecorator(quadWidth:Number, quadHeight:Number, color:uint=16777215, label:String = "")
         {
@@ -42,7 +44,7 @@ package render.starling.decorator
             return decoratedFixture.fixture;   
         }
         
-        public function add(decoratedFixture:IFixture):void
+        public function add(decoratedFixture:IFixtureEntity):void
         {
             this.decoratedFixture = decoratedFixture;   
         }

@@ -1,6 +1,6 @@
 package render.starling
 {
-    import game.entities.fixture.IFixture;
+    import game.entities.fixture.IFixtureEntity;
     
     import render.IRenderFactory;
     
@@ -10,7 +10,7 @@ package render.starling
         {
         }
         
-        public function createDrawHero():IFixture
+        public function createDrawHero():IFixtureEntity
         {
             return null;
         }

@@ -10,13 +10,13 @@ package
 	import flash.geom.Point;
 	
 	import game.entities.camera.decorator.DynamicBackground;
-	import game.entities.fixture.Fixture;
-	import game.entities.fixture.IFixture;
+	import game.entities.fixture.FixtureEntity;
+	import game.entities.fixture.IFixtureEntity;
 	import game.entities.fixture.WorldManager;
-	import game.entities.fixture.decorator.CameraFollow;
-	import game.entities.fixture.decorator.KeyboardMove;
-	import game.entities.fixture.decorator.MouseLook;
-	import game.entities.fixture.decorator.RapidFire;
+	import game.entities.fixture.decorator.decorations.CameraFollow;
+	import game.entities.fixture.decorator.decorations.KeyboardMove;
+	import game.entities.fixture.decorator.decorations.MouseLook;
+	import game.entities.fixture.decorator.decorations.RapidFire;
 	
 	import render.CameraComposite;
 	import render.IRenderer;
@@ -38,7 +38,7 @@ package
 
 		private var worldManager:WorldManager;
 
-		private var hero:IFixture;
+		private var hero:IFixtureEntity;
 
 		private var flashContainer:flash.display.Sprite = new flash.display.Sprite();
 
@@ -48,7 +48,7 @@ package
 
 		private var cameraComposite:render.CameraComposite;
 
-		private var badGuy:IFixture;
+		private var badGuy:IFixtureEntity;
 
 		public function Game()
 		{
