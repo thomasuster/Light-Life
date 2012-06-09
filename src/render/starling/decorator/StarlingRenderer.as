@@ -4,6 +4,8 @@ package render.starling.decorator
     import Box2D.Common.Math.b2Vec2;
     import Box2D.Dynamics.b2Fixture;
     
+    import com.junkbyte.console.Cc;
+    
     import flash.display.Bitmap;
     import flash.utils.Dictionary;
     
@@ -20,6 +22,8 @@ package render.starling.decorator
     import starling.display.DisplayObjectContainer;
     import starling.display.Image;
     import starling.textures.Texture;
+    
+    import uster.debug.Logger;
     
     public class StarlingRenderer implements IRenderer
     {
@@ -119,7 +123,14 @@ package render.starling.decorator
         private function removeChild(displayObject:IDisplayObject):void
         {
             var starlingDisplayObject:DisplayObject = displayObjects[displayObject];
-            container.removeChild(starlingDisplayObject);
+            if(container.contains(starlingDisplayObject))
+            {
+                container.removeChild(starlingDisplayObject,true);
+            }
+            else
+            {
+                Cc.log("StarlingRenderer.removeChild: invalid displayObject to remove.");
+            }
             delete displayObjects[displayObject];
         }
     }

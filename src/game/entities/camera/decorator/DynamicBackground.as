@@ -11,8 +11,6 @@ package game.entities.camera.decorator
         private var tileWidth:Number;
         private var tileHeight:Number;
         private var currentHash:String;
-        /*private var cameraWidth:Number;
-        private var error:Number = 0.01;*/
         private var tiles:Object = {};
         private const buffer:Number = 100;
         private var renderer:IRenderer;
@@ -51,12 +49,11 @@ package game.entities.camera.decorator
         
         protected override function behavior():void
         {
-            //trace(camera.x + " " + camera.y);
             var hashX:int = x / tileWidth;
             var hashY:int = y / tileHeight;
             var newHash:String = hash(hashX, hashY);
             var displayObject:IDisplayObject;
-//            trace(newHash);
+            
             if(newHash != currentHash)
             {
                 var newTiles:Object = {};
