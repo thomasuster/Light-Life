@@ -33,7 +33,7 @@ package render.starling.decorator
         
         private var container:DisplayObjectContainer;
         private var displayObjects:Dictionary = new Dictionary();
-        private var fixtureEntityDecorators:Dictionary = new Dictionary();
+        private var displayObjectsByb2Fixtures:Dictionary = new Dictionary();
         
         public function StarlingRenderer(container:DisplayObjectContainer)
         {
@@ -98,12 +98,12 @@ package render.starling.decorator
         //Fixture add/remove
         private function addFixtureChild(fixture:b2Fixture, displayObject:IDisplayObject, starlingDisplayObject:DisplayObject):void
         {
-            fixtureEntityDecorators[fixture] = displayObject;
+            displayObjectsByb2Fixtures[fixture] = displayObject;
             addChild(displayObject, starlingDisplayObject);
         }
         public function removeByFixture(fixture:b2Fixture):void
         {
-            var displayObject:IDisplayObject = fixtureEntityDecorators[fixture];
+            var displayObject:IDisplayObject = displayObjectsByb2Fixtures[fixture];
             removeChild(displayObject);
         }
 

@@ -2,6 +2,8 @@ package
 {
     import General.FpsCounter;
     
+    import com.demonsters.debugger.MonsterDebugger;
+    
     import flash.display.DisplayObject;
     import flash.display.Loader;
     import flash.display.MovieClip;
@@ -37,6 +39,10 @@ package
 
         public function LightLife()
         {
+            // Start the MonsterDebugger
+//            MonsterDebugger.initialize(this);
+//            MonsterDebugger.trace(this, "Hello World!");
+            
             var square:Sprite = new Sprite();
             addChild(square);
             square.graphics.lineStyle(1,0x00ff00);

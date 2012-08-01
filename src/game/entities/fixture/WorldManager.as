@@ -43,6 +43,7 @@ package game.entities.fixture
         private var hero:IFixtureEntity = new FixtureEntity(new b2Fixture());
         
         private var fixtureEntitys:Dictionary = new Dictionary(); /*b2Fixture -> IFixture */
+        private var entities:Dictionary = new Dictionary(); /* IEntity -> IEntity */
         
         public function WorldManager(camera:Sprite, renderer:IRenderer)
         {
@@ -58,6 +59,7 @@ package game.entities.fixture
             world = new b2World(gravity, doSleep);
             var fireContactListener:b2ContactListener = new FireContactListener(this);
             world.SetContactListener(fireContactListener);
+            entities[fireContactListener] = fireContactListener;
         }
         
         public function toggleDebug():void
@@ -105,6 +107,11 @@ package game.entities.fixture
             world.DrawDebugData();
             
             for each (var entity:IEntity in fixtureEntitys) 
+            {
+                entity.update();
+            }
+            
+            for each (entity in entities)
             {
                 entity.update();
             }
@@ -180,6 +187,7 @@ package game.entities.fixture
         
         public function cull(fixture:b2Fixture):void
         {
+            world.DestroyBody(fixture.GetBody());
             renderer.removeByFixture(fixture);
             delete fixtureEntitys[fixture];
         }
