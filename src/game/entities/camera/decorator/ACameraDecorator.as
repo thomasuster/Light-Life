@@ -30,6 +30,16 @@ package game.entities.camera.decorator
             
         }
         
+        public function set zoom(value:Number):void
+        {
+            decoratedCamera.zoom = value;
+        }
+        
+        public function get zoom():Number
+        {
+            return decoratedCamera.zoom;
+        }
+        
         public function get height():Number
         {
             return decoratedCamera.height;

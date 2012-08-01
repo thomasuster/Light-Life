@@ -2,6 +2,8 @@ package render
 {
     public interface ICamera
     {
+        function set zoom(value:Number):void;
+        function get zoom():Number;
         function get height():Number;
         function set height(value:Number):void;
         function get width():Number;

@@ -20,13 +20,8 @@ package game.entities.fixture.decorator.decorations
         protected override function behavior():void
         {
             var position:b2Vec2 = fixture.GetBody().GetPosition();
-            //camera.x = position.x;
-            //camera.x = position.x;
-            /*camera.x = -1 * position.x * WorldManager.SCALE + LightLife.WIDTH / 2;
-            camera.y = -1 * position.y * WorldManager.SCALE + LightLife.HEIGHT / 2;*/
-            
-            camera.x = position.x * WorldManager.SCALE;
-            camera.y = position.y * WorldManager.SCALE;
+            camera.x = position.x * WorldManager.SCALE * camera.zoom;
+            camera.y = position.y * WorldManager.SCALE * camera.zoom;
         }
     }
 }

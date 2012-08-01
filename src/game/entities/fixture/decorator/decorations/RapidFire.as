@@ -15,12 +15,10 @@ package game.entities.fixture.decorator.decorations
         
         private var fireStarted:Boolean = false;
         private var rateCounter:int = 0; 
-        private var rate:int = 2;
+        private var rate:int = 1;
         private var _game:Game;
         private var speed:Number = 7.5/2;
 
-        private var test:Boolean = true;
-        
         public function RapidFire(controls:Controls, worldManager:WorldManager, game:Game)
         {
             this.controls = controls;
@@ -58,13 +56,6 @@ package game.entities.fixture.decorator.decorations
                 {
                     //Continue not firring
                 }
-            }
-            
-            
-            if(controls.mouseDown && test)
-            {
-                test = false;
-                fire();
             }
         }
         

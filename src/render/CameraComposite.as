@@ -15,6 +15,23 @@ package render
         {
         }
         
+        public function set zoom(value:Number):void
+        {
+            for each (var camera:ICamera in cameras) 
+            {
+                camera.zoom = value;
+            }
+        }
+        
+        public function get zoom():Number
+        {
+            for each (var camera:ICamera in cameras) 
+            {
+                return camera.zoom;
+            }
+            return 0;
+        }
+        
         public function get height():Number
         {
             return _height;

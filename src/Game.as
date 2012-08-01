@@ -7,7 +7,9 @@ package
 	import com.junkbyte.console.Cc;
 	
 	import flash.display.Sprite;
+	import flash.events.MouseEvent;
 	import flash.geom.Point;
+	import flash.ui.Mouse;
 	
 	import game.entities.camera.decorator.DynamicBackground;
 	import game.entities.fixture.FixtureEntity;
@@ -19,6 +21,7 @@ package
 	import game.entities.fixture.decorator.decorations.RapidFire;
 	
 	import render.CameraComposite;
+	import render.ICamera;
 	import render.IRenderer;
 	import render.flash.FlashCamera;
 	import render.starling.StarlingCamera;
@@ -44,11 +47,10 @@ package
 
 		//private var mouseFixture:b2Fixture;
 
-		private var background:DynamicBackground;
-
-		private var cameraComposite:render.CameraComposite;
-
 		private var badGuy:IFixtureEntity;
+		private var camera:ICamera;
+
+		private var background:DynamicBackground;
 
 		public function Game()
 		{
@@ -61,7 +63,7 @@ package
             Cc.startOnStage(flashContainer, "`");
             Cc.addMenu("Debug Draw", debugDraw);
             Cc.width = LightLife.WIDTH;
-            Cc.height = 4/5 * LightLife.HEIGHT;
+            Cc.height = 1/(1.61*2) * LightLife.HEIGHT;
             
 			addEventListener(Event.ADDED_TO_STAGE, onAdded);
 		}
@@ -92,6 +94,7 @@ package
                 worldManager.createBounds();
                 var flashCamera:FlashCamera = new FlashCamera(flashContainer);
                 var starlingCamera:StarlingCamera = new StarlingCamera(this);
+                var cameraComposite:render.CameraComposite;
                 cameraComposite = new render.CameraComposite();
                 cameraComposite.add(flashCamera);
                 cameraComposite.add(starlingCamera);
@@ -109,8 +112,21 @@ package
             {
                 background = new DynamicBackground(renderer);
                 background.add(cameraComposite);
+                camera = background;
             }
+            
+            controls.addEventListener(MouseEvent.MOUSE_WHEEL, controls_mouseWheelHandler);
 		}
+        
+        private function controls_mouseWheelHandler(event:MouseEvent):void
+        {
+            var value:Number = camera.zoom+=(event.delta*0.01); 
+            if(value < 0)
+            {
+                value = 0.001;
+            }
+            camera.zoom = value;
+        }
         
         private function onFrame (e:Event):void
 		{
@@ -130,7 +146,7 @@ package
         
         public function cameraToWorld(x:Number, y:Number):b2Vec2
         {
-            return new b2Vec2((x + cameraComposite.x - LightLife.WIDTH/2) / WorldManager.SCALE, (y + cameraComposite.y - LightLife.HEIGHT/2) / WorldManager.SCALE);
+            return new b2Vec2((x + camera.x - LightLife.WIDTH/2) / (WorldManager.SCALE * camera.zoom), (y + camera.y - LightLife.HEIGHT/2) / (WorldManager.SCALE * camera.zoom));
         }
     }
 }

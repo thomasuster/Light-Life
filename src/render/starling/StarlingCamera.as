@@ -17,6 +17,17 @@ package render.starling
             this.camera = camera; 
         }
         
+        public function set zoom(value:Number):void
+        {
+            camera.scaleX = value;
+            camera.scaleY = value;
+        }
+        
+        public function get zoom():Number
+        {
+            return camera.scaleX;
+        }
+        
         public function get height():Number
         {
             return _height;

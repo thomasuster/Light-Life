@@ -2,6 +2,8 @@ package game.entities.camera.decorator
 {
     import Box2D.Common.Math.b2Vec2;
     
+    import com.junkbyte.console.Cc;
+    
     import render.ICamera;
     import render.IDisplayObject;
     import render.IRenderer;
@@ -47,12 +49,23 @@ package game.entities.camera.decorator
             return (tileX*tileWidth) - tileWidth/2;
         }
         
+        public override function set zoom(value:Number):void
+        {
+            //Refresh width for zooming
+//            tileWidth = (width*1/zoom) + buffer;
+//            tileHeight = (height*1/zoom) + buffer;
+            Cc.log("DynamicBackground.zoom: text");
+            super.zoom = value;
+        }
+        
         protected override function behavior():void
         {
-            var hashX:int = x / tileWidth;
-            var hashY:int = y / tileHeight;
+            var hashX:int = x / (tileWidth * zoom);
+            var hashY:int = y / (tileHeight * zoom);
             var newHash:String = hash(hashX, hashY);
             var displayObject:IDisplayObject;
+            
+            Cc.log("DynamicBackground.behavior: " + newHash);
             
             if(newHash != currentHash)
             {

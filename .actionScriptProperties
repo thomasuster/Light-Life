@@ -3,8 +3,8 @@
   <compiler additionalCompilerArguments="-locale en_US -swf-version=15" autoRSLOrdering="true" copyDependentFiles="true" flexSDK="Flex 4.5 (build 20967)" fteInMXComponents="false" generateAccessible="true" htmlExpressInstall="true" htmlGenerate="true" htmlHistoryManagement="true" htmlPlayerVersionCheck="true" includeNetmonSwc="false" outputFolderPath="bin-debug" removeUnusedRSL="true" sourceFolderPath="src" strict="true" targetPlayerVersion="11.2.0" useApolloConfig="false" useDebugRSLSwfs="true" verifyDigests="true" warn="true">
     <compilerSourcePath>
       <compilerSourcePathEntry kind="1" linkType="1" path="sources/Box2DFlashAS3 2.1a/Source"/>
-      <compilerSourcePathEntry kind="1" linkType="1" path="sources/PrimaryFeather-Starling-Framework-v0.9.1-0-g46f3151/PrimaryFeather-Starling-Framework-46f3151/starling/src"/>
       <compilerSourcePathEntry kind="1" linkType="1" path="sources/console_2.6/src"/>
+      <compilerSourcePathEntry kind="1" linkType="1" path="sources/PrimaryFeather-Starling-Framework-4ee83c1/starling/src"/>
     </compilerSourcePath>
     <libraryPath defaultLinkType="0">
       <libraryPathEntry kind="4" path="">

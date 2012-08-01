@@ -60,6 +60,7 @@ package game.entities.fixture
             var fireContactListener:b2ContactListener = new FireContactListener(this);
             world.SetContactListener(fireContactListener);
             entities[fireContactListener] = fireContactListener;
+            toggleDebug();
         }
         
         public function toggleDebug():void

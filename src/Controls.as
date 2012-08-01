@@ -1,6 +1,9 @@
 package
 {
+    import com.junkbyte.console.Cc;
+    
     import flash.display.Stage;
+    import flash.events.EventDispatcher;
     import flash.events.MouseEvent;
     
     import starling.display.Stage;
@@ -9,7 +12,7 @@ package
 	/**
 	 * LightLife Game Controller. 
 	 */	
-	public class Controls
+	public class Controls extends EventDispatcher
 	{
         private var _left:Boolean;
         private var _right:Boolean;
@@ -84,6 +87,13 @@ package
             flashStage.addEventListener(MouseEvent.MOUSE_UP, flashStage_mouseUpHandler);
             flashStage.addEventListener(MouseEvent.RIGHT_MOUSE_DOWN, flashStage_rightMouseDownHandler);
             flashStage.addEventListener(MouseEvent.RIGHT_MOUSE_UP, flashStage_rightMouseUpHandler);
+            
+            flashStage.addEventListener(MouseEvent.MOUSE_WHEEL, flashStage_mouseWheelHandler);
+        }
+        
+        private function flashStage_mouseWheelHandler(event:MouseEvent):void
+        {
+            dispatchEvent(event);
         }
         
         private function flashStage_rightMouseDownHandler(event:MouseEvent):void
