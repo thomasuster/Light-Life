@@ -4,6 +4,8 @@ package game.entities.camera.decorator
     
     import com.junkbyte.console.Cc;
     
+    import game.entities.fixture.WorldManager;
+    
     import render.ICamera;
     import render.IDisplayObject;
     import render.IRenderer;
@@ -14,8 +16,9 @@ package game.entities.camera.decorator
         private var tileHeight:Number;
         private var currentHash:String;
         private var tiles:Object = {};
-        private const buffer:Number = 100;
+        private const buffer:Number = 0;
         private var renderer:IRenderer;
+        private var test:Boolean = true;
         
         public function DynamicBackground(renderer:IRenderer)
         {
@@ -25,8 +28,13 @@ package game.entities.camera.decorator
         public override function add(decoratedCamera:ICamera):void
         {
             super.add(decoratedCamera);
-            tileWidth = width + buffer;
-            tileHeight = height + buffer;
+            init();
+        }
+        
+        private function init():void
+        {
+            tileWidth = width/zoom - buffer;
+            tileHeight = height/zoom - buffer;
             for (var tileX:int = -1; tileX <= 1; tileX++) 
             {
                 for (var tileY:int = -1; tileY <= 1; tileY++) 
@@ -51,29 +59,51 @@ package game.entities.camera.decorator
         
         public override function set zoom(value:Number):void
         {
-            //Refresh width for zooming
-//            tileWidth = (width*1/zoom) + buffer;
-//            tileHeight = (height*1/zoom) + buffer;
-            Cc.log("DynamicBackground.zoom: text");
             super.zoom = value;
+            
+            cullTiles();
+            currentHash = "reset";
+            //Refresh width for zooming
+            Cc.log("DynamicBackground.zoom: text");
+        }
+        
+        private function cullTiles():void
+        {
+            for each (var displayObject:IDisplayObject in tiles) 
+            {
+                renderer.remove(displayObject);
+            }
+            tiles = {};
         }
         
         protected override function behavior():void
         {
-            var hashX:int = x / (tileWidth * zoom);
-            var hashY:int = y / (tileHeight * zoom);
+            var hashX:int = (x+(x/Math.abs(x))*(width*zoom/2)) / (tileWidth * zoom);
+            var hashY:int = (y+(y/Math.abs(y))*(height*zoom/2)) / (tileHeight * zoom)
+            
             var newHash:String = hash(hashX, hashY);
             var displayObject:IDisplayObject;
+            var xTilesPerCamera:int = Math.ceil(width/zoom / tileWidth / 2);
+            var yTilesPerCamera:int = Math.ceil(height/zoom / tileHeight / 2);
+//            var xTilesPerCamera:int = 0;
+//            var yTilesPerCamera:int = 0;
             
-            Cc.log("DynamicBackground.behavior: " + newHash);
+            if(test)
+            {
+                Cc.log("DynamicBackground.behavior: (x,y) " + x + " , " + y);
+                Cc.log("DynamicBackground.behavior: (hashX,hashY) " + hashX + " , " + hashY);
+                Cc.log("DynamicBackground.behavior: (width,height) " + width + " , " + height);
+                Cc.log("DynamicBackground.behavior: (zoom) " + zoom);
+                Cc.log("DynamicBackground.behavior: (xTilesPerCamera, yTilesPerCamera) " + xTilesPerCamera + " , " + yTilesPerCamera);
+            }
             
             if(newHash != currentHash)
             {
                 var newTiles:Object = {};
                 currentHash = newHash;
-                for (var tileX:int = hashX-1; tileX <= hashX+1; tileX++) 
+                for (var tileX:int = hashX-xTilesPerCamera; tileX <= hashX+xTilesPerCamera; tileX++) 
                 {
-                    for (var tileY:int = hashY-1; tileY <= hashY+1; tileY++) 
+                    for (var tileY:int = hashY-yTilesPerCamera; tileY <= hashY+yTilesPerCamera; tileY++) 
                     {
                         var hash:String = hash(tileX, tileY);
                         if(hash in tiles)
@@ -85,17 +115,13 @@ package game.entities.camera.decorator
                         {
                             var _x:Number = getX(tileX);
                             var _y:Number = getY(tileY);
-//                            trace(_x + " " + _y);
                             displayObject = renderer.addBackGround(_x, _y, tileWidth, tileHeight);
                             newTiles[hash] = displayObject;
                         }
                     }
                 }
                 
-                for each (displayObject in tiles) 
-                {
-                    renderer.remove(displayObject);
-                }
+                cullTiles();
                 tiles = newTiles;
             }
         }

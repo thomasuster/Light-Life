@@ -24,6 +24,7 @@ package render.starling.decorator
     import starling.textures.Texture;
     
     import uster.debug.Logger;
+    import render.NullDisplayObject;
     
     public class StarlingRenderer implements IRenderer
     {
@@ -78,7 +79,16 @@ package render.starling.decorator
         
         public function addBackGround(x:Number, y:Number, width:Number, height:Number):IDisplayObject
         {
-            var texture:Texture = Texture.fromBitmap(stars);
+            try
+            {
+                var texture:Texture = Texture.fromBitmap(stars);
+            } 
+            catch(error:Error) 
+            {
+                displayObject = new NullDisplayObject();
+                return displayObject;
+                Cc.warn("StarlingRenderer.addBackGround: " + error.message);
+            }
             var image:Image = new Image(texture);
             image.x = x;
             image.y = y;
