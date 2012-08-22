@@ -156,21 +156,25 @@ package
         {
             switch(charCode)
             {
+                case 87:
                 case 119:
                 {
                     _up = keyUp;
                     break;
                 }
+                case 65:
                 case 97:
                 {
                     _left = keyUp;
                     break;
                 }
+                case 83:
                 case 115:
                 {
                     _down = keyUp;
                     break;
                 }
+                case 68:
                 case 100:
                 {
                     _right = keyUp;
