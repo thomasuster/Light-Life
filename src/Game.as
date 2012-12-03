@@ -131,7 +131,7 @@ package
         private function onFrame (e:Event):void
 		{
             worldManager.update();
-            background.update();
+//            background.update();
 		}
         
 		private function onTouch(e:TouchEvent):void

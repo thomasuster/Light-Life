@@ -25,7 +25,7 @@ package game.entities.fixture.decorator.decorations
             var xDir:int = direction.x;
             var yDir:int = direction.y;
             
-            var speed:Number = 0.00;
+            var speed:Number = 0.2;
             //Moving
             var xDelta:Number = xDir * speed;
             var yDelta:Number = yDir * speed;

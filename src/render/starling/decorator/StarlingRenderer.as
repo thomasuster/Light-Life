@@ -12,8 +12,10 @@ package render.starling.decorator
     import game.entities.fixture.IFixtureEntity;
     import game.entities.fixture.WorldManager;
     import game.entities.fixture.decorator.IFixtureEntityDecorator;
-    
-    import render.IDisplayObject;
+
+import render.Assets;
+
+import render.IDisplayObject;
     import render.IRenderer;
     import render.NullDisplayObject;
     import render.starling.StarlingDisplayObject;

@@ -1,9 +1,7 @@
 package
 {
     import General.FpsCounter;
-    
-    import com.demonsters.debugger.MonsterDebugger;
-    
+
     import flash.display.DisplayObject;
     import flash.display.Loader;
     import flash.display.MovieClip;
@@ -13,11 +11,11 @@ package
     import flash.events.Event;
     import flash.events.ProgressEvent;
     import flash.geom.ColorTransform;
-    
+
     import starling.core.Starling;
     import starling.events.EnterFrameEvent;
     import starling.events.KeyboardEvent;
-    
+
     import uster.display._2D.progress.ProgressBar;
     import uster.display.assetManager.AssetManager;
 
