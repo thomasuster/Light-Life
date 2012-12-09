@@ -95,7 +95,6 @@ public class DynamicBackground extends ACameraDecorator
     }
 
     private function addTile(tileX:int, tileY:int):IDisplayObject {
-        var displayObject:IDisplayObject;
         var _x:Number = getX(tileX, newTileWidth);
         var _y:Number = getY(tileY, newTileHeight);
         return renderer.addBackGround(_x, _y, newTileWidth, newTileHeight, String(ratio));
