@@ -1,7 +1,6 @@
 package  
 {
-	import flash.utils.Dictionary;
-	/**
+/**
 	 * ...
 	 * @author Thomas Uster
 	 */

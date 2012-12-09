@@ -1,28 +1,22 @@
 package
 {
-    import General.FpsCounter;
+import General.FpsCounter;
 
-    import flash.display.DisplayObject;
-    import flash.display.Loader;
-    import flash.display.MovieClip;
-    import flash.display.Sprite;
-    import flash.display.StageAlign;
-    import flash.display.StageScaleMode;
-    import flash.events.Event;
-    import flash.events.ProgressEvent;
-    import flash.geom.ColorTransform;
+import flash.display.DisplayObject;
+import flash.display.Loader;
+import flash.display.MovieClip;
+import flash.display.Sprite;
+import flash.display.StageAlign;
+import flash.display.StageScaleMode;
+import flash.events.Event;
+import flash.events.ProgressEvent;
 
-    import starling.core.Starling;
-    import starling.events.EnterFrameEvent;
-    import starling.events.KeyboardEvent;
+import starling.core.Starling;
 
-    import uster.display._2D.progress.ProgressBar;
-    import uster.display.assetManager.AssetManager;
+import uster.display._2D.progress.ProgressBar;
+import uster.display.assetManager.AssetManager;
 
-    /**
-     * Entry swf for Light Life 
-     */    
-    [SWF(width="1024", height="768", frameRate="60", backgroundColor="#000000")]
+[SWF(width="1024", height="768", frameRate="60", backgroundColor="#000000")]
     public class LightLife extends Sprite
     {
 		private var assetManager:AssetManager = AssetManager.instance;
@@ -37,10 +31,6 @@ package
 
         public function LightLife()
         {
-            // Start the MonsterDebugger
-//            MonsterDebugger.initialize(this);
-//            MonsterDebugger.trace(this, "Hello World!");
-            
             var square:Sprite = new Sprite();
             addChild(square);
             square.graphics.lineStyle(1,0x00ff00);

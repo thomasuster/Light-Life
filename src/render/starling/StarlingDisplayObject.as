@@ -1,10 +1,10 @@
 package render.starling
 {
-    import render.IDisplayObject;
-    
-    import starling.display.DisplayObject;
-    
-    public class StarlingDisplayObject implements IDisplayObject
+import render.IDisplayObject;
+
+import starling.display.DisplayObject;
+
+public class StarlingDisplayObject implements IDisplayObject
     {
         private var displayObject:DisplayObject;
         

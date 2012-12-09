@@ -15,14 +15,12 @@
 // Input class
 //===========================================================
 package General{
-	
-	
-	
-	import flash.display.*;
-	import flash.events.*;
-	
-	
-	public class Input{
+
+
+import flash.display.*;
+import flash.events.*;
+
+public class Input{
 		
 		
 		//======================

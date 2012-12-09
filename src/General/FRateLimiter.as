@@ -17,12 +17,11 @@
 //===========================================================
 
 package General{
-	
-	
-	import flash.utils.getTimer;
-	
-	
-	public class FRateLimiter{
+
+
+import flash.utils.getTimer;
+
+public class FRateLimiter{
 		
 		
 		//======================

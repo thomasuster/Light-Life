@@ -1,14 +1,12 @@
 package game.entities.fixture.decorator.decorations
 {
-    import Box2D.Common.Math.b2Vec2;
-    import Box2D.Dynamics.b2Body;
-    import Box2D.Dynamics.b2Fixture;
-    
-    import game.entities.fixture.IFixtureEntity;
-    import game.entities.fixture.WorldManager;
-    import game.entities.fixture.decorator.AFixtureDecorator;
+import Box2D.Common.Math.b2Vec2;
 
-    public class RapidFire extends AFixtureDecorator
+import game.entities.fixture.IFixtureEntity;
+import game.entities.fixture.WorldManager;
+import game.entities.fixture.decorator.AFixtureDecorator;
+
+public class RapidFire extends AFixtureDecorator
     {
         private var controls:Controls;
         private var worldManager:WorldManager;

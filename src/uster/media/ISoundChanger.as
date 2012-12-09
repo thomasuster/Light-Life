@@ -1,9 +1,9 @@
 package uster.media
 {
-    import flash.media.SoundChannel;
-    import flash.media.SoundTransform;
+import flash.media.SoundChannel;
+import flash.media.SoundTransform;
 
-    public interface ISoundChanger
+public interface ISoundChanger
     {
         function play(startTime:Number, loops:int, sndTransform:SoundTransform):SoundChannel;
     }

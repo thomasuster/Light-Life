@@ -1,11 +1,11 @@
 package uster.display.assetManager
 {
-	import flash.display.Loader;
-	import flash.net.URLRequest;
-	
-	import uster.debug.Logger;
-	
-	internal class LoadCommand
+import flash.display.Loader;
+import flash.net.URLRequest;
+
+import uster.debug.Logger;
+
+internal class LoadCommand
 	{
 		public var loader:Loader;
 		public var urlRequest:URLRequest;

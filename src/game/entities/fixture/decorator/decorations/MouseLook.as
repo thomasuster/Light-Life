@@ -1,17 +1,11 @@
 package game.entities.fixture.decorator.decorations
 {
-    import Box2D.Common.Math.b2Vec2;
-    import Box2D.Dynamics.b2Body;
-    
-    import flash.display.DisplayObject;
-    
-    import game.entities.fixture.WorldManager;
-    import game.entities.fixture.IFixtureEntity;
-    
-    import render.ICamera;
-    import game.entities.fixture.decorator.AFixtureDecorator;
+import Box2D.Common.Math.b2Vec2;
+import Box2D.Dynamics.b2Body;
 
-    public class MouseLook extends AFixtureDecorator
+import game.entities.fixture.decorator.AFixtureDecorator;
+
+public class MouseLook extends AFixtureDecorator
     {
         private var controls:Controls;
         private var _game:Game;

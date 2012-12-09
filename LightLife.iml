@@ -14,6 +14,12 @@
             <entry library-id="c7f60d15-632f-4611-b53b-40e646214370">
               <dependency linkage="Merged" />
             </entry>
+            <entry library-id="250870d7-38a1-422b-9fe2-77b6bbad24e5">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="37aa6ec1-4903-48f3-bb53-1dc676553ff5">
+              <dependency linkage="Merged" />
+            </entry>
           </entries>
           <sdk name="flex_sdk_4.5.1.21328" />
         </dependencies>
@@ -31,6 +37,7 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
     </content>
     <orderEntry type="jdk" jdkName="flex_sdk_4.5.1.21328" jdkType="Flex SDK Type (new)" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -60,6 +67,26 @@
         <properties id="c7f60d15-632f-4611-b53b-40e646214370" />
         <CLASSES>
           <root url="file://$MODULE_DIR$/sources/PrimaryFeather-Starling-Framework-4ee83c1/starling/src" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library type="flex">
+        <properties id="250870d7-38a1-422b-9fe2-77b6bbad24e5" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/sources/flexunit-4.1.0-8-4.1.0.16076/flexunit/flexunit-4.1.0-8-as3_4.1.0.16076.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library type="flex">
+        <properties id="37aa6ec1-4903-48f3-bb53-1dc676553ff5" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/sources/mockolate-0.12.4/mockolate-0.12.4-as3.swc!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

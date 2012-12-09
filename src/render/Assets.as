@@ -1,8 +1,8 @@
 package render
 {
-    import flash.display.Bitmap;
+import flash.display.Bitmap;
 
-    public class Assets
+public class Assets
     {
         [Embed (source="../../media/assets/stars/stars1.gif" )]
         private static const Stars1:Class;

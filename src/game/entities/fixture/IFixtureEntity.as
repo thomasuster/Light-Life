@@ -1,10 +1,10 @@
 package game.entities.fixture
 {
-    import Box2D.Dynamics.b2Fixture;
-    
-    import game.entities.IEntity;
+import Box2D.Dynamics.b2Fixture;
 
-    public interface IFixtureEntity extends IEntity
+import game.entities.IEntity;
+
+public interface IFixtureEntity extends IEntity
     {
         function get fixture():b2Fixture;
     }

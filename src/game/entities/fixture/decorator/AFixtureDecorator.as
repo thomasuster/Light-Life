@@ -1,10 +1,10 @@
 package game.entities.fixture.decorator
 {
-    import Box2D.Dynamics.b2Fixture;
-    
-    import game.entities.fixture.IFixtureEntity;
+import Box2D.Dynamics.b2Fixture;
 
-    public class AFixtureDecorator implements IFixtureEntity, IFixtureEntityDecorator
+import game.entities.fixture.IFixtureEntity;
+
+public class AFixtureDecorator implements IFixtureEntity, IFixtureEntityDecorator
     {
         protected var decoratedFixture:IFixtureEntity;
         

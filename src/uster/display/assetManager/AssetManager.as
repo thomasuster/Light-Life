@@ -1,19 +1,18 @@
 package uster.display.assetManager
 {
-	import flash.display.DisplayObject;
-	import flash.display.DisplayObjectContainer;
-	import flash.display.Loader;
-	import flash.display.LoaderInfo;
-	import flash.events.Event;
-	import flash.events.EventDispatcher;
-	import flash.events.IEventDispatcher;
-	import flash.events.IOErrorEvent;
-	import flash.events.ProgressEvent;
-	import flash.net.URLRequest;
-	
-	import uster.debug.Logger;
-	
-	/**w
+import flash.display.DisplayObject;
+import flash.display.Loader;
+import flash.display.LoaderInfo;
+import flash.events.Event;
+import flash.events.EventDispatcher;
+import flash.events.IEventDispatcher;
+import flash.events.IOErrorEvent;
+import flash.events.ProgressEvent;
+import flash.net.URLRequest;
+
+import uster.debug.Logger;
+
+/**w
 	 * Singleton for loading and retrieving assets.
 	 * 
 	 * Assets can be anything from SWF files or image (JPG, PNG, or GIF) files.

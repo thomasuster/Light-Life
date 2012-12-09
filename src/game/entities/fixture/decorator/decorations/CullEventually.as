@@ -1,9 +1,9 @@
 package game.entities.fixture.decorator.decorations
 {
-    import game.entities.fixture.WorldManager;
-    import game.entities.fixture.decorator.AFixtureDecorator;
-    
-    public class CullEventually extends AFixtureDecorator
+import game.entities.fixture.WorldManager;
+import game.entities.fixture.decorator.AFixtureDecorator;
+
+public class CullEventually extends AFixtureDecorator
     {
         private var worldManager:WorldManager;
         private var count:int = 0;

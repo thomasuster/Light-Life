@@ -1,34 +1,29 @@
 package render.starling.decorator
 {
-    import Box2D.Collision.b2AABB;
-    import Box2D.Common.Math.b2Vec2;
-    import Box2D.Dynamics.b2Fixture;
-    
-    import com.junkbyte.console.Cc;
-    
-    import flash.display.Bitmap;
-    import flash.utils.Dictionary;
-    
-    import game.entities.fixture.IFixtureEntity;
-    import game.entities.fixture.WorldManager;
-    import game.entities.fixture.decorator.IFixtureEntityDecorator;
+import Box2D.Collision.b2AABB;
+import Box2D.Common.Math.b2Vec2;
+import Box2D.Dynamics.b2Fixture;
+
+import com.junkbyte.console.Cc;
+
+import flash.display.Bitmap;
+import flash.utils.Dictionary;
+
+import game.entities.fixture.IFixtureEntity;
+import game.entities.fixture.WorldManager;
 
 import render.Assets;
-
 import render.IDisplayObject;
-    import render.IRenderer;
-    import render.NullDisplayObject;
-    import render.starling.StarlingDisplayObject;
-    
-    import starling.core.Starling;
-    import starling.display.DisplayObject;
-    import starling.display.DisplayObjectContainer;
-    import starling.display.Image;
-    import starling.textures.Texture;
-    
-    import uster.debug.Logger;
-    
-    public class StarlingRenderer implements IRenderer
+import render.IRenderer;
+import render.NullDisplayObject;
+import render.starling.StarlingDisplayObject;
+
+import starling.display.DisplayObject;
+import starling.display.DisplayObjectContainer;
+import starling.display.Image;
+import starling.textures.Texture;
+
+public class StarlingRenderer implements IRenderer
     {
         private var container:DisplayObjectContainer;
         private var displayObjects:Dictionary = new Dictionary();

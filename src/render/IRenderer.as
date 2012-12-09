@@ -1,10 +1,10 @@
 package render
 {
-    import Box2D.Dynamics.b2Fixture;
-    
-    import game.entities.fixture.IFixtureEntity;
+import Box2D.Dynamics.b2Fixture;
 
-    public interface IRenderer
+import game.entities.fixture.IFixtureEntity;
+
+public interface IRenderer
     {
         function addDrawHero(fixture:IFixtureEntity):IFixtureEntity;
         function addBadGuy(fixture:IFixtureEntity):IFixtureEntity;

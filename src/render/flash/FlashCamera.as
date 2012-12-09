@@ -1,12 +1,10 @@
 package render.flash
 {
-    import flash.display.DisplayObject;
-    
-    import game.entities.fixture.WorldManager;
-    
-    import render.ICamera;
-    
-    public class FlashCamera implements ICamera
+import flash.display.DisplayObject;
+
+import render.ICamera;
+
+public class FlashCamera implements ICamera
     {
         private var camera:DisplayObject;
         private var _x:Number = 0;

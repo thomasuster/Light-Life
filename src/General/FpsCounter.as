@@ -16,14 +16,13 @@
 // FPS COUNTER CLASS
 //===========================================================
 package General{
-	
-	import flash.display.Sprite;
-	import flash.text.*;
-	import flash.utils.getTimer;
-	import flash.events.*;
-	import flash.system.System;
-	
-	public class FpsCounter extends Sprite{
+
+import flash.display.Sprite;
+import flash.system.System;
+import flash.text.*;
+import flash.utils.getTimer;
+
+public class FpsCounter extends Sprite{
 		
 		//======================
 		// constructor

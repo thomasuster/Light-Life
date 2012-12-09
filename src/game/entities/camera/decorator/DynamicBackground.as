@@ -1,12 +1,12 @@
 package game.entities.camera.decorator
 {
-    import com.junkbyte.console.Cc;
-    
-    import render.ICamera;
-    import render.IDisplayObject;
-    import render.IRenderer;
-    
-    public class DynamicBackground extends ACameraDecorator
+import com.junkbyte.console.Cc;
+
+import render.ICamera;
+import render.IDisplayObject;
+import render.IRenderer;
+
+public class DynamicBackground extends ACameraDecorator
     {
         private var baseTileWidth:Number;
         private var baseTileHeight:Number;

@@ -1,32 +1,32 @@
 package game.entities.fixture
 {
-    import Box2D.Collision.Shapes.b2PolygonShape;
-    import Box2D.Common.Math.b2Vec2;
-    import Box2D.Dynamics.b2Body;
-    import Box2D.Dynamics.b2BodyDef;
-    import Box2D.Dynamics.b2ContactListener;
-    import Box2D.Dynamics.b2DebugDraw;
-    import Box2D.Dynamics.b2Fixture;
-    import Box2D.Dynamics.b2World;
-    
-    import flash.display.Sprite;
-    import flash.utils.Dictionary;
-    import flash.utils.getTimer;
-    
-    import game.entities.IEntity;
-    import game.entities.fixture.decorator.AFixtureDecorator;
-    import game.entities.fixture.decorator.IFixtureEntityDecorator;
-    import game.entities.fixture.decorator.decorations.CameraFollow;
-    import game.entities.fixture.decorator.decorations.CullEventually;
-    import game.entities.fixture.decorator.decorations.KeyboardMove;
-    import game.entities.fixture.decorator.decorations.MouseLook;
-    import game.entities.fixture.decorator.decorations.MoveToward;
-    import game.entities.fixture.decorator.decorations.RapidFire;
-    
-    import render.ICamera;
-    import render.IRenderer;
+import Box2D.Collision.Shapes.b2PolygonShape;
+import Box2D.Common.Math.b2Vec2;
+import Box2D.Dynamics.b2Body;
+import Box2D.Dynamics.b2BodyDef;
+import Box2D.Dynamics.b2ContactListener;
+import Box2D.Dynamics.b2DebugDraw;
+import Box2D.Dynamics.b2Fixture;
+import Box2D.Dynamics.b2World;
 
-    public class WorldManager
+import flash.display.Sprite;
+import flash.utils.Dictionary;
+import flash.utils.getTimer;
+
+import game.entities.IEntity;
+import game.entities.fixture.decorator.AFixtureDecorator;
+import game.entities.fixture.decorator.IFixtureEntityDecorator;
+import game.entities.fixture.decorator.decorations.CameraFollow;
+import game.entities.fixture.decorator.decorations.CullEventually;
+import game.entities.fixture.decorator.decorations.KeyboardMove;
+import game.entities.fixture.decorator.decorations.MouseLook;
+import game.entities.fixture.decorator.decorations.MoveToward;
+import game.entities.fixture.decorator.decorations.RapidFire;
+
+import render.ICamera;
+import render.IRenderer;
+
+public class WorldManager
     {
         public static const SCALE:Number = 50;
         public static const FIRE:String = "fire";

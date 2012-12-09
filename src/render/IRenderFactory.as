@@ -1,8 +1,8 @@
 package render
 {
-    import game.entities.fixture.IFixtureEntity;
+import game.entities.fixture.IFixtureEntity;
 
-    public interface IRenderFactory
+public interface IRenderFactory
     {
         function createDrawHero():IFixtureEntity;
         //function drawDrone():void;

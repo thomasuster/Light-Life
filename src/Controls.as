@@ -1,15 +1,13 @@
 package
 {
-    import com.junkbyte.console.Cc;
-    
-    import flash.display.Stage;
-    import flash.events.EventDispatcher;
-    import flash.events.MouseEvent;
-    
-    import starling.display.Stage;
-    import starling.events.KeyboardEvent;
+import flash.display.Stage;
+import flash.events.EventDispatcher;
+import flash.events.MouseEvent;
 
-	/**
+import starling.display.Stage;
+import starling.events.KeyboardEvent;
+
+/**
 	 * LightLife Game Controller. 
 	 */	
 	public class Controls extends EventDispatcher
