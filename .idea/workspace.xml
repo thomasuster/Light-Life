@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ea8edbe3-0547-4df4-85ea-c23de337193d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/entities/camera/decorator/DynamicBackground.as" afterPath="$PROJECT_DIR$/src/game/entities/camera/decorator/DynamicBackground.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/render/starling/decorator/StarlingRenderer.as" afterPath="$PROJECT_DIR$/src/render/starling/decorator/StarlingRenderer.as" />
-    </list>
+    <list default="true" id="ea8edbe3-0547-4df4-85ea-c23de337193d" name="Default" comment="" />
     <ignored path="LightLife.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
