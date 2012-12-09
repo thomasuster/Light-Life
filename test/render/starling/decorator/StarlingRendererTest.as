@@ -23,6 +23,12 @@ package render.starling.decorator {
         [Test]
         public function backgroundShouldGenerateMissingAssets():void
         {
+
+        }
+
+        [Test]
+        public function backgroundShouldGroByGridSize():void
+        {
             var base:IDisplayObject = starlingRenderer.addBackGround(0,0,100,100,"stars1");
             var bigger:IDisplayObject = starlingRenderer.addBackGround(0,0,100,100,"stars2");
             assertThat(base.height, equalTo(GRID_SIZE*bigger.height));

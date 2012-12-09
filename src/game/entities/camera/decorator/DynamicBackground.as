@@ -20,6 +20,7 @@ public class DynamicBackground extends ACameraDecorator
     private var newTileHeight:Number;
     private var newTiles:Object;
     private var ratio:int = 1;
+    private static const gridSize:int = 3;
 
     public function DynamicBackground(renderer:IRenderer)
     {
@@ -41,8 +42,6 @@ public class DynamicBackground extends ACameraDecorator
     public override function set zoom(value:Number):void
     {
         super.zoom = value;
-        cull();
-        levelOfDetail = "reset";
     }
 
     private function cull():void
@@ -104,10 +103,10 @@ public class DynamicBackground extends ACameraDecorator
         var newWidthToZoom:Number = (width / zoom);
 
         var _ratio:Number = newWidthToZoom / baseTileWidth;
-        ratio = (_ratio) / 3 + 1;                  //wtf
+        ratio = (_ratio) / gridSize + 1;
 
-        newTileWidth = baseTileWidth * Math.pow(3, ratio);
-        newTileHeight = baseTileHeight * Math.pow(3, ratio);
+        newTileWidth = baseTileWidth * Math.pow(gridSize, ratio);
+        newTileHeight = baseTileHeight * Math.pow(gridSize, ratio);
 
         hashX = getHashX(newTileWidth);
         hashY = getHashY(newTileHeight);
@@ -124,7 +123,7 @@ public class DynamicBackground extends ACameraDecorator
     }
 
     private function debug():void {
-        if(true)
+        if(false)
         {
             Cc.log("DynamicBackground.ratio: " + ratio);
             Cc.log("DynamicBackground.behavior: (x,y) " + x + " , " + y);

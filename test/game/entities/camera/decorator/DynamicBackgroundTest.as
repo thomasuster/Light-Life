@@ -20,6 +20,7 @@ public class DynamicBackgroundTest {
     [Test]
     public function testAdd():void {
         assertThat(background, notNullValue());
+        background.update();
     }
 }
 }

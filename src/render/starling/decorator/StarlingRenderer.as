@@ -72,39 +72,55 @@ public class StarlingRenderer implements IRenderer
         
         public function addBackGround(x:Number, y:Number, width:Number, height:Number, lod:String):IDisplayObject
         {
-            var bitmap:Bitmap;
-            if(lod in Assets.instance.stars)
+            var bitmap:Bitmap = getBitmap(lod);
+            var texture:Texture = getTexture(bitmap);
+            if(texture)
             {
-                bitmap = Assets.instance.stars[lod];
+                return getBackground(texture,x,y,width,height);
             }
             else
             {
-                Cc.error("StarlingRenderer.addBackGround: No texture for width: " + lod + ", rendering one...");
-                //TODO RENDER BITMAP
-                bitmap = new Bitmap();
+                Cc.error("StarlingRenderer.addBackGround: Unable to create texture.");
+                return new NullDisplayObject();
             }
-            
-            try
-            {
-                var texture:Texture = Texture.fromBitmap(bitmap);
-            } 
-            catch(error:Error) 
-            {
-                displayObject = new NullDisplayObject();
-                return displayObject;
-                Cc.warn("StarlingRenderer.addBackGround: " + error.message);
-            }
-            var image:Image = new Image(texture);
-            image.x = x;
-            image.y = y;
-            image.width = width;
-            image.height= height;
-            var displayObject:IDisplayObject = new StarlingDisplayObject(image);
-            addChild(displayObject, image, 0);
-            return displayObject;
         }
-        
-        public function remove(displayObject:IDisplayObject):void
+
+    private function getBackground(texture:Texture, x:Number, y:Number, width:Number, height:Number):IDisplayObject
+    {
+        var image:Image = new Image(texture);
+        image.x = x;
+        image.y = y;
+        image.width = width;
+        image.height = height;
+        var displayObject:IDisplayObject = new StarlingDisplayObject().setDisplayObject(image);
+        addChild(displayObject, image, 0);
+        return displayObject;
+    }
+
+    private function getTexture(bitmap:Bitmap):Texture
+    {
+        try{
+            return Texture.fromBitmap(bitmap);
+        }
+        catch (error:Error){}
+        return null;
+    }
+
+    private function getBitmap(lod:String):Bitmap
+    {
+        var bitmap:Bitmap;
+        if (lod in Assets.instance.stars)
+            bitmap = Assets.instance.stars[lod];
+        else
+        {
+            Cc.error("StarlingRenderer.addBackGround: No texture for width: " + lod + ", rendering one...");
+            //TODO RENDER BITMAP
+            bitmap = new Bitmap();
+        }
+        return bitmap;
+    }
+
+    public function remove(displayObject:IDisplayObject):void
         {
             removeChild(displayObject);
             delete displayObjects[displayObject];
