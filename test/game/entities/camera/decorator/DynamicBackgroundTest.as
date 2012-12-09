@@ -1,6 +1,5 @@
 package game.entities.camera.decorator {
 import org.flexunit.assertThat;
-import org.flexunit.asserts.assertNotNull;
 import org.hamcrest.object.notNullValue;
 
 import render.IRenderer;

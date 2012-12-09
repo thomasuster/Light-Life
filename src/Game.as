@@ -96,7 +96,7 @@ public class Game extends Sprite
             hero = worldManager.createHero(controls, cameraComposite, this);
             for (var i:int = 0; i < 7; i++)
             {
-                badGuy = worldManager.createBadGuy();
+//                badGuy = worldManager.createBadGuy();
             }
         }
 
@@ -123,7 +123,7 @@ public class Game extends Sprite
     private function onFrame (e:Event):void
     {
         worldManager.update();
-//            background.update();
+            background.update();
     }
 
     private function onTouch(e:TouchEvent):void
