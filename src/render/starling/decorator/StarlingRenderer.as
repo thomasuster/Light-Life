@@ -79,7 +79,8 @@ public class StarlingRenderer implements IRenderer
             }
             else
             {
-                Cc.error("StarlingRenderer.addBackGround: No texture for width: " + lod);
+                Cc.error("StarlingRenderer.addBackGround: No texture for width: " + lod + ", rendering one...");
+                //TODO RENDER BITMAP
                 bitmap = new Bitmap();
             }
             

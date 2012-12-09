@@ -6,8 +6,6 @@ import render.ICamera;
 import render.IDisplayObject;
 import render.IRenderer;
 
-import starling.display.DisplayObject;
-
 public class DynamicBackground extends ACameraDecorator
 {
     private var baseTileWidth:Number;
@@ -57,10 +55,8 @@ public class DynamicBackground extends ACameraDecorator
 
     protected override function behavior():void
     {
-        calculateInitialStuff();
-
+        calculateNewValues();
         debug();
-
         checkAndAdjust();
     }
 
@@ -105,11 +101,11 @@ public class DynamicBackground extends ACameraDecorator
         return renderer.addBackGround(_x, _y, newTileWidth, newTileHeight, String(ratio));
     }
 
-    private function calculateInitialStuff():void {
-        var currentTileWidth:Number = (width / zoom);
+    private function calculateNewValues():void {
+        var newWidthToZoom:Number = (width / zoom);
 
-        var _ratio:Number = currentTileWidth / baseTileWidth;
-        ratio = (_ratio) / 3 + 1;
+        var _ratio:Number = newWidthToZoom / baseTileWidth;
+        ratio = (_ratio) / 3 + 1;                  //wtf
 
         newTileWidth = baseTileWidth * Math.pow(3, ratio);
         newTileHeight = baseTileHeight * Math.pow(3, ratio);
@@ -161,9 +157,4 @@ internal class TileDimensions
 {
     public var tileWidth:Number = 1;
     public var tileHeight:Number = 1;
-
-    public function TileDimensions()
-    {
-
-    }
 }
