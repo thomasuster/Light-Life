@@ -1,29 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/render/starling/decorator/StarlingRenderer.as" line="158" mnemonic="S" />
+    <bookmark url="file://$PROJECT_DIR$/src/render/starling/decorator/StarlingRenderer.as" line="152" mnemonic="S" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea8edbe3-0547-4df4-85ea-c23de337193d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/render/starling/StarlingDisplayObjectTest.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/entities/camera/decorator/DynamicBackground.as" afterPath="$PROJECT_DIR$/src/game/entities/camera/decorator/DynamicBackground.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/render/starling/decorator/FlexUnitStarlingIntegration.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/render/starling/decorator/TextureProxy.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/game/entities/camera/decorator/DynamicBackgroundTest.as" afterPath="$PROJECT_DIR$/test/game/entities/camera/decorator/DynamicBackgroundTest.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/render/starling/StarlingDisplayObject.as" afterPath="$PROJECT_DIR$/src/render/starling/StarlingDisplayObject.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LightLife.iml" afterPath="$PROJECT_DIR$/LightLife.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/render/starling/decorator/StarlingRenderer.as" afterPath="$PROJECT_DIR$/src/render/starling/decorator/StarlingRenderer.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/render/starling/decorator/StarlingRendererTest.as" afterPath="$PROJECT_DIR$/test/render/starling/decorator/StarlingRendererTest.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="LightLife.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355076086467" ignored="false" />
-    <file path="/StarlingRendererTest.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355077456143" ignored="false" />
-    <file path="/StarlingRenderer.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355078912534" ignored="false" />
-    <file path="/fragment.js2" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355078528321" ignored="false" />
-    <file path="/DynamicBackgroundTest.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355077093324" ignored="false" />
+    <file path="/Dummy.txt" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355465248931" ignored="false" />
+    <file path="/StarlingRendererTest.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355471109218" ignored="false" />
+    <file path="/StarlingRenderer.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355470902725" ignored="false" />
+    <file path="/fragment.js2" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355470714965" ignored="false" />
+    <file path="/DynamicBackgroundTest.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355215085215" ignored="false" />
     <file path="/Assets.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355077595436" ignored="false" />
     <file path="/StarlingDisplayObjectTest.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355078105826" ignored="false" />
     <file path="/StarlingDisplayObject.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355078127271" ignored="false" />
     <file path="/DynamicBackground.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355079080108" ignored="false" />
+    <file path="/a.dummy" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355380528562" ignored="false" />
+    <file path="/Starling.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355215967797" ignored="false" />
+    <file path="/TextureProxy.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355466889634" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +45,6 @@
   </component>
   <component name="DebuggerManager">
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <breakpoint_rules default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -74,6 +79,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <breakpoint_rules default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -83,13 +89,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DynamicBackground.as" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/game/entities/camera/decorator/DynamicBackground.as">
+      <file leaf-file-name="StarlingRendererTest.as" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/render/starling/decorator/StarlingRendererTest.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="103" column="8" selection-start="2693" selection-end="2693" vertical-scroll-proportion="0.29187396">
+            <state line="43" column="25" selection-start="1202" selection-end="1202" vertical-scroll-proportion="0.60749507">
               <folding>
-                <element signature="e#41#72#0" expanded="true" />
+                <element signature="e#41#69#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StarlingRenderer.as" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/render/starling/decorator/StarlingRenderer.as">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="90" column="22" selection-start="3402" selection-end="3407" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#40#70#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Texture.as" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sources/PrimaryFeather-Starling-Framework-4ee83c1/starling/src/starling/textures/Texture.as">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="270" column="45" selection-start="12827" selection-end="12836" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#458#486#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Game.as" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Game.as">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="56" column="55" selection-start="1682" selection-end="1682" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -117,13 +154,17 @@
         <option value="$PROJECT_DIR$/src/game/entities/camera/decorator/DynamicBackgroundTest.as" />
         <option value="$PROJECT_DIR$/test/game/entities/camera/decorator/NullRenderer.as" />
         <option value="$PROJECT_DIR$/src/Game.as" />
-        <option value="$PROJECT_DIR$/test/game/entities/camera/decorator/DynamicBackgroundTest.as" />
-        <option value="$PROJECT_DIR$/test/render/starling/decorator/StarlingRendererTest.as" />
         <option value="$PROJECT_DIR$/test/render/starling/StarlingDisplayObjectTest.as" />
         <option value="$PROJECT_DIR$/src/render/starling/StarlingDisplayObject.as" />
-        <option value="$PROJECT_DIR$/src/render/starling/decorator/StarlingRenderer.as" />
         <option value="$PROJECT_DIR$/src/render/Assets.as" />
         <option value="$PROJECT_DIR$/src/game/entities/camera/decorator/DynamicBackground.as" />
+        <option value="$PROJECT_DIR$/test/game/entities/camera/decorator/DynamicBackgroundTest.as" />
+        <option value="$PROJECT_DIR$/sources/console_2.6/src/com/junkbyte/console/Cc.as" />
+        <option value="$PROJECT_DIR$/sources/PrimaryFeather-Starling-Framework-4ee83c1/starling/src/starling/core/Starling.as" />
+        <option value="$PROJECT_DIR$/test/render/starling/decorator/FlexUnitStarlingIntegration.as" />
+        <option value="$PROJECT_DIR$/src/render/starling/decorator/TextureProxy.as" />
+        <option value="$PROJECT_DIR$/src/render/starling/decorator/StarlingRenderer.as" />
+        <option value="$PROJECT_DIR$/test/render/starling/decorator/StarlingRendererTest.as" />
       </list>
     </option>
   </component>
@@ -141,17 +182,72 @@
             <id />
           </State>
           <State>
+            <id>Abstraction issues</id>
+          </State>
+          <State>
+            <id>Assignment issues</id>
+          </State>
+          <State>
+            <id>Class structure</id>
+          </State>
+          <State>
+            <id>Code maturity issues</id>
+          </State>
+          <State>
             <id>Code style issues</id>
+          </State>
+          <State>
+            <id>Control flow issues</id>
+          </State>
+          <State>
+            <id>Data flow issues</id>
+          </State>
+          <State>
+            <id>Declaration redundancy</id>
+          </State>
+          <State>
+            <id>Error handling</id>
+          </State>
+          <State>
+            <id>FlexUnit inspections</id>
+          </State>
+          <State>
+            <id>General</id>
+          </State>
+          <State>
+            <id>Internationalization issues</id>
+          </State>
+          <State>
+            <id>J2ME issues</id>
+          </State>
+          <State>
+            <id>JUnit issues</id>
+          </State>
+          <State>
+            <id>Java language level migration aids</id>
+          </State>
+          <State>
+            <id>Javadoc issues</id>
+          </State>
+          <State>
+            <id>Logging issues</id>
+          </State>
+          <State>
+            <id>Memory issues</id>
+          </State>
+          <State>
+            <id>Method metrics</id>
+          </State>
+          <State>
+            <id>Numeric issues</id>
           </State>
           <State>
             <id>Performance issues</id>
           </State>
-        </expanded-state>
-        <selected-state>
           <State>
-            <id>Abstraction issues</id>
+            <id>Probable bugs</id>
           </State>
-        </selected-state>
+        </expanded-state>
       </profile-state>
     </entry>
   </component>
@@ -196,6 +292,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="LightLife" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LightLife" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LightLife" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="starling" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LightLife" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LightLife" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="starling" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="decorator" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -305,6 +441,16 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="PackagesPane">
         <subPane>
           <PATH>
@@ -319,28 +465,19 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_directory_selection" value="$PROJECT_DIR$/test" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/test/render/starling/decorator" />
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.30000004" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="preferences.keymap" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="options.lastSelected" value="editing.templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/sources/hamcrest-as3-flex-1.1.3/hamcrest-as3-flex-1.1.3.swc!/" />
+    <property name="project.structure.side.proportion" value="0.11086474" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
@@ -361,7 +498,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Flash App.build (LightLife)">
+  <component name="RunManager" selected="FlexUnit.StarlingRendererTest.backgroundShouldGenerateMissingAssets()">
     <configuration default="false" name="StarlingRendererTest.backgroundShouldGenerateMissingAssets()" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" temporary="true" appDescriptorForEmulator="Android" class_name="render.starling.decorator.StarlingRendererTest" emulatorAdlOptions="" method_name="backgroundShouldGenerateMissingAssets" output_log_level="null" package_name="" scope="Method">
       <option name="BCName" value="build" />
       <option name="launcherParameters">
@@ -392,6 +529,21 @@
       <ConfigurationWrapper RunnerId="FlexDebugRunner" />
       <method />
     </configuration>
+    <configuration default="false" name="StarlingRendererTest.backgroundShouldBeScaled()" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" temporary="true" appDescriptorForEmulator="Android" class_name="render.starling.decorator.StarlingRendererTest" emulatorAdlOptions="" method_name="backgroundShouldBeScaled" output_log_level="null" package_name="" scope="Method">
+      <option name="BCName" value="build" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browserFamily" value="FIREFOX" />
+          <option name="launcherType" value="Browser" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="moduleName" value="LightLife" />
+      <option name="trusted" value="true" />
+      <RunnerSettings RunnerId="FlexDebugRunner" />
+      <ConfigurationWrapper RunnerId="FlexDebugRunner" />
+      <method />
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -401,15 +553,15 @@
       <method />
     </configuration>
     <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" output_log_level="null" package_name="" scope="Class">
-      <option name="BCName" value="" />
+      <option name="BCName" value="build" />
       <option name="launcherParameters">
         <LauncherParameters>
           <option name="browserFamily" value="FIREFOX" />
-          <option name="launcherType" value="OSDefault" />
+          <option name="launcherType" value="Browser" />
           <option name="playerPath" value="FlashPlayerDebugger.exe" />
         </LauncherParameters>
       </option>
-      <option name="moduleName" value="" />
+      <option name="moduleName" value="LightLife" />
       <option name="trusted" value="true" />
       <method />
     </configuration>
@@ -439,6 +591,11 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="RemoteFlashRunConfigurationType" factoryName="Flash Remote Debug">
+      <option name="BCName" value="" />
+      <option name="moduleName" value="" />
       <method />
     </configuration>
     <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
@@ -513,15 +670,17 @@
       <ConfigurationWrapper RunnerId="FlexRunner" />
       <method />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Flash App.build (LightLife)" />
       <item index="1" class="java.lang.String" itemvalue="FlexUnit.StarlingRendererTest.backgroundShouldGenerateMissingAssets()" />
       <item index="2" class="java.lang.String" itemvalue="FlexUnit.StarlingDisplayObjectTest.setDisplayObjectShouldAdjustDimensions()" />
+      <item index="3" class="java.lang.String" itemvalue="FlexUnit.StarlingRendererTest.backgroundShouldBeScaled()" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="FlexUnit.StarlingDisplayObjectTest.setDisplayObjectShouldAdjustDimensions()" />
-        <item index="1" class="java.lang.String" itemvalue="FlexUnit.StarlingRendererTest.backgroundShouldGenerateMissingAssets()" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="FlexUnit.StarlingRendererTest.backgroundShouldGenerateMissingAssets()" />
+        <item index="1" class="java.lang.String" itemvalue="FlexUnit.StarlingRendererTest.backgroundShouldBeScaled()" />
+        <item index="2" class="java.lang.String" itemvalue="FlexUnit.StarlingDisplayObjectTest.setDisplayObjectShouldAdjustDimensions()" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="JUnit" default="true" selected="false">
@@ -557,21 +716,21 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32844242" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3277027" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14994664" sideWeight="0.6004464" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28329572" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14941922" sideWeight="0.606982" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.393018" sideWeight="0.49788806" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39414415" sideWeight="0.49841604" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924107" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32882884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2497332" sideWeight="0.60177976" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -634,12 +793,37 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="flex">
-          <url>file://$PROJECT_DIR$/src/game/entities/camera/decorator/DynamicBackground.as</url>
-          <line>64</line>
-          <option name="timeStamp" value="3" />
+          <url>file://$PROJECT_DIR$/sources/PrimaryFeather-Starling-Framework-4ee83c1/starling/src/starling/textures/Texture.as</url>
+          <line>124</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="flex">
+          <url>file://$PROJECT_DIR$/test/render/starling/decorator/StarlingRendererTest.as</url>
+          <line>33</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="flex">
+          <url>file://$PROJECT_DIR$/sources/PrimaryFeather-Starling-Framework-4ee83c1/starling/src/starling/textures/Texture.as</url>
+          <line>119</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="flex">
+          <url>file://$PROJECT_DIR$/test/render/starling/decorator/FlexUnitStarlingIntegration.as</url>
+          <line>19</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="flex">
+          <url>file://$PROJECT_DIR$/sources/PrimaryFeather-Starling-Framework-4ee83c1/starling/src/starling/core/Starling.as</url>
+          <line>173</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="flex">
+          <url>file://$PROJECT_DIR$/sources/PrimaryFeather-Starling-Framework-4ee83c1/starling/src/starling/core/Starling.as</url>
+          <line>168</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="4" />
+      <option name="time" value="26" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -647,108 +831,112 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/render/starling/decorator/StarlingRenderer.as">
+    <entry file="file://$PROJECT_DIR$/sources/console_2.6/src/com/junkbyte/console/Cc.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="16" selection-start="2864" selection-end="2864" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="44" column="0" selection-start="1635" selection-end="1635" vertical-scroll-proportion="0.37728193" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/render/starling/decorator/StarlingRendererTest.as">
+    <entry file="file://$PROJECT_DIR$/sources/PrimaryFeather-Starling-Framework-4ee83c1/samples/demo/src/Game.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="4" selection-start="72" selection-end="72" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#41#72#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="55" column="71" selection-start="1869" selection-end="1869" vertical-scroll-proportion="0.4893617" />
       </provider>
     </entry>
-    <entry file="file://C:/Program Files (x86)/Adobe/Adobe Flash Builder 4.5/sdks/flex_sdk_4.5.1.21328/frameworks/projects/framework/src/mx/core/MovieClipLoaderAsset.as">
+    <entry file="file://$PROJECT_DIR$/sources/PrimaryFeather-Starling-Framework-4ee83c1/samples/demo/src/Startup.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="13" selection-start="1173" selection-end="1193" vertical-scroll-proportion="0.33333334" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controls.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="192" column="12" selection-start="5030" selection-end="5030" vertical-scroll-proportion="0.7708333" />
+        <state line="15" column="75" selection-start="439" selection-end="439" vertical-scroll-proportion="0.35106382" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LightLife.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="49" selection-start="474" selection-end="474" vertical-scroll-proportion="0.0" />
+        <state line="98" column="40" selection-start="3336" selection-end="3336" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/EmbeddedAssets.as">
+    <entry file="file://$PROJECT_DIR$/sources/PrimaryFeather-Starling-Framework-4ee83c1/starling/src/starling/display/DisplayObjectContainer.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="40" selection-start="190" selection-end="190" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/game/entities/camera/decorator/NullRenderer.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="3" selection-start="274" selection-end="274" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="55" selection-start="3232" selection-end="3232" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/render/IRenderer.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="30" selection-start="399" selection-end="412" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/game/entities/camera/decorator/DynamicBackgroundTest.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="28" selection-start="479" selection-end="479" vertical-scroll-proportion="0.0">
+        <state line="10" column="0" selection-start="426" selection-end="426" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/render/starling/decorator/StarlingRendererTest.as">
+    <entry file="file://$PROJECT_DIR$/sources/PrimaryFeather-Starling-Framework-4ee83c1/starling/src/starling/display/Sprite.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="60" selection-start="643" selection-end="643" vertical-scroll-proportion="0.0">
+        <state line="10" column="0" selection-start="426" selection-end="426" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/PrimaryFeather-Starling-Framework-4ee83c1/starling/src/starling/events/EventDispatcher.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="426" selection-end="426" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/PrimaryFeather-Starling-Framework-4ee83c1/starling/src/starling/display/DisplayObject.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="105" column="0" selection-start="5424" selection-end="5424" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/render/starling/decorator/FlexUnitStarlingIntegration.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="61" selection-start="324" selection-end="324" vertical-scroll-proportion="0.41509435">
           <folding>
-            <element signature="e#41#72#0" expanded="true" />
+            <element signature="e#40#66#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/render/starling/StarlingDisplayObject.as">
+    <entry file="file://$PROJECT_DIR$/sources/PrimaryFeather-Starling-Framework-4ee83c1/starling/src/starling/core/Starling.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="24" selection-start="345" selection-end="345" vertical-scroll-proportion="0.3654485">
+        <state line="10" column="26" selection-start="447" selection-end="447" vertical-scroll-proportion="0.4347826">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/sources/flexunit-4.1.0-8-4.1.0.16076/flexunit/flexunit-4.1.0-8-as3_4.1.0.16076.swc!/library.swf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1523" column="53" selection-start="72361" selection-end="72372" vertical-scroll-proportion="0.32251522">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/render/starling/StarlingDisplayObjectTest.as">
+    <entry file="file://$PROJECT_DIR$/src/render/starling/decorator/TextureProxy.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="65" selection-start="643" selection-end="643" vertical-scroll-proportion="0.0">
+        <state line="11" column="49" selection-start="269" selection-end="269" vertical-scroll-proportion="0.28271028">
           <folding>
-            <element signature="e#185#216#0" expanded="true" />
+            <element signature="e#40#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="55" selection-start="1682" selection-end="1682" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/PrimaryFeather-Starling-Framework-4ee83c1/starling/src/starling/textures/Texture.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="270" column="45" selection-start="12827" selection-end="12836" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#458#486#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/render/starling/decorator/StarlingRenderer.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="11" selection-start="3715" selection-end="3715" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/render/Assets.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="75" selection-start="703" selection-end="703" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/entities/camera/decorator/DynamicBackground.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="8" selection-start="2693" selection-end="2693" vertical-scroll-proportion="0.29187396">
+        <state line="90" column="22" selection-start="3402" selection-end="3407" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#41#72#0" expanded="true" />
+            <element signature="e#40#70#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/render/starling/decorator/StarlingRendererTest.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="25" selection-start="1202" selection-end="1202" vertical-scroll-proportion="0.60749507">
+          <folding>
+            <element signature="e#41#69#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -797,7 +985,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.11086474" />
               </list>
             </option>
           </splitter-proportions>
@@ -821,7 +1009,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.11086474" />
               </list>
             </option>
           </splitter-proportions>
