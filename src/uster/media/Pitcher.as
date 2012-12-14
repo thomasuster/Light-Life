@@ -1,12 +1,12 @@
 package uster.media
 {
-import flash.events.SampleDataEvent;
-import flash.media.Sound;
-import flash.media.SoundChannel;
-import flash.media.SoundTransform;
-import flash.utils.ByteArray;
+    import flash.events.SampleDataEvent;
+    import flash.media.Sound;
+    import flash.media.SoundChannel;
+    import flash.media.SoundTransform;
+    import flash.utils.ByteArray;
 
-/**
+    /**
      * Original code from Andre Michelle (andre.michelle@gmail.com) 
      */
     internal class Pitcher implements ISoundChanger

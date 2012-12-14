@@ -1,32 +1,32 @@
 package game.entities.fixture
 {
-import Box2D.Collision.Shapes.b2PolygonShape;
-import Box2D.Common.Math.b2Vec2;
-import Box2D.Dynamics.b2Body;
-import Box2D.Dynamics.b2BodyDef;
-import Box2D.Dynamics.b2ContactListener;
-import Box2D.Dynamics.b2DebugDraw;
-import Box2D.Dynamics.b2Fixture;
-import Box2D.Dynamics.b2World;
+    import Box2D.Collision.Shapes.b2PolygonShape;
+    import Box2D.Common.Math.b2Vec2;
+    import Box2D.Dynamics.b2Body;
+    import Box2D.Dynamics.b2BodyDef;
+    import Box2D.Dynamics.b2ContactListener;
+    import Box2D.Dynamics.b2DebugDraw;
+    import Box2D.Dynamics.b2Fixture;
+    import Box2D.Dynamics.b2World;
 
-import flash.display.Sprite;
-import flash.utils.Dictionary;
-import flash.utils.getTimer;
+    import flash.display.Sprite;
+    import flash.utils.Dictionary;
+    import flash.utils.getTimer;
 
-import game.entities.IEntity;
-import game.entities.fixture.decorator.AFixtureDecorator;
-import game.entities.fixture.decorator.IFixtureEntityDecorator;
-import game.entities.fixture.decorator.decorations.CameraFollow;
-import game.entities.fixture.decorator.decorations.CullEventually;
-import game.entities.fixture.decorator.decorations.KeyboardMove;
-import game.entities.fixture.decorator.decorations.MouseLook;
-import game.entities.fixture.decorator.decorations.MoveToward;
-import game.entities.fixture.decorator.decorations.RapidFire;
+    import game.entities.IEntity;
+    import game.entities.fixture.decorator.AFixtureDecorator;
+    import game.entities.fixture.decorator.IFixtureEntityDecorator;
+    import game.entities.fixture.decorator.decorations.CameraFollow;
+    import game.entities.fixture.decorator.decorations.CullEventually;
+    import game.entities.fixture.decorator.decorations.KeyboardMove;
+    import game.entities.fixture.decorator.decorations.MouseLook;
+    import game.entities.fixture.decorator.decorations.MoveToward;
+    import game.entities.fixture.decorator.decorations.RapidFire;
 
-import render.ICamera;
-import render.IRenderer;
+    import render.ICamera;
+    import render.starling.decorator.StarlingRenderer;
 
-public class WorldManager
+    public class WorldManager
     {
         public static const SCALE:Number = 50;
         public static const FIRE:String = "fire";
@@ -38,14 +38,14 @@ public class WorldManager
         private var positionIterations:int = 10;
         private var WIDTH:int = 1024;
         private var HEIGHT:int = 768;
-        private var renderer:IRenderer;
+        private var renderer:StarlingRenderer;
         private var debugDraw:Boolean = false;
         private var hero:IFixtureEntity = new FixtureEntity(new b2Fixture());
         
         private var fixtureEntitys:Dictionary = new Dictionary(); /*b2Fixture -> IFixture */
         private var entities:Dictionary = new Dictionary(); /* IEntity -> IEntity */
         
-        public function WorldManager(camera:Sprite, renderer:IRenderer)
+        public function WorldManager(camera:Sprite, renderer:StarlingRenderer)
         {
             this.renderer = renderer;
             sprite2D = camera;

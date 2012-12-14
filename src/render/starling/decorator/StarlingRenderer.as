@@ -14,7 +14,6 @@ package render.starling.decorator
 
     import render.Assets;
     import render.IDisplayObject;
-    import render.IRenderer;
     import render.NullDisplayObject;
     import render.starling.StarlingDisplayObject;
 
@@ -23,13 +22,15 @@ package render.starling.decorator
     import starling.display.Image;
     import starling.textures.Texture;
 
-    public class StarlingRenderer implements IRenderer
+    public class StarlingRenderer
     {
         public var textureProxy:TextureProxy = new TextureProxy()
+        public var assets:Assets;
 
         private var container:DisplayObjectContainer;
         private var displayObjects:Dictionary = new Dictionary();
         private var displayObjectsByb2Fixtures:Dictionary = new Dictionary();
+
 
         public function StarlingRenderer(container:DisplayObjectContainer) {
             this.container = container;
@@ -71,7 +72,7 @@ package render.starling.decorator
             return sprite;
         }
 
-        public function addBackGround(x:Number, y:Number, width:Number, height:Number, lod:String):IDisplayObject
+        public function addBackGround(x:Number, y:Number, width:Number, height:Number, lod:int):IDisplayObject
         {
             var bitmap:Bitmap = getBitmap(lod);
             var texture:Texture = textureProxy.fromBitmap(bitmap);
@@ -100,11 +101,11 @@ package render.starling.decorator
             return displayObject;
         }
 
-        private function getBitmap(lod:String):Bitmap
+        private function getBitmap(lod:int):Bitmap
         {
             var bitmap:Bitmap;
-            if (lod in Assets.instance.stars)
-                bitmap = Assets.instance.stars[lod];
+            if (lod in assets.hasStars(lod))
+                bitmap = assets.getStars(lod);
             else
             {
                 Cc.error("StarlingRenderer.addBackGround: No texture for width: " + lod + ", rendering one...");

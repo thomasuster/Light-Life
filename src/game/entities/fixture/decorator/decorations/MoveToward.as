@@ -1,11 +1,11 @@
 package game.entities.fixture.decorator.decorations
 {
-import Box2D.Common.Math.b2Vec2;
-import Box2D.Dynamics.b2Body;
+    import Box2D.Common.Math.b2Vec2;
+    import Box2D.Dynamics.b2Body;
 
-import game.entities.fixture.decorator.AFixtureDecorator;
+    import game.entities.fixture.decorator.AFixtureDecorator;
 
-public class MoveToward extends AFixtureDecorator
+    public class MoveToward extends AFixtureDecorator
     {
         private var targetFixture:b2Body;
         private var error:Number = 0.1;

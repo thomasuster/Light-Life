@@ -1,8 +1,8 @@
 package render
 {
-import flash.utils.Dictionary;
+    import flash.utils.Dictionary;
 
-/**
+    /**
      * Composite camera. 
      */    
     public class CameraComposite implements ICamera

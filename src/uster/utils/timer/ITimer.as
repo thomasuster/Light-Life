@@ -1,8 +1,8 @@
 package uster.utils.timer
 {
-import flash.events.IEventDispatcher;
+    import flash.events.IEventDispatcher;
 
-public interface ITimer extends IEventDispatcher
+    public interface ITimer extends IEventDispatcher
 	{
 		function reset():void;
 		function start():void;

@@ -17,12 +17,12 @@
 //===========================================================
 package General{
 
-import flash.display.Sprite;
-import flash.system.System;
-import flash.text.*;
-import flash.utils.getTimer;
+    import flash.display.Sprite;
+    import flash.system.System;
+    import flash.text.*;
+    import flash.utils.getTimer;
 
-public class FpsCounter extends Sprite{
+    public class FpsCounter extends Sprite{
 		
 		//======================
 		// constructor

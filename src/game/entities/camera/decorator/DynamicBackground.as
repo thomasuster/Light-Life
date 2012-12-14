@@ -1,18 +1,18 @@
 package game.entities.camera.decorator
 {
-import com.junkbyte.console.Cc;
+    import com.junkbyte.console.Cc;
 
-import render.ICamera;
-import render.IDisplayObject;
-import render.IRenderer;
+    import render.ICamera;
+    import render.IDisplayObject;
+    import render.starling.decorator.StarlingRenderer;
 
-public class DynamicBackground extends ACameraDecorator
+    public class DynamicBackground extends ACameraDecorator
 {
     private var baseTileWidth:Number;
     private var baseTileHeight:Number;
     private var levelOfDetail:String;
     private var tiles:Object = {};
-    private var renderer:IRenderer;
+    private var renderer:StarlingRenderer;
     private var newHash:String;
     private var hashX:int;
     private var hashY:int;
@@ -22,7 +22,7 @@ public class DynamicBackground extends ACameraDecorator
     private var ratio:int = 1;
     private static const gridSize:int = 3;
 
-    public function DynamicBackground(renderer:IRenderer)
+    public function DynamicBackground(renderer:StarlingRenderer)
     {
         this.renderer = renderer;
     }
@@ -96,7 +96,7 @@ public class DynamicBackground extends ACameraDecorator
     private function addTile(tileX:int, tileY:int):IDisplayObject {
         var _x:Number = getX(tileX, newTileWidth);
         var _y:Number = getY(tileY, newTileHeight);
-        return renderer.addBackGround(_x, _y, newTileWidth, newTileHeight, String(ratio));
+        return renderer.addBackGround(_x, _y, newTileWidth, newTileHeight, ratio);
     }
 
     private function calculateNewValues():void {

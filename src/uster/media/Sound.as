@@ -1,10 +1,10 @@
 package uster.media
 {
-import flash.media.Sound;
-import flash.media.SoundChannel;
-import flash.media.SoundTransform;
+    import flash.media.Sound;
+    import flash.media.SoundChannel;
+    import flash.media.SoundTransform;
 
-public class Sound implements ISound
+    public class Sound implements ISound
     {
         private var _volume:Number = 1;
         private var _pan:Number = 0;

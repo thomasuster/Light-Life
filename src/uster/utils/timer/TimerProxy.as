@@ -1,11 +1,11 @@
 package uster.utils.timer
 {
-import flash.events.Event;
-import flash.events.EventDispatcher;
-import flash.events.TimerEvent;
-import flash.utils.Timer;
+    import flash.events.Event;
+    import flash.events.EventDispatcher;
+    import flash.events.TimerEvent;
+    import flash.utils.Timer;
 
-/**
+    /**
 	 * A Proxy for the Adobe Timer Class. All Timer's delegate to one Adobe Timer class for actual Events to allow
 	 * for time manipulation.
      * 

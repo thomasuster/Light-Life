@@ -1,8 +1,8 @@
 package uster.display._2D.progress
 {
-import flash.display.DisplayObject;
+    import flash.display.DisplayObject;
 
-public class ProgressBar implements IProgress
+    public class ProgressBar implements IProgress
 	{
 		private var displayObject:DisplayObject;
 		private var width:Number;

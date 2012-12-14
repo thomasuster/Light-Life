@@ -1,31 +1,30 @@
 package
 {
-import Box2D.Common.Math.b2Vec2;
+    import Box2D.Common.Math.b2Vec2;
 
-import com.junkbyte.console.Cc;
+    import com.junkbyte.console.Cc;
 
-import flash.display.Sprite;
-import flash.events.MouseEvent;
-import flash.geom.Point;
+    import flash.display.Sprite;
+    import flash.events.MouseEvent;
+    import flash.geom.Point;
 
-import game.entities.camera.decorator.DynamicBackground;
-import game.entities.fixture.IFixtureEntity;
-import game.entities.fixture.WorldManager;
+    import game.entities.camera.decorator.DynamicBackground;
+    import game.entities.fixture.IFixtureEntity;
+    import game.entities.fixture.WorldManager;
 
-import render.CameraComposite;
-import render.ICamera;
-import render.IRenderer;
-import render.flash.FlashCamera;
-import render.starling.StarlingCamera;
-import render.starling.decorator.StarlingRenderer;
+    import render.CameraComposite;
+    import render.ICamera;
+    import render.flash.FlashCamera;
+    import render.starling.StarlingCamera;
+    import render.starling.decorator.StarlingRenderer;
 
-import starling.core.Starling;
-import starling.display.Sprite;
-import starling.events.Event;
-import starling.events.Touch;
-import starling.events.TouchEvent;
+    import starling.core.Starling;
+    import starling.display.Sprite;
+    import starling.events.Event;
+    import starling.events.Touch;
+    import starling.events.TouchEvent;
 
-public class Game extends Sprite
+    public class Game extends Sprite
 {
     //public static var sprite2D:flash.display.Sprite;
 
@@ -67,7 +66,7 @@ public class Game extends Sprite
 
     private function onAdded ( e:Event ):void
     {
-        var renderer:IRenderer = new StarlingRenderer(this);
+        var renderer:StarlingRenderer = new StarlingRenderer(this);
         Starling.current.nativeStage.addChild(flashContainer);
         worldManager = new WorldManager(flashContainer, renderer)
 

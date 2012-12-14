@@ -1,8 +1,8 @@
 package game.entities.camera.decorator
 {
-import render.ICamera;
+    import render.ICamera;
 
-public class ACameraDecorator implements ICameraDecorator
+    public class ACameraDecorator implements ICameraDecorator
     {
         protected var decoratedCamera:ICamera;
         

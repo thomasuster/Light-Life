@@ -1,15 +1,15 @@
 package render.starling.decorator
 {
-import Box2D.Dynamics.b2Fixture;
+    import Box2D.Dynamics.b2Fixture;
 
-import game.entities.fixture.IFixtureEntity;
-import game.entities.fixture.decorator.IFixtureEntityDecorator;
+    import game.entities.fixture.IFixtureEntity;
+    import game.entities.fixture.decorator.IFixtureEntityDecorator;
 
-import render.IDisplayObject;
+    import render.IDisplayObject;
 
-import starling.display.Sprite;
+    import starling.display.Sprite;
 
-public class HeroDecorator extends Sprite implements IFixtureEntityDecorator, IDisplayObject
+    public class HeroDecorator extends Sprite implements IFixtureEntityDecorator, IDisplayObject
 	{
         private var simpleQuadDecorator:SimpleQuadDecorator;
         private var rDest:Number;

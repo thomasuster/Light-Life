@@ -16,11 +16,10 @@
 //===========================================================
 package General{
 
+    import flash.display.*;
+    import flash.events.*;
 
-import flash.display.*;
-import flash.events.*;
-
-public class Input{
+    public class Input{
 		
 		
 		//======================

@@ -1,10 +1,10 @@
 package game.entities.fixture.decorator.decorations
 {
-import Box2D.Common.Math.b2Vec2;
+    import Box2D.Common.Math.b2Vec2;
 
-import game.entities.fixture.decorator.AFixtureDecorator;
+    import game.entities.fixture.decorator.AFixtureDecorator;
 
-public class KeyboardMove extends AFixtureDecorator
+    public class KeyboardMove extends AFixtureDecorator
     {
         private var controls:Controls;
         

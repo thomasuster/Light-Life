@@ -1,22 +1,22 @@
 package
 {
-import General.FpsCounter;
+    import General.FpsCounter;
 
-import flash.display.DisplayObject;
-import flash.display.Loader;
-import flash.display.MovieClip;
-import flash.display.Sprite;
-import flash.display.StageAlign;
-import flash.display.StageScaleMode;
-import flash.events.Event;
-import flash.events.ProgressEvent;
+    import flash.display.DisplayObject;
+    import flash.display.Loader;
+    import flash.display.MovieClip;
+    import flash.display.Sprite;
+    import flash.display.StageAlign;
+    import flash.display.StageScaleMode;
+    import flash.events.Event;
+    import flash.events.ProgressEvent;
 
-import starling.core.Starling;
+    import starling.core.Starling;
 
-import uster.display._2D.progress.ProgressBar;
-import uster.display.assetManager.AssetManager;
+    import uster.display._2D.progress.ProgressBar;
+    import uster.display.assetManager.AssetManager;
 
-[SWF(width="1024", height="768", frameRate="60", backgroundColor="#000000")]
+    [SWF(width="1024", height="768", frameRate="60", backgroundColor="#000000")]
     public class LightLife extends Sprite
     {
 		private var assetManager:AssetManager = AssetManager.instance;

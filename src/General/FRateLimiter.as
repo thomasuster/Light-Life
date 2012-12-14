@@ -18,10 +18,9 @@
 
 package General{
 
+    import flash.utils.getTimer;
 
-import flash.utils.getTimer;
-
-public class FRateLimiter{
+    public class FRateLimiter{
 		
 		
 		//======================

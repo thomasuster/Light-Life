@@ -1,10 +1,10 @@
 package render.flash
 {
-import flash.display.DisplayObject;
+    import flash.display.DisplayObject;
 
-import render.ICamera;
+    import render.ICamera;
 
-public class FlashCamera implements ICamera
+    public class FlashCamera implements ICamera
     {
         private var camera:DisplayObject;
         private var _x:Number = 0;

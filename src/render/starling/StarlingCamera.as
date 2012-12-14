@@ -1,10 +1,10 @@
 package render.starling
 {
-import render.ICamera;
+    import render.ICamera;
 
-import starling.display.DisplayObject;
+    import starling.display.DisplayObject;
 
-public class StarlingCamera implements ICamera
+    public class StarlingCamera implements ICamera
     {
         private var camera:DisplayObject;
         private var _x:Number = 0;

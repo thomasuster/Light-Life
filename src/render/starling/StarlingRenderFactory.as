@@ -1,10 +1,10 @@
 package render.starling
 {
-import game.entities.fixture.IFixtureEntity;
+    import game.entities.fixture.IFixtureEntity;
 
-import render.IRenderFactory;
+    import render.IRenderFactory;
 
-public class StarlingRenderFactory implements IRenderFactory
+    public class StarlingRenderFactory implements IRenderFactory
     {
         public function StarlingRenderFactory()
         {

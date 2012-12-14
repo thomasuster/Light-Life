@@ -1,8 +1,8 @@
 package game.entities.fixture
 {
-import Box2D.Dynamics.b2Fixture;
+    import Box2D.Dynamics.b2Fixture;
 
-public class FixtureEntity implements IFixtureEntity
+    public class FixtureEntity implements IFixtureEntity
     {
         protected var _fixture:b2Fixture;
         

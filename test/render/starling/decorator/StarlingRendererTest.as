@@ -12,6 +12,8 @@ package render.starling.decorator {
     import org.hamcrest.object.equalTo;
     import org.hamcrest.object.instanceOf;
 
+    import render.Assets;
+
     import render.IDisplayObject;
 
     import starling.display.Sprite;
@@ -20,7 +22,7 @@ package render.starling.decorator {
     [RunWith("mockolate.runner.MockolateRunner")]
     public class StarlingRendererTest
     {
-        private var starlingRenderer:StarlingRenderer;
+        private var renderer:StarlingRenderer;
         private const GRID_SIZE:int = 3;
 
         [Mock(type="nice")]
@@ -29,12 +31,26 @@ package render.starling.decorator {
         [Mock(type="nice")]
         public var texture:Texture;
 
+        public var assets:Assets;
+
         [Before]
         public function setUp():void
         {
+            create();
+            inject();
+        }
+
+        private function create():void
+        {
             var container:Sprite = new Sprite();
-            starlingRenderer = new StarlingRenderer(container);
-            starlingRenderer.textureProxy = textureProxy;
+            renderer = new StarlingRenderer(container);
+            assets = new Assets();
+        }
+
+        private function inject():void
+        {
+            renderer.textureProxy = textureProxy;
+            renderer.assets = assets;
         }
 
         [Test]
@@ -48,14 +64,14 @@ package render.starling.decorator {
 
         private function addBackGround():void
         {
-            starlingRenderer.addBackGround(0,0,100,200,"1");
+            renderer.addBackGround(0,0,100,200,1);
         }
 
         [Test]
         public function backgroundShouldBeScaled():void
         {
-            var base:IDisplayObject = starlingRenderer.addBackGround(0,0,100,200,"1");
-            var bigger:IDisplayObject = starlingRenderer.addBackGround(0,0,300,400,"2");
+            var base:IDisplayObject = renderer.addBackGround(0,0,100,200,1);
+            var bigger:IDisplayObject = renderer.addBackGround(0,0,300,400,1);
 //            assertThat(base.height, equalTo(GRID_SIZE*bigger.height));
 //            assertThat(base.width, equalTo(GRID_SIZE*bigger.width));
             assertThat(base.width, equalTo(100));
