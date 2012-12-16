@@ -96,7 +96,7 @@ package game.entities.camera.decorator
     private function addTile(tileX:int, tileY:int):IDisplayObject {
         var _x:Number = getX(tileX, newTileWidth);
         var _y:Number = getY(tileY, newTileHeight);
-        return renderer.addBackGround(_x, _y, newTileWidth, newTileHeight, ratio);
+        return renderer.getStars(ratio);
     }
 
     private function calculateNewValues():void {

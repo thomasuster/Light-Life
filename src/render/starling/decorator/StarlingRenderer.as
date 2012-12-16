@@ -72,13 +72,13 @@ package render.starling.decorator
             return sprite;
         }
 
-        public function addBackGround(x:Number, y:Number, width:Number, height:Number, lod:int):IDisplayObject
+        public function getStars(lod:int):IDisplayObject
         {
-            var bitmap:Bitmap = getBitmap(lod);
+            var bitmap:Bitmap = assets.getStars(lod);
             var texture:Texture = textureProxy.fromBitmap(bitmap);
             if(texture)
             {
-                return getBackground(texture,x,y,width,height);
+                return getBackground(texture);
             }
             else
             {
@@ -87,32 +87,12 @@ package render.starling.decorator
             }
         }
 
-        private function getBackground(texture:Texture, x:Number, y:Number, width:Number, height:Number):IDisplayObject
+        private function getBackground(texture:Texture):IDisplayObject
         {
-            texture.frame.width = width;
-            texture.frame.height = height;
             var image:Image = new Image(texture);
-            image.x = x;
-            image.y = y;
-            //        image.width = width;
-            //        image.height = height;
             var displayObject:IDisplayObject = new StarlingDisplayObject().setDisplayObject(image);
             addChild(displayObject, image, 0);
             return displayObject;
-        }
-
-        private function getBitmap(lod:int):Bitmap
-        {
-            var bitmap:Bitmap;
-            if (lod in assets.hasStars(lod))
-                bitmap = assets.getStars(lod);
-            else
-            {
-                Cc.error("StarlingRenderer.addBackGround: No texture for width: " + lod + ", rendering one...");
-                //TODO RENDER BITMAP
-                bitmap = new Bitmap();
-            }
-            return bitmap;
         }
 
         public function remove(displayObject:IDisplayObject):void

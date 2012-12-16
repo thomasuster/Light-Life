@@ -1,59 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/render/starling/decorator/StarlingRenderer.as" line="153" mnemonic="S" />
+    <bookmark url="file://$PROJECT_DIR$/src/render/starling/decorator/StarlingRenderer.as" line="133" mnemonic="S" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea8edbe3-0547-4df4-85ea-c23de337193d" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\flash\projects\LightLife\src\render\IRenderer.as" afterPath="" />
-      <change type="DELETED" beforePath="C:\flash\projects\LightLife\test\game\entities\camera\decorator\NullRenderer.as" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/entities/camera/decorator/ACameraDecorator.as" afterPath="$PROJECT_DIR$/src/game/entities/camera/decorator/ACameraDecorator.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/entities/fixture/decorator/AFixtureDecorator.as" afterPath="$PROJECT_DIR$/src/game/entities/fixture/decorator/AFixtureDecorator.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/uster/display/assetManager/AssetManager.as" afterPath="$PROJECT_DIR$/src/uster/display/assetManager/AssetManager.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/render/Assets.as" afterPath="$PROJECT_DIR$/src/render/Assets.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/render/CameraComposite.as" afterPath="$PROJECT_DIR$/src/render/CameraComposite.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/entities/fixture/decorator/decorations/CameraFollow.as" afterPath="$PROJECT_DIR$/src/game/entities/fixture/decorator/decorations/CameraFollow.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controls.as" afterPath="$PROJECT_DIR$/src/Controls.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/entities/fixture/decorator/decorations/CullEventually.as" afterPath="$PROJECT_DIR$/src/game/entities/fixture/decorator/decorations/CullEventually.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/entities/camera/decorator/DynamicBackground.as" afterPath="$PROJECT_DIR$/src/game/entities/camera/decorator/DynamicBackground.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/General/FRateLimiter.as" afterPath="$PROJECT_DIR$/src/General/FRateLimiter.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/entities/fixture/FireContactListener.as" afterPath="$PROJECT_DIR$/src/game/entities/fixture/FireContactListener.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/entities/fixture/FixtureEntity.as" afterPath="$PROJECT_DIR$/src/game/entities/fixture/FixtureEntity.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/render/flash/FlashCamera.as" afterPath="$PROJECT_DIR$/src/render/flash/FlashCamera.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/General/FpsCounter.as" afterPath="$PROJECT_DIR$/src/General/FpsCounter.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game.as" afterPath="$PROJECT_DIR$/src/Game.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/render/starling/decorator/HeroDecorator.as" afterPath="$PROJECT_DIR$/src/render/starling/decorator/HeroDecorator.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/entities/camera/decorator/ICameraDecorator.as" afterPath="$PROJECT_DIR$/src/game/entities/camera/decorator/ICameraDecorator.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/entities/fixture/IFixtureEntity.as" afterPath="$PROJECT_DIR$/src/game/entities/fixture/IFixtureEntity.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/entities/fixture/decorator/IFixtureEntityDecorator.as" afterPath="$PROJECT_DIR$/src/game/entities/fixture/decorator/IFixtureEntityDecorator.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/render/IRenderFactory.as" afterPath="$PROJECT_DIR$/src/render/IRenderFactory.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/uster/media/ISoundChanger.as" afterPath="$PROJECT_DIR$/src/uster/media/ISoundChanger.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/uster/utils/timer/ITimer.as" afterPath="$PROJECT_DIR$/src/uster/utils/timer/ITimer.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/General/Input.as" afterPath="$PROJECT_DIR$/src/General/Input.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/entities/fixture/decorator/decorations/KeyboardMove.as" afterPath="$PROJECT_DIR$/src/game/entities/fixture/decorator/decorations/KeyboardMove.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LightLife.as" afterPath="$PROJECT_DIR$/src/LightLife.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/uster/display/assetManager/LoadCommand.as" afterPath="$PROJECT_DIR$/src/uster/display/assetManager/LoadCommand.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/entities/fixture/decorator/decorations/MouseLook.as" afterPath="$PROJECT_DIR$/src/game/entities/fixture/decorator/decorations/MouseLook.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/entities/fixture/decorator/decorations/MoveToward.as" afterPath="$PROJECT_DIR$/src/game/entities/fixture/decorator/decorations/MoveToward.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/uster/media/Pitcher.as" afterPath="$PROJECT_DIR$/src/uster/media/Pitcher.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/uster/display/_2D/progress/ProgressBar.as" afterPath="$PROJECT_DIR$/src/uster/display/_2D/progress/ProgressBar.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/entities/fixture/decorator/decorations/RapidFire.as" afterPath="$PROJECT_DIR$/src/game/entities/fixture/decorator/decorations/RapidFire.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/render/starling/decorator/SimpleQuadDecorator.as" afterPath="$PROJECT_DIR$/src/render/starling/decorator/SimpleQuadDecorator.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/uster/media/Sound.as" afterPath="$PROJECT_DIR$/src/uster/media/Sound.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/render/starling/StarlingCamera.as" afterPath="$PROJECT_DIR$/src/render/starling/StarlingCamera.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/render/starling/StarlingRenderFactory.as" afterPath="$PROJECT_DIR$/src/render/starling/StarlingRenderFactory.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/render/starling/decorator/StarlingRenderer.as" afterPath="$PROJECT_DIR$/src/render/starling/decorator/StarlingRenderer.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/render/starling/decorator/StarlingRendererTest.as" afterPath="$PROJECT_DIR$/test/render/starling/decorator/StarlingRendererTest.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/uster/utils/timer/TimerProxy.as" afterPath="$PROJECT_DIR$/src/uster/utils/timer/TimerProxy.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/entities/fixture/WorldManager.as" afterPath="$PROJECT_DIR$/src/game/entities/fixture/WorldManager.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="LightLife.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355472383345" ignored="false" />
-    <file path="/StarlingRendererTest.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355472290545" ignored="false" />
-    <file path="/StarlingRenderer.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355471942351" ignored="false" />
-    <file path="/fragment.js2" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355472392954" ignored="false" />
+    <file path="/StarlingRendererTest.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355643976322" ignored="false" />
+    <file path="/StarlingRenderer.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355643988864" ignored="false" />
+    <file path="/fragment.js2" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355643872543" ignored="false" />
     <file path="/DynamicBackgroundTest.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355215085215" ignored="false" />
     <file path="/Assets.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355472003619" ignored="false" />
     <file path="/StarlingDisplayObjectTest.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355078105826" ignored="false" />
@@ -125,18 +87,18 @@
       <file leaf-file-name="StarlingRenderer.as" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/render/starling/decorator/StarlingRenderer.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="106" column="29" selection-start="3943" selection-end="3949" vertical-scroll-proportion="0.0">
+            <state line="93" column="9" selection-start="3409" selection-end="3409" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StarlingRendererTest.as" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/render/starling/decorator/StarlingRendererTest.as">
+      <file leaf-file-name="DynamicBackground.as" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/game/entities/camera/decorator/DynamicBackground.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="24" selection-start="1364" selection-end="1364" vertical-scroll-proportion="1.0848126">
+            <state line="98" column="33" selection-start="2587" selection-end="2587" vertical-scroll-proportion="0.3708087">
               <folding>
-                <element signature="e#41#69#0" expanded="true" />
+                <element signature="e#45#76#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -171,10 +133,10 @@
         <option value="$PROJECT_DIR$/src/render/starling/decorator/TextureProxy.as" />
         <option value="$PROJECT_DIR$/src/render/Assets.as" />
         <option value="$PROJECT_DIR$/src/render/IRenderer.as" />
-        <option value="$PROJECT_DIR$/src/render/starling/decorator/StarlingRenderer.as" />
         <option value="$PROJECT_DIR$/src/game/entities/fixture/WorldManager.as" />
-        <option value="$PROJECT_DIR$/src/game/entities/camera/decorator/DynamicBackground.as" />
         <option value="$PROJECT_DIR$/src/Game.as" />
+        <option value="$PROJECT_DIR$/src/render/starling/decorator/StarlingRenderer.as" />
+        <option value="$PROJECT_DIR$/src/game/entities/camera/decorator/DynamicBackground.as" />
         <option value="$PROJECT_DIR$/test/render/starling/decorator/StarlingRendererTest.as" />
       </list>
     </option>
@@ -509,8 +471,8 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="FlexUnit.StarlingRendererTest.backgroundShouldGenerateMissingAssets()">
-    <configuration default="false" name="StarlingRendererTest.backgroundShouldGenerateMissingAssets()" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" temporary="true" appDescriptorForEmulator="Android" class_name="render.starling.decorator.StarlingRendererTest" emulatorAdlOptions="" method_name="backgroundShouldGenerateMissingAssets" output_log_level="null" package_name="" scope="Method">
+  <component name="RunManager" selected="FlexUnit.StarlingRendererTest.shouldReturnDisplayObject()">
+    <configuration default="false" name="StarlingRendererTest.shouldReturnDisplayObject()" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" temporary="true" appDescriptorForEmulator="Android" class_name="render.starling.decorator.StarlingRendererTest" emulatorAdlOptions="" method_name="shouldReturnDisplayObject" output_log_level="null" package_name="" scope="Method">
       <option name="BCName" value="build" />
       <option name="launcherParameters">
         <LauncherParameters>
@@ -541,6 +503,21 @@
       <method />
     </configuration>
     <configuration default="false" name="StarlingRendererTest.backgroundShouldBeScaled()" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" temporary="true" appDescriptorForEmulator="Android" class_name="render.starling.decorator.StarlingRendererTest" emulatorAdlOptions="" method_name="backgroundShouldBeScaled" output_log_level="null" package_name="" scope="Method">
+      <option name="BCName" value="build" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browserFamily" value="FIREFOX" />
+          <option name="launcherType" value="Browser" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="moduleName" value="LightLife" />
+      <option name="trusted" value="true" />
+      <RunnerSettings RunnerId="FlexDebugRunner" />
+      <ConfigurationWrapper RunnerId="FlexDebugRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="StarlingRendererTest" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" temporary="true" appDescriptorForEmulator="Android" class_name="render.starling.decorator.StarlingRendererTest" emulatorAdlOptions="" method_name="" output_log_level="null" package_name="" scope="Class">
       <option name="BCName" value="build" />
       <option name="launcherParameters">
         <LauncherParameters>
@@ -681,17 +658,19 @@
       <ConfigurationWrapper RunnerId="FlexRunner" />
       <method />
     </configuration>
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Flash App.build (LightLife)" />
-      <item index="1" class="java.lang.String" itemvalue="FlexUnit.StarlingRendererTest.backgroundShouldGenerateMissingAssets()" />
+      <item index="1" class="java.lang.String" itemvalue="FlexUnit.StarlingRendererTest.shouldReturnDisplayObject()" />
       <item index="2" class="java.lang.String" itemvalue="FlexUnit.StarlingDisplayObjectTest.setDisplayObjectShouldAdjustDimensions()" />
       <item index="3" class="java.lang.String" itemvalue="FlexUnit.StarlingRendererTest.backgroundShouldBeScaled()" />
+      <item index="4" class="java.lang.String" itemvalue="FlexUnit.StarlingRendererTest" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="FlexUnit.StarlingRendererTest.backgroundShouldGenerateMissingAssets()" />
-        <item index="1" class="java.lang.String" itemvalue="FlexUnit.StarlingRendererTest.backgroundShouldBeScaled()" />
-        <item index="2" class="java.lang.String" itemvalue="FlexUnit.StarlingDisplayObjectTest.setDisplayObjectShouldAdjustDimensions()" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="FlexUnit.StarlingRendererTest.shouldReturnDisplayObject()" />
+        <item index="1" class="java.lang.String" itemvalue="FlexUnit.StarlingRendererTest" />
+        <item index="2" class="java.lang.String" itemvalue="FlexUnit.StarlingRendererTest.backgroundShouldBeScaled()" />
+        <item index="3" class="java.lang.String" itemvalue="FlexUnit.StarlingDisplayObjectTest.setDisplayObjectShouldAdjustDimensions()" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="JUnit" default="true" selected="false">
@@ -839,7 +818,9 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/LightLife.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="40" selection-start="3336" selection-end="3336" vertical-scroll-proportion="0.0" />
+        <state line="98" column="40" selection-start="3336" selection-end="3336" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sources/PrimaryFeather-Starling-Framework-4ee83c1/starling/src/starling/display/DisplayObjectContainer.as">
@@ -882,12 +863,16 @@
     </entry>
     <entry file="jar://$PROJECT_DIR$/sources/flexunit-4.1.0-8-4.1.0.16076/flexunit/flexunit-4.1.0-8-as3_4.1.0.16076.swc!/library.swf">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1523" column="53" selection-start="72361" selection-end="72372" vertical-scroll-proportion="0.32251522" />
+        <state line="1523" column="53" selection-start="72361" selection-end="72372" vertical-scroll-proportion="0.32251522">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/render/starling/decorator/TextureProxy.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="49" selection-start="269" selection-end="269" vertical-scroll-proportion="0.28271028" />
+        <state line="11" column="49" selection-start="269" selection-end="269" vertical-scroll-proportion="0.28271028">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sources/PrimaryFeather-Starling-Framework-4ee83c1/starling/src/starling/textures/Texture.as">
@@ -901,36 +886,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/game/entities/fixture/WorldManager.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="54" selection-start="1103" selection-end="1103" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/entities/camera/decorator/DynamicBackground.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="80" selection-start="2634" selection-end="2634" vertical-scroll-proportion="0.0" />
+        <state line="26" column="54" selection-start="1103" selection-end="1103" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#36#81#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Game.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="56" selection-start="2113" selection-end="2113" vertical-scroll-proportion="0.0" />
+        <state line="69" column="56" selection-start="2113" selection-end="2113" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/render/Assets.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="40" selection-start="1055" selection-end="1055" vertical-scroll-proportion="0.0" />
+        <state line="33" column="40" selection-start="1055" selection-end="1055" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/render/starling/decorator/StarlingRenderer.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="106" column="29" selection-start="3943" selection-end="3949" vertical-scroll-proportion="0.0">
+        <state line="93" column="9" selection-start="3409" selection-end="3409" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/render/starling/decorator/StarlingRendererTest.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="24" selection-start="1364" selection-end="1364" vertical-scroll-proportion="1.0848126">
+        <state line="62" column="0" selection-start="1588" selection-end="1588" vertical-scroll-proportion="0.7810651">
           <folding>
             <element signature="e#41#69#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/entities/camera/decorator/DynamicBackground.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="33" selection-start="2587" selection-end="2587" vertical-scroll-proportion="0.3708087">
+          <folding>
+            <element signature="e#45#76#0" expanded="true" />
           </folding>
         </state>
       </provider>
