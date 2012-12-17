@@ -56,7 +56,7 @@ package render.starling.decorator {
             expect(textureProxy.fromBitmap(arg(instanceOf(Bitmap)))).returns(texture);
             var rect:Rectangle = new Rectangle();
             allow(texture.frame).returns(rect);
-            assertThat(renderer.getStars(1), instanceOf(IDisplayObject));
+            assertThat(renderer.getStars(new Rectangle()), instanceOf(IDisplayObject));
         }
     }
 }

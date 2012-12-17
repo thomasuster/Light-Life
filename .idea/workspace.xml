@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/render/starling/decorator/StarlingRenderer.as" line="133" mnemonic="S" />
+    <bookmark url="file://$PROJECT_DIR$/src/render/starling/decorator/StarlingRenderer.as" line="135" mnemonic="S" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea8edbe3-0547-4df4-85ea-c23de337193d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/entities/camera/decorator/DynamicBackground.as" afterPath="$PROJECT_DIR$/src/game/entities/camera/decorator/DynamicBackground.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/game/entities/camera/decorator/LeanRenderedBackground.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/game/entities/camera/decorator/LeanRenderedBackgroundTest.as" />
+      <change type="DELETED" beforePath="C:\flash\projects\LightLife\src\game\entities\camera\decorator\DynamicBackground.as" afterPath="" />
+      <change type="DELETED" beforePath="C:\flash\projects\LightLife\test\game\entities\camera\decorator\DynamicBackgroundTest.as" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/entities/camera/decorator/ACameraDecorator.as" afterPath="$PROJECT_DIR$/src/game/entities/camera/decorator/ACameraDecorator.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game.as" afterPath="$PROJECT_DIR$/src/Game.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/render/starling/decorator/StarlingRenderer.as" afterPath="$PROJECT_DIR$/src/render/starling/decorator/StarlingRenderer.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/render/starling/decorator/StarlingRendererTest.as" afterPath="$PROJECT_DIR$/test/render/starling/decorator/StarlingRendererTest.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -13,18 +18,23 @@
     <ignored path="LightLife.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355472383345" ignored="false" />
-    <file path="/StarlingRendererTest.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355643976322" ignored="false" />
-    <file path="/StarlingRenderer.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355643988864" ignored="false" />
-    <file path="/fragment.js2" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355643872543" ignored="false" />
-    <file path="/DynamicBackgroundTest.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355215085215" ignored="false" />
+    <file path="/StarlingRendererTest.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355723874862" ignored="false" />
+    <file path="/StarlingRenderer.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355723744898" ignored="false" />
+    <file path="/fragment.js2" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355724072520" ignored="false" />
+    <file path="/DynamicBackgroundTest.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355721796023" ignored="false" />
     <file path="/Assets.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355472003619" ignored="false" />
     <file path="/StarlingDisplayObjectTest.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355078105826" ignored="false" />
     <file path="/StarlingDisplayObject.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355078127271" ignored="false" />
-    <file path="/DynamicBackground.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355472165469" ignored="false" />
-    <file path="/a.dummy" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355472084028" ignored="false" />
+    <file path="/DynamicBackground.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355720167602" ignored="false" />
+    <file path="/a.dummy" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355722615801" ignored="false" />
     <file path="/Starling.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355215967797" ignored="false" />
     <file path="/TextureProxy.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355466889634" ignored="false" />
     <file path="/WorldManager.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355472147595" ignored="false" />
+    <file path="/BackgroundFactory.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355722685354" ignored="false" />
+    <file path="/LeanRenderedBackground.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355723807443" ignored="false" />
+    <file path="/LeanRenderedBackgroundTest.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355723848312" ignored="false" />
+    <file path="/BackgroundFactoryTest.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355722693587" ignored="false" />
+    <file path="/Game.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355724452237" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,21 +94,72 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="StarlingRenderer.as" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/render/starling/decorator/StarlingRenderer.as">
+      <file leaf-file-name="Game.as" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Game.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="93" column="9" selection-start="3409" selection-end="3409" vertical-scroll-proportion="0.0">
+            <state line="86" column="45" selection-start="2979" selection-end="2979" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#14#46#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="noname.as" pinned="false" current="false" current-in-tab="false">
+        <entry file="mock:///noname.as">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="27" selection-start="27" selection-end="27" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DynamicBackground.as" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/game/entities/camera/decorator/DynamicBackground.as">
+      <file leaf-file-name="Texture.as" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sources/PrimaryFeather-Starling-Framework-4ee83c1/starling/src/starling/textures/Texture.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="98" column="33" selection-start="2587" selection-end="2587" vertical-scroll-proportion="0.3708087">
+            <state line="110" column="0" selection-start="5059" selection-end="5059" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#45#76#0" expanded="true" />
+                <element signature="e#458#486#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TextureProxy.as" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/render/starling/decorator/TextureProxy.as">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="0" selection-start="213" selection-end="213" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StarlingRenderer.as" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/render/starling/decorator/StarlingRenderer.as">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="80" column="34" selection-start="2971" selection-end="2971" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LeanRenderedBackground.as" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/game/entities/camera/decorator/LeanRenderedBackground.as">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="38" selection-start="647" selection-end="647" vertical-scroll-proportion="0.60946745">
+              <folding>
+                <element signature="e#45#73#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WorldManager.as" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/game/entities/fixture/WorldManager.as">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="40" column="20" selection-start="1561" selection-end="1561" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#36#81#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -122,22 +183,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/game/entities/camera/decorator/DynamicBackgroundTest.as" />
-        <option value="$PROJECT_DIR$/test/game/entities/camera/decorator/NullRenderer.as" />
-        <option value="$PROJECT_DIR$/test/render/starling/StarlingDisplayObjectTest.as" />
-        <option value="$PROJECT_DIR$/src/render/starling/StarlingDisplayObject.as" />
-        <option value="$PROJECT_DIR$/test/game/entities/camera/decorator/DynamicBackgroundTest.as" />
-        <option value="$PROJECT_DIR$/sources/console_2.6/src/com/junkbyte/console/Cc.as" />
         <option value="$PROJECT_DIR$/sources/PrimaryFeather-Starling-Framework-4ee83c1/starling/src/starling/core/Starling.as" />
         <option value="$PROJECT_DIR$/test/render/starling/decorator/FlexUnitStarlingIntegration.as" />
         <option value="$PROJECT_DIR$/src/render/starling/decorator/TextureProxy.as" />
         <option value="$PROJECT_DIR$/src/render/Assets.as" />
         <option value="$PROJECT_DIR$/src/render/IRenderer.as" />
         <option value="$PROJECT_DIR$/src/game/entities/fixture/WorldManager.as" />
-        <option value="$PROJECT_DIR$/src/Game.as" />
-        <option value="$PROJECT_DIR$/src/render/starling/decorator/StarlingRenderer.as" />
+        <option value="$PROJECT_DIR$/src/game/entities/camera/decorator/ACameraDecorator.as" />
         <option value="$PROJECT_DIR$/src/game/entities/camera/decorator/DynamicBackground.as" />
+        <option value="$PROJECT_DIR$/test/game/entities/camera/decorator/DynamicBackgroundTest.as" />
+        <option value="$PROJECT_DIR$/test/game/entities/camera/decorator/BackgroundFactoryTest.as" />
+        <option value="$PROJECT_DIR$/src/game/entities/camera/decorator/BackgroundFactory.as" />
+        <option value="$PROJECT_DIR$/test/game/entities/camera/decorator/LeanRenderedBackgroundTest.as" />
         <option value="$PROJECT_DIR$/test/render/starling/decorator/StarlingRendererTest.as" />
+        <option value="$PROJECT_DIR$/src/render/starling/decorator/StarlingRenderer.as" />
+        <option value="$PROJECT_DIR$/src/Game.as" />
+        <option value="$PROJECT_DIR$/src/game/entities/camera/decorator/LeanRenderedBackground.as" />
       </list>
     </option>
   </component>
@@ -354,78 +415,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LightLife" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LightLife" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="render" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LightLife" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LightLife" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="entities" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LightLife" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LightLife" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="entities" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="decorator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LightLife" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LightLife" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope">
@@ -441,7 +430,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_directory_selection" value="$PROJECT_DIR$/test/render/starling/decorator" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/test" />
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -471,8 +460,8 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="FlexUnit.StarlingRendererTest.shouldReturnDisplayObject()">
-    <configuration default="false" name="StarlingRendererTest.shouldReturnDisplayObject()" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" temporary="true" appDescriptorForEmulator="Android" class_name="render.starling.decorator.StarlingRendererTest" emulatorAdlOptions="" method_name="shouldReturnDisplayObject" output_log_level="null" package_name="" scope="Method">
+  <component name="RunManager" selected="Flash App.build (LightLife)">
+    <configuration default="false" name="LeanRenderedBackgroundTest.onAddCameraShouldGetBackground()" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" temporary="true" appDescriptorForEmulator="Android" class_name="game.entities.camera.decorator.LeanRenderedBackgroundTest" emulatorAdlOptions="" method_name="onAddCameraShouldGetBackground" output_log_level="null" package_name="" scope="Method">
       <option name="BCName" value="build" />
       <option name="launcherParameters">
         <LauncherParameters>
@@ -487,37 +476,7 @@
       <ConfigurationWrapper RunnerId="FlexDebugRunner" />
       <method />
     </configuration>
-    <configuration default="false" name="StarlingDisplayObjectTest.setDisplayObjectShouldAdjustDimensions()" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" temporary="true" appDescriptorForEmulator="Android" class_name="render.starling.StarlingDisplayObjectTest" emulatorAdlOptions="" method_name="setDisplayObjectShouldAdjustDimensions" output_log_level="null" package_name="" scope="Method">
-      <option name="BCName" value="build" />
-      <option name="launcherParameters">
-        <LauncherParameters>
-          <option name="browserFamily" value="FIREFOX" />
-          <option name="launcherType" value="Browser" />
-          <option name="playerPath" value="FlashPlayerDebugger.exe" />
-        </LauncherParameters>
-      </option>
-      <option name="moduleName" value="LightLife" />
-      <option name="trusted" value="true" />
-      <RunnerSettings RunnerId="FlexDebugRunner" />
-      <ConfigurationWrapper RunnerId="FlexDebugRunner" />
-      <method />
-    </configuration>
-    <configuration default="false" name="StarlingRendererTest.backgroundShouldBeScaled()" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" temporary="true" appDescriptorForEmulator="Android" class_name="render.starling.decorator.StarlingRendererTest" emulatorAdlOptions="" method_name="backgroundShouldBeScaled" output_log_level="null" package_name="" scope="Method">
-      <option name="BCName" value="build" />
-      <option name="launcherParameters">
-        <LauncherParameters>
-          <option name="browserFamily" value="FIREFOX" />
-          <option name="launcherType" value="Browser" />
-          <option name="playerPath" value="FlashPlayerDebugger.exe" />
-        </LauncherParameters>
-      </option>
-      <option name="moduleName" value="LightLife" />
-      <option name="trusted" value="true" />
-      <RunnerSettings RunnerId="FlexDebugRunner" />
-      <ConfigurationWrapper RunnerId="FlexDebugRunner" />
-      <method />
-    </configuration>
-    <configuration default="false" name="StarlingRendererTest" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" temporary="true" appDescriptorForEmulator="Android" class_name="render.starling.decorator.StarlingRendererTest" emulatorAdlOptions="" method_name="" output_log_level="null" package_name="" scope="Class">
+    <configuration default="false" name="LightLife" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" temporary="true" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" output_log_level="null" package_name="" scope="Package">
       <option name="BCName" value="build" />
       <option name="launcherParameters">
         <LauncherParameters>
@@ -658,19 +617,15 @@
       <ConfigurationWrapper RunnerId="FlexRunner" />
       <method />
     </configuration>
-    <list size="5">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Flash App.build (LightLife)" />
-      <item index="1" class="java.lang.String" itemvalue="FlexUnit.StarlingRendererTest.shouldReturnDisplayObject()" />
-      <item index="2" class="java.lang.String" itemvalue="FlexUnit.StarlingDisplayObjectTest.setDisplayObjectShouldAdjustDimensions()" />
-      <item index="3" class="java.lang.String" itemvalue="FlexUnit.StarlingRendererTest.backgroundShouldBeScaled()" />
-      <item index="4" class="java.lang.String" itemvalue="FlexUnit.StarlingRendererTest" />
+      <item index="1" class="java.lang.String" itemvalue="FlexUnit.LeanRenderedBackgroundTest.onAddCameraShouldGetBackground()" />
+      <item index="2" class="java.lang.String" itemvalue="FlexUnit.LightLife" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="FlexUnit.StarlingRendererTest.shouldReturnDisplayObject()" />
-        <item index="1" class="java.lang.String" itemvalue="FlexUnit.StarlingRendererTest" />
-        <item index="2" class="java.lang.String" itemvalue="FlexUnit.StarlingRendererTest.backgroundShouldBeScaled()" />
-        <item index="3" class="java.lang.String" itemvalue="FlexUnit.StarlingDisplayObjectTest.setDisplayObjectShouldAdjustDimensions()" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="FlexUnit.LightLife" />
+        <item index="1" class="java.lang.String" itemvalue="FlexUnit.LeanRenderedBackgroundTest.onAddCameraShouldGetBackground()" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="JUnit" default="true" selected="false">
@@ -710,6 +665,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995495" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32882884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14941922" sideWeight="0.606982" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.393018" sideWeight="0.49788806" order="3" side_tool="false" content_ui="tabs" />
@@ -720,7 +676,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32882884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2497332" sideWeight="0.60177976" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -816,47 +771,11 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/LightLife.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="40" selection-start="3336" selection-end="3336" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sources/PrimaryFeather-Starling-Framework-4ee83c1/starling/src/starling/display/DisplayObjectContainer.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="426" selection-end="426" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sources/PrimaryFeather-Starling-Framework-4ee83c1/starling/src/starling/display/Sprite.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="426" selection-end="426" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sources/PrimaryFeather-Starling-Framework-4ee83c1/starling/src/starling/events/EventDispatcher.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="426" selection-end="426" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sources/PrimaryFeather-Starling-Framework-4ee83c1/starling/src/starling/display/DisplayObject.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="0" selection-start="5424" selection-end="5424" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/render/starling/decorator/FlexUnitStarlingIntegration.as">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="61" selection-start="324" selection-end="324" vertical-scroll-proportion="0.41509435">
           <folding>
             <element signature="e#40#66#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sources/PrimaryFeather-Starling-Framework-4ee83c1/starling/src/starling/core/Starling.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="26" selection-start="447" selection-end="447" vertical-scroll-proportion="0.4347826">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -868,66 +787,114 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/render/starling/decorator/TextureProxy.as">
+    <entry file="file://$PROJECT_DIR$/src/game/entities/camera/decorator/ACameraDecorator.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="49" selection-start="269" selection-end="269" vertical-scroll-proportion="0.28271028">
+        <state line="10" column="47" selection-start="308" selection-end="308" vertical-scroll-proportion="0.39076376">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sources/PrimaryFeather-Starling-Framework-4ee83c1/starling/src/starling/textures/Texture.as">
+    <entry file="file://$PROJECT_DIR$/src/render/ICamera.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="270" column="45" selection-start="12827" selection-end="12836" vertical-scroll-proportion="0.0">
+        <state line="12" column="55" selection-start="412" selection-end="412" vertical-scroll-proportion="0.52071005">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/game/entities/camera/decorator/LeanRenderedBackgroundTest.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="71" selection-start="2040" selection-end="2040" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#458#486#0" expanded="true" />
+            <element signature="e#45#73#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/entities/fixture/WorldManager.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="54" selection-start="1103" selection-end="1103" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#36#81#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="56" selection-start="2113" selection-end="2113" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/render/Assets.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="40" selection-start="1055" selection-end="1055" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/render/starling/decorator/StarlingRenderer.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="9" selection-start="3409" selection-end="3409" vertical-scroll-proportion="0.0">
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/render/starling/decorator/StarlingRendererTest.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="0" selection-start="1588" selection-end="1588" vertical-scroll-proportion="0.7810651">
+        <state line="58" column="55" selection-start="1551" selection-end="1551" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#41#69#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/entities/camera/decorator/DynamicBackground.as">
+    <entry file="file://$PROJECT_DIR$/sources/PrimaryFeather-Starling-Framework-4ee83c1/starling/src/starling/core/Starling.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="33" selection-start="2587" selection-end="2587" vertical-scroll-proportion="0.3708087">
+        <state line="250" column="0" selection-start="12095" selection-end="12095" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#45#76#0" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/PrimaryFeather-Starling-Framework-4ee83c1/starling/src/starling/display/DisplayObjectContainer.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="329" column="0" selection-start="13486" selection-end="13486" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/PrimaryFeather-Starling-Framework-4ee83c1/starling/src/starling/events/EventDispatcher.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="105" column="68" selection-start="4788" selection-end="4788" vertical-scroll-proportion="0.20315582">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/entities/fixture/WorldManager.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="20" selection-start="1561" selection-end="1561" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#36#81#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/render/Assets.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="70" selection-start="403" selection-end="403" vertical-scroll-proportion="-0.24822696">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="86" column="45" selection-start="2979" selection-end="2979" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#14#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/PrimaryFeather-Starling-Framework-4ee83c1/starling/src/starling/textures/Texture.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="110" column="0" selection-start="5059" selection-end="5059" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#458#486#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/render/starling/decorator/TextureProxy.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="213" selection-end="213" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/render/starling/decorator/StarlingRenderer.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="80" column="34" selection-start="2971" selection-end="2971" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/entities/camera/decorator/LeanRenderedBackground.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="38" selection-start="647" selection-end="647" vertical-scroll-proportion="0.60946745">
+          <folding>
+            <element signature="e#45#73#0" expanded="true" />
           </folding>
         </state>
       </provider>

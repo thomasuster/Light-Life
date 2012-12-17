@@ -7,6 +7,7 @@ package render.starling.decorator
     import com.junkbyte.console.Cc;
 
     import flash.display.Bitmap;
+    import flash.geom.Rectangle;
     import flash.utils.Dictionary;
 
     import game.entities.fixture.IFixtureEntity;
@@ -72,8 +73,9 @@ package render.starling.decorator
             return sprite;
         }
 
-        public function getStars(lod:int):IDisplayObject
+        public function getStars(rect:Rectangle):IDisplayObject
         {
+            var lod:int = 1;
             var bitmap:Bitmap = assets.getStars(lod);
             var texture:Texture = textureProxy.fromBitmap(bitmap);
             if(texture)

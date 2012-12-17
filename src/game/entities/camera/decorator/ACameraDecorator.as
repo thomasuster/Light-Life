@@ -4,15 +4,11 @@ package game.entities.camera.decorator
 
     public class ACameraDecorator implements ICameraDecorator
     {
-        protected var decoratedCamera:ICamera;
-        
-        public function ACameraDecorator()
-        {
-        }
+        protected var camera:ICamera;
         
         public function add(decoratedCamera:ICamera):void
         {
-            this.decoratedCamera = decoratedCamera;   
+            this.camera = decoratedCamera;
         }
         
         public function update():void
@@ -30,52 +26,52 @@ package game.entities.camera.decorator
         
         public function set zoom(value:Number):void
         {
-            decoratedCamera.zoom = value;
+            camera.zoom = value;
         }
         
         public function get zoom():Number
         {
-            return decoratedCamera.zoom;
+            return camera.zoom;
         }
         
         public function get height():Number
         {
-            return decoratedCamera.height;
+            return camera.height;
         }
         
         public function set height(value:Number):void
         {
-            decoratedCamera.height = value;
+            camera.height = value;
         }
         
         public function get width():Number
         {
-            return decoratedCamera.width;
+            return camera.width;
         }
         
         public function set width(value:Number):void
         {
-            decoratedCamera.width = value;
+            camera.width = value;
         }
         
         public function get y():Number
         {
-            return decoratedCamera.y;
+            return camera.y;
         }
         
         public function set y(value:Number):void
         {
-            decoratedCamera.y = value;
+            camera.y = value;
         }
         
         public function get x():Number
         {
-            return decoratedCamera.x;
+            return camera.x;
         }
         
         public function set x(value:Number):void
         {
-            decoratedCamera.x = x;
+            camera.x = x;
         }
     }
 }
