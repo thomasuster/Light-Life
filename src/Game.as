@@ -80,8 +80,10 @@ package
 
         private function addRendering():StarlingRenderer
         {
-            var renderer:StarlingRenderer = new StarlingRenderer(this);
+            var renderer:StarlingRenderer = new StarlingRenderer();
+            renderer.container = this;
             renderer.assets = new Assets();
+            renderer.init();
             Starling.current.nativeStage.addChild(flashContainer);
             worldManager = new WorldManager(flashContainer, renderer)
             return renderer;

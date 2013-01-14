@@ -41,7 +41,7 @@ package game.entities.camera.decorator {
 
             injectCameraProperties();
             var captured:Capture = new Capture();
-            expect(backgroundFactory.getStars(arg(capture(captured))));
+            expect(backgroundFactory.renderStars(arg(capture(captured))));
             background.update();
             const rect:Rectangle = captured.value;
             assertBackgroundHasCameraProperties(rect);

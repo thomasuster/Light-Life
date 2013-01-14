@@ -27,14 +27,23 @@ package render.starling.decorator
     {
         public var textureProxy:TextureProxy = new TextureProxy()
         public var assets:Assets;
+        public var container:DisplayObjectContainer;
 
-        private var container:DisplayObjectContainer;
         private var displayObjects:Dictionary = new Dictionary();
         private var displayObjectsByb2Fixtures:Dictionary = new Dictionary();
+        private var image:Image;
 
+        public function init():void
+        {
+            image = makeImage();
+        }
 
-        public function StarlingRenderer(container:DisplayObjectContainer) {
-            this.container = container;
+        private function makeImage():Image
+        {
+            var texture:Texture = getStarsTexture();
+            const _image:Image = new Image(texture);
+            container.addChild(_image);
+            return _image;
         }
 
         public function addDrawHero(fixtureEntity:IFixtureEntity):IFixtureEntity
@@ -73,28 +82,17 @@ package render.starling.decorator
             return sprite;
         }
 
-        public function getStars(rect:Rectangle):IDisplayObject
+        public function renderStars(rect:Rectangle):void
         {
-            var lod:int = 1;
-            var bitmap:Bitmap = assets.getStars(lod);
-            var texture:Texture = textureProxy.fromBitmap(bitmap);
-            if(texture)
-            {
-                return getBackground(texture);
-            }
-            else
-            {
-                Cc.error("StarlingRenderer.addBackGround: Unable to create texture.");
-                return new NullDisplayObject();
-            }
+            var texture:Texture = getStarsTexture();
+            image.texture = texture;
         }
 
-        private function getBackground(texture:Texture):IDisplayObject
+        private function getStarsTexture():Texture
         {
-            var image:Image = new Image(texture);
-            var displayObject:IDisplayObject = new StarlingDisplayObject().setDisplayObject(image);
-            addChild(displayObject, image, 0);
-            return displayObject;
+            var bitmap:Bitmap = assets.getStars(0);
+            var texture:Texture = textureProxy.fromBitmap(bitmap);
+            return texture;
         }
 
         public function remove(displayObject:IDisplayObject):void
@@ -103,7 +101,6 @@ package render.starling.decorator
             delete displayObjects[displayObject];
         }
 
-        //Fixture add/remove
         private function addFixtureChild(fixture:b2Fixture, displayObject:IDisplayObject, starlingDisplayObject:DisplayObject):void
         {
             displayObjectsByb2Fixtures[fixture] = displayObject;
@@ -141,5 +138,7 @@ package render.starling.decorator
             }
             delete displayObjects[displayObject];
         }
+
+
     }
 }

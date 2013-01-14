@@ -5,13 +5,19 @@ package render.starling.decorator {
 
     import mockolate.allow;
     import mockolate.arg;
+    import mockolate.capture;
     import mockolate.expect;
+    import mockolate.ingredients.Capture;
 
     import org.flexunit.assertThat;
     import org.hamcrest.object.instanceOf;
+    import org.hamcrest.object.notNullValue;
 
     import render.Assets;
     import render.IDisplayObject;
+
+    import starling.display.DisplayObject;
+    import starling.display.Image;
 
     import starling.display.Sprite;
     import starling.textures.Texture;
@@ -28,6 +34,8 @@ package render.starling.decorator {
         [Mock(type="nice")]
         public var texture:Texture;
 
+        public var container:Sprite;
+
         public var assets:Assets;
 
         [Before]
@@ -35,28 +43,52 @@ package render.starling.decorator {
         {
             create();
             inject();
+            expectTexture();
+            renderer.init();
         }
 
         private function create():void
         {
-            var container:Sprite = new Sprite();
-            renderer = new StarlingRenderer(container);
+            container = new Sprite();
+            renderer = new StarlingRenderer();
             assets = new Assets();
         }
 
         private function inject():void
         {
+            renderer.container = container;
             renderer.textureProxy = textureProxy;
             renderer.assets = assets;
         }
 
-        [Test]
-        public function shouldReturnDisplayObject():void
+        private function expectTexture():void
         {
-            expect(textureProxy.fromBitmap(arg(instanceOf(Bitmap)))).returns(texture);
+            expect(textureProxy.fromBitmap(arg(instanceOf(Bitmap)))).returns(texture).once();
+        }
+
+        [Test]
+        public function renderStarsShouldAddToStage():void
+        {
+            expectTexture();
             var rect:Rectangle = new Rectangle();
-            allow(texture.frame).returns(rect);
-            assertThat(renderer.getStars(new Rectangle()), instanceOf(IDisplayObject));
+            renderer.renderStars(rect);
+            var background:DisplayObject = getBackgroundByTexture(texture);
+            assertThat(background, notNullValue());
+        }
+
+        private function getBackgroundByTexture(texture:Texture):DisplayObject
+        {
+            for (var i:int = 0; i < container.numChildren; i++)
+            {
+                var displayObject:DisplayObject = container.getChildAt(i);
+                if(displayObject is Image)
+                {
+                    var image:Image = displayObject as Image;
+                    if(image.texture == texture)
+                        return image;
+                }
+            }
+            return null;
         }
     }
 }
