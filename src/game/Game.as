@@ -1,4 +1,4 @@
-package
+package game
 {
     import Box2D.Common.Math.b2Vec2;
 
@@ -13,14 +13,12 @@ package
     import game.entities.fixture.WorldManager;
 
     import render.Assets;
-
     import render.CameraComposite;
     import render.ICamera;
     import render.flash.FlashCamera;
     import render.starling.StarlingCamera;
     import render.starling.decorator.StarlingRenderer;
 
-    import starling.core.Starling;
     import starling.display.Sprite;
     import starling.events.Event;
     import starling.events.Touch;
@@ -28,6 +26,10 @@ package
 
     public class Game extends Sprite
     {
+        public var starlingStage:StarlingStageProxy;
+        public var flashStage:FlashStageProxy;
+        public var renderer:StarlingRenderer = new StarlingRenderer();
+
         private var controls:Controls = new Controls();
         private var worldManager:WorldManager;
         private var hero:IFixtureEntity;
@@ -38,7 +40,14 @@ package
 
         public function Game()
         {
-            //Console integration
+            starlingStage = new StarlingStageProxy(this);
+            flashStage = new FlashStageProxy();
+            configureConsole();
+            addEventListener(Event.ADDED_TO_STAGE, onAdded);
+        }
+
+        public function configureConsole():void
+        {
             Cc.config.style.backgroundColor = 0x000000;
             Cc.config.commandLineAllowed = true // Enables full commandLine features
             Cc.config.tracing = true; // also send traces to flash's normal trace()
@@ -47,9 +56,7 @@ package
             Cc.startOnStage(flashContainer, "`");
             Cc.addMenu("Debug Draw", debugDraw);
             Cc.width = LightLife.WIDTH;
-            Cc.height = 1/(1.61*2) * LightLife.HEIGHT;
-
-            addEventListener(Event.ADDED_TO_STAGE, onAdded);
+            Cc.height = 1 / (1.61 * 2) * LightLife.HEIGHT;
         }
 
         private function debugDraw():void
@@ -67,32 +74,30 @@ package
 
         private function initRendering():void
         {
-            var renderer:StarlingRenderer = addRendering();
+            configureRenderer();
             var cameraComposite:CameraComposite = create();
             addBackground(renderer, cameraComposite);
         }
 
         private function initControls():void
         {
-            controls.init(stage, Starling.current.nativeStage);
+            controls.init(starlingStage.getStage(), flashStage.getStage());
             controls.addEventListener(MouseEvent.MOUSE_WHEEL, controls_mouseWheelHandler);
         }
 
-        private function addRendering():StarlingRenderer
+        private function configureRenderer():void
         {
-            var renderer:StarlingRenderer = new StarlingRenderer();
             renderer.container = this;
             renderer.assets = new Assets();
             renderer.init();
-            Starling.current.nativeStage.addChild(flashContainer);
+            flashStage.getStage().addChild(flashContainer);
             worldManager = new WorldManager(flashContainer, renderer)
-            return renderer;
         }
 
         private function setEventListeners():void
         {
-            stage.addEventListener(TouchEvent.TOUCH, onTouch);
-            stage.addEventListener(Event.ENTER_FRAME, onFrame);
+            starlingStage.getStage().addEventListener(TouchEvent.TOUCH, onTouch);
+            starlingStage.getStage().addEventListener(Event.ENTER_FRAME, onFrame);
         }
 
         private function addConsoleCommands():void

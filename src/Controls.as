@@ -1,5 +1,6 @@
 package
 {
+    import flash.display.DisplayObject;
     import flash.display.Stage;
     import flash.events.EventDispatcher;
     import flash.events.MouseEvent;
@@ -76,7 +77,7 @@ package
             return _left;
         }
         
-        public function init(stage:starling.display.Stage, flashStage:flash.display.Stage):void
+        public function init(stage:starling.display.DisplayObject, flashStage:DisplayObject):void
         {
             stage.addEventListener(KeyboardEvent.KEY_UP, stage_keyUpHandler);
             stage.addEventListener(KeyboardEvent.KEY_DOWN, stage_keyDownHandler);

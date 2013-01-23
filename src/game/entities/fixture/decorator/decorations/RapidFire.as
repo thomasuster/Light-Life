@@ -2,6 +2,8 @@ package game.entities.fixture.decorator.decorations
 {
     import Box2D.Common.Math.b2Vec2;
 
+    import game.Game;
+
     import game.entities.fixture.IFixtureEntity;
     import game.entities.fixture.WorldManager;
     import game.entities.fixture.decorator.AFixtureDecorator;

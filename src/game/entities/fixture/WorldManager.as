@@ -13,6 +13,8 @@ package game.entities.fixture
     import flash.utils.Dictionary;
     import flash.utils.getTimer;
 
+    import game.Game;
+
     import game.entities.IEntity;
     import game.entities.fixture.decorator.AFixtureDecorator;
     import game.entities.fixture.decorator.IFixtureEntityDecorator;

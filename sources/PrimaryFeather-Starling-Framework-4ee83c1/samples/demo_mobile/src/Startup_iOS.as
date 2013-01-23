@@ -8,7 +8,9 @@ package
     import flash.events.Event;
     import flash.geom.Rectangle;
     import flash.system.Capabilities;
-    
+
+    import game.Game;
+
     import starling.core.Starling;
     
     [SWF(width="320", height="480", frameRate="30", backgroundColor="#000000")]

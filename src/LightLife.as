@@ -11,6 +11,8 @@ package
     import flash.events.Event;
     import flash.events.ProgressEvent;
 
+    import game.Game;
+
     import starling.core.Starling;
 
     import uster.display._2D.progress.ProgressBar;

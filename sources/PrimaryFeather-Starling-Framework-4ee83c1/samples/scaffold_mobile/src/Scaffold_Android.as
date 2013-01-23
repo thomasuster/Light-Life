@@ -6,7 +6,9 @@ package
     import flash.display.StageScaleMode;
     import flash.events.Event;
     import flash.geom.Rectangle;
-    
+
+    import game.Game;
+
     import starling.core.Starling;
     
     [SWF(frameRate="30", backgroundColor="#000")]
