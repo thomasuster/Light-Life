@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="Flex" version="4">
-  <component name="FlexBuildConfigurationManager" active="build">
+  <component name="FlexBuildConfigurationManager" active="localhost">
     <configurations>
-      <configuration name="build" main-class="LightLife" output-file="LightLife.swf" output-folder="$MODULE_DIR$/bin-debug" use-html-wrapper="true" wrapper-template-path="$MODULE_DIR$/html-template">
+      <configuration name="localhost" main-class="LightLife" output-file="LightLife.swf" output-folder="$MODULE_DIR$/bin-debug" use-html-wrapper="true" wrapper-template-path="$MODULE_DIR$/html-template">
         <dependencies target-player="11.2" framework-linkage="Merged">
           <entries>
             <entry library-id="0f280698-d4de-4463-b10e-de8d6db599cc">

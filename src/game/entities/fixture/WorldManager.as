@@ -13,8 +13,7 @@ package game.entities.fixture
     import flash.utils.Dictionary;
     import flash.utils.getTimer;
 
-    import game.Game;
-
+    import game.GameStarter;
     import game.entities.IEntity;
     import game.entities.fixture.decorator.AFixtureDecorator;
     import game.entities.fixture.decorator.IFixtureEntityDecorator;
@@ -30,31 +29,26 @@ package game.entities.fixture
 
     public class WorldManager
     {
+        public var renderer:StarlingRenderer;
+        public var sprite2D:Sprite;
+
         public static const SCALE:Number = 50;
         public static const FIRE:String = "fire";
-        
+
         private var world:b2World;
-        private var sprite2D:Sprite;
         private var timeStep:Number = 1.0/30.0;
         private var velocityIterations:int = 10;
         private var positionIterations:int = 10;
         private var WIDTH:int = 1024;
         private var HEIGHT:int = 768;
-        private var renderer:StarlingRenderer;
+
         private var debugDraw:Boolean = false;
         private var hero:IFixtureEntity = new FixtureEntity(new b2Fixture());
         
         private var fixtureEntitys:Dictionary = new Dictionary(); /*b2Fixture -> IFixture */
         private var entities:Dictionary = new Dictionary(); /* IEntity -> IEntity */
         
-        public function WorldManager(camera:Sprite, renderer:StarlingRenderer)
-        {
-            this.renderer = renderer;
-            sprite2D = camera;
-            createWorld();
-        }
-        
-        private function createWorld():void
+        public function createWorld():void
         {
             var gravity:b2Vec2 = new b2Vec2(0, 0);
             var doSleep:Boolean = true;
@@ -142,7 +136,7 @@ package game.entities.fixture
             renderer.addSimpleQuadDecorator(new FixtureEntity(fixture), "", 0xAABBDD);
         }
         
-        public function createHero(controls:Controls, camera:ICamera, game:Game):IFixtureEntity
+        public function createHero(controls:Controls, camera:ICamera, game:GameStarter):IFixtureEntity
         {
             var fixture:b2Fixture = createFixture(0, 0, 100, 100, b2Body.b2_dynamicBody);
             
@@ -164,12 +158,10 @@ package game.entities.fixture
         public function createBadGuy():IFixtureEntity
         {
             var fixture:b2Fixture = createFixture(10, 10, 133, 133, b2Body.b2_dynamicBody);
-            
             var fixtureEntity:IFixtureEntity = new FixtureEntity(fixture);
             fixtureEntity = renderer.addBadGuy(fixtureEntity);
             var decoration:AFixtureDecorator = new MoveToward(hero.fixture.GetBody());
             decoration.add(fixtureEntity);
-            
             fixtureEntitys[fixture] = decoration;
             return decoration;
         }

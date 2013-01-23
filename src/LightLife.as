@@ -11,7 +11,7 @@ package
     import flash.events.Event;
     import flash.events.ProgressEvent;
 
-    import game.Game;
+    import game.GameStarter;
 
     import starling.core.Starling;
 
@@ -98,7 +98,7 @@ package
             //Game.sprite2D = nativeOverlay;
             
 			// create our Starling instance
-			mStarling = new Starling(Game, stage);
+			mStarling = new Starling(GameStarter, stage);
             
 			// set anti-aliasing (higher is better quality but slower performance)
 			mStarling.antiAliasing = 1;

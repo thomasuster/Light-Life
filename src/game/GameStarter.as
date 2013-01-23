@@ -24,21 +24,20 @@ package game
     import starling.events.Touch;
     import starling.events.TouchEvent;
 
-    public class Game extends Sprite
+    public class GameStarter extends Sprite
     {
         public var starlingStage:StarlingStageProxy;
         public var flashStage:FlashStageProxy;
         public var renderer:StarlingRenderer = new StarlingRenderer();
+        public var worldManager:WorldManager = new WorldManager();
 
         private var controls:Controls = new Controls();
-        private var worldManager:WorldManager;
         private var hero:IFixtureEntity;
         private var flashContainer:flash.display.Sprite = new flash.display.Sprite();
-        private var badGuy:IFixtureEntity;
         private var camera:ICamera;
         private var background:LeanRenderedBackground;
 
-        public function Game()
+        public function GameStarter()
         {
             starlingStage = new StarlingStageProxy(this);
             flashStage = new FlashStageProxy();
@@ -91,7 +90,9 @@ package game
             renderer.assets = new Assets();
             renderer.init();
             flashStage.getStage().addChild(flashContainer);
-            worldManager = new WorldManager(flashContainer, renderer)
+            worldManager.renderer = renderer;
+            worldManager.sprite2D = flashContainer;
+            worldManager.createWorld();
         }
 
         private function setEventListeners():void
@@ -121,7 +122,7 @@ package game
             hero = worldManager.createHero(controls, cameraComposite, this);
             for (var i:int = 0; i < 7; i++)
             {
-                //                badGuy = worldManager.createBadGuy();
+                worldManager.createBadGuy();
             }
             return cameraComposite;
         }

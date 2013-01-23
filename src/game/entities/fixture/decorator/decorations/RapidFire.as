@@ -2,7 +2,7 @@ package game.entities.fixture.decorator.decorations
 {
     import Box2D.Common.Math.b2Vec2;
 
-    import game.Game;
+    import game.GameStarter;
 
     import game.entities.fixture.IFixtureEntity;
     import game.entities.fixture.WorldManager;
@@ -16,10 +16,10 @@ package game.entities.fixture.decorator.decorations
         private var fireStarted:Boolean = false;
         private var rateCounter:int = 0; 
         private var rate:int = 1;
-        private var _game:Game;
+        private var _game:GameStarter;
         private var speed:Number = 7.5/2;
 
-        public function RapidFire(controls:Controls, worldManager:WorldManager, game:Game)
+        public function RapidFire(controls:Controls, worldManager:WorldManager, game:GameStarter)
         {
             this.controls = controls;
             this.worldManager = worldManager;

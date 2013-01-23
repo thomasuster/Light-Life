@@ -2,7 +2,13 @@ package game
 {
     import flash.display.Sprite;
 
+    import game.entities.fixture.WorldManager;
+
     import mockolate.allow;
+    import mockolate.expect;
+
+    import org.hamcrest.assertThat;
+    import org.hamcrest.number.greaterThan;
 
     import render.starling.decorator.StarlingRenderer;
 
@@ -10,7 +16,7 @@ package game
     import starling.events.Event;
 
     [RunWith("mockolate.runner.MockolateRunner")]
-    public class GameTest
+    public class GameStarterTest
     {
         [Mock(type="nice")]
         public var starlingStage:StarlingStageProxy;
@@ -18,23 +24,32 @@ package game
         public var flashStage:FlashStageProxy;
         [Mock(type="nice")]
         public var renderer:StarlingRenderer;
+        [Mock(type="nice")]
+        public var worldManager:WorldManager;
 
-        private var myGame:Game;
+        private var myGame:GameStarter;
 
         [Before]
         public function setup():void
         {
-            myGame = new Game();
+            myGame = new GameStarter();
+            inject();
+            allow(starlingStage.getStage()).returns(new starling.display.Sprite());
+            allow(flashStage.getStage()).returns(new flash.display.Sprite());
+        }
+
+        public function inject():void
+        {
             myGame.starlingStage = starlingStage;
             myGame.flashStage = flashStage;
             myGame.renderer = renderer;
-            allow(starlingStage.getStage()).returns(new starling.display.Sprite());
-            allow(flashStage.getStage()).returns(new flash.display.Sprite());
+            myGame.worldManager = worldManager;
         }
 
         [Test]
         public function onAddedToStageGameShouldCreateBadGuys():void
         {
+            expect(worldManager.createBadGuy()).atLeast(1);
             myGame.dispatchEvent(new Event(Event.ADDED_TO_STAGE));
         }
     }
