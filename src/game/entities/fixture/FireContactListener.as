@@ -22,7 +22,7 @@ package game.entities.fixture
         override public function BeginContact(contact:b2Contact):void
         {
             var fixtures:Array = [contact.GetFixtureA(), contact.GetFixtureB()];
-            for each (var fixture:b2Fixture in fixtures) 
+            for each (var fixture:b2Fixture in fixtures)
             {
                 if(fixture.GetUserData() == WorldManager.FIRE)
                 {

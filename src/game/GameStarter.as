@@ -120,7 +120,7 @@ package game
             cameraComposite.height = LightLife.HEIGHT;
 
             hero = worldManager.createHero(controls, cameraComposite, this);
-            for (var i:int = 0; i < 7; i++)
+            for (var i:int = 0; i < 50; i++)
             {
                 worldManager.createBadGuy();
             }
