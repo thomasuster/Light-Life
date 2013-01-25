@@ -62,6 +62,7 @@ package render.starling.decorator
 
             addFixtureChild(fixtureEntity.fixture, sprite, sprite);
             return sprite;
+            return null;
         }
 
         public function addSimpleQuadDecorator(fixtureEntity:IFixtureEntity, name:String="", color:uint=0xFF5555):IFixtureEntity

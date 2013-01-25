@@ -27,43 +27,33 @@ package game
     public class GameStarter extends Sprite
     {
         public var starlingStage:StarlingStageProxy;
-        public var flashStage:FlashStageProxy;
         public var renderer:StarlingRenderer = new StarlingRenderer();
-        public var worldManager:WorldFactory = new WorldFactory();
+        public var worldFactory:WorldFactory = new WorldFactory();
 
         private var controls:Controls = new Controls();
         private var hero:IFixtureEntity;
-        private var flashContainer:flash.display.Sprite = new flash.display.Sprite();
         private var camera:ICamera;
         private var background:LeanRenderedBackground;
+
+        private var flashContainer:flash.display.Sprite = new flash.display.Sprite();
+        public var flashStage:FlashStageProxy;
 
         public function GameStarter()
         {
             starlingStage = new StarlingStageProxy(this);
             flashStage = new FlashStageProxy();
-            configureConsole();
-            addEventListener(Event.ADDED_TO_STAGE, onAdded);
-        }
 
-        public function configureConsole():void
-        {
-            Cc.config.style.backgroundColor = 0x000000;
-            Cc.config.commandLineAllowed = true // Enables full commandLine features
-            Cc.config.tracing = true; // also send traces to flash's normal trace()
-            Cc.config.maxLines = 2000; // change maximum log lines to 2000, default is 1000
-            Cc.config.rememberFilterSettings = true;
-            Cc.startOnStage(flashContainer, "`");
-            Cc.addMenu("Debug Draw", debugDraw);
-            Cc.width = LightLife.WIDTH;
-            Cc.height = 1 / (1.61 * 2) * LightLife.HEIGHT;
+            CcConfig.config(flashContainer, debugDraw);
+
+            addEventListener(Event.ADDED_TO_STAGE, onAdded);
         }
 
         private function debugDraw():void
         {
-            worldManager.toggleDebug();
+            worldFactory.toggleDebug();
         }
 
-        private function onAdded ( e:Event ):void
+        private function onAdded (e:Event):void
         {
             setEventListeners();
             initControls();
@@ -89,10 +79,12 @@ package game
             renderer.container = this;
             renderer.assets = new Assets();
             renderer.init();
+
             flashStage.getStage().addChild(flashContainer);
-            worldManager.renderer = renderer;
-            worldManager.sprite2D = flashContainer;
-            worldManager.createWorld();
+
+            worldFactory.renderer = renderer;
+            worldFactory.sprite2D = flashContainer;
+            worldFactory.createWorld();
         }
 
         private function setEventListeners():void
@@ -103,13 +95,13 @@ package game
 
         private function addConsoleCommands():void
         {
-            Cc.addSlashCommand("spawnBadGuy", worldManager.createBadGuy);
+            Cc.addSlashCommand("spawnBadGuy", worldFactory.createBadGuy);
             Cc.commandLine = true;
         }
 
         private function create():CameraComposite
         {
-            worldManager.createBounds();
+            worldFactory.createBounds();
             var flashCamera:FlashCamera = new FlashCamera(flashContainer);
             var starlingCamera:StarlingCamera = new StarlingCamera(this);
             var cameraComposite:CameraComposite;
@@ -119,10 +111,10 @@ package game
             cameraComposite.width = LightLife.WIDTH;
             cameraComposite.height = LightLife.HEIGHT;
 
-            hero = worldManager.createHero(controls, cameraComposite, this);
+            hero = worldFactory.createHero(controls, cameraComposite, this);
             for (var i:int = 0; i < 50; i++)
             {
-                worldManager.createBadGuy();
+                worldFactory.createBadGuy();
             }
             return cameraComposite;
         }
@@ -146,16 +138,14 @@ package game
 
         private function onFrame (e:Event):void
         {
-            worldManager.update();
+            worldFactory.update();
             background.update();
         }
 
         private function onTouch(e:TouchEvent):void
         {
-            // get the mouse location related to the stage
             var touch:Touch = e.getTouch(stage);
             var pos:Point = touch.getLocation(stage);
-            // store the mouse coordinates
             controls.mouseX = pos.x;
             controls.mouseY = pos.y;
         }

@@ -7,9 +7,6 @@ package game
     import mockolate.allow;
     import mockolate.expect;
 
-    import org.hamcrest.assertThat;
-    import org.hamcrest.number.greaterThan;
-
     import render.starling.decorator.StarlingRenderer;
 
     import starling.display.Sprite;
@@ -19,37 +16,39 @@ package game
     public class GameStarterTest
     {
         [Mock(type="nice")]
-        public var starlingStage:StarlingStageProxy;
+        public var starlingStageProxy:StarlingStageProxy;
         [Mock(type="nice")]
-        public var flashStage:FlashStageProxy;
+        public var flashStageProxy:FlashStageProxy;
         [Mock(type="nice")]
         public var renderer:StarlingRenderer;
         [Mock(type="nice")]
-        public var worldManager:WorldFactory;
+        public var worldFactory:WorldFactory;
 
         private var myGame:GameStarter;
+
+        private var starlingStage:starling.display.Sprite = new starling.display.Sprite();
 
         [Before]
         public function setup():void
         {
             myGame = new GameStarter();
             inject();
-            allow(starlingStage.getStage()).returns(new starling.display.Sprite());
-            allow(flashStage.getStage()).returns(new flash.display.Sprite());
+            allow(starlingStageProxy.getStage()).returns(starlingStage);
+            allow(flashStageProxy.getStage()).returns(new flash.display.Sprite());
         }
 
         public function inject():void
         {
-            myGame.starlingStage = starlingStage;
-            myGame.flashStage = flashStage;
+            myGame.starlingStage = starlingStageProxy;
+            myGame.flashStage = flashStageProxy;
             myGame.renderer = renderer;
-            myGame.worldManager = worldManager;
+            myGame.worldFactory = worldFactory;
         }
 
         [Test]
         public function onAddedToStageGameShouldCreateBadGuys():void
         {
-            expect(worldManager.createBadGuy()).atLeast(1);
+            expect(worldFactory.createBadGuy()).atLeast(1);
             onAdded();
         }
 
@@ -61,14 +60,16 @@ package game
         [Test]
         public function onAddedShouldCreateWorld():void
         {
-            expect(worldManager.createWorld());
+            expect(worldFactory.createWorld());
             onAdded();
         }
 
         [Test]
-        public function onAddedShouldCreateFireContact():void
+        public function onAddedAndFrameShouldUpdateWorldFactory():void
         {
+            expect(worldFactory.update());
             onAdded();
+            starlingStage.dispatchEvent(new Event(Event.ENTER_FRAME));
         }
     }
 }

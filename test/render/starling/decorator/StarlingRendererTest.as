@@ -90,5 +90,11 @@ package render.starling.decorator {
             }
             return null;
         }
+
+        [Test]
+        public function addBadGuyShouldNotBeNull():void
+        {
+
+        }
     }
 }

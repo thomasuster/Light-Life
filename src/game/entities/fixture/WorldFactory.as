@@ -11,7 +11,6 @@ package game.entities.fixture
 
     import flash.display.Sprite;
     import flash.utils.Dictionary;
-    import flash.utils.getTimer;
 
     import game.GameStarter;
     import game.entities.IEntity;
