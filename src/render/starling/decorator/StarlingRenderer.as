@@ -11,7 +11,7 @@ package render.starling.decorator
     import flash.utils.Dictionary;
 
     import game.entities.fixture.IFixtureEntity;
-    import game.entities.fixture.WorldManager;
+    import game.entities.fixture.WorldFactory;
 
     import render.Assets;
     import render.IDisplayObject;
@@ -70,8 +70,8 @@ package render.starling.decorator
             var lowerBound:b2Vec2 = aabb.lowerBound.Copy();
             var upperBound:b2Vec2 = aabb.upperBound.Copy();
             upperBound.Subtract(lowerBound);
-            var width:Number = Math.abs(upperBound.x * WorldManager.SCALE);
-            var height:Number = Math.abs(upperBound.y * WorldManager.SCALE);
+            var width:Number = Math.abs(upperBound.x * WorldFactory.SCALE);
+            var height:Number = Math.abs(upperBound.y * WorldFactory.SCALE);
             var sprite:SimpleQuadDecorator = new SimpleQuadDecorator(width, height, color, name);
             var position:b2Vec2 = fixtureEntity.fixture.GetBody().GetPosition();
             sprite.add(fixtureEntity);

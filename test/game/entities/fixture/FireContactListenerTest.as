@@ -12,7 +12,7 @@ package game.entities.fixture
         [Mock(type="nice")]
         public var contact:b2Contact
         [Mock(type="nice")]
-        public var worldManager:WorldManager;
+        public var worldManager:WorldFactory;
 
         private var fireContactListener:FireContactListener;
 
@@ -35,7 +35,7 @@ package game.entities.fixture
         {
             allow(contact.GetFixtureA()).returns(fireFixture);
             allow(contact.GetFixtureB()).returns(new b2Fixture());
-            fireFixture.SetUserData(WorldManager.FIRE);
+            fireFixture.SetUserData(WorldFactory.FIRE);
             fireContactListener.BeginContact(contact);
         }
     }

@@ -5,13 +5,13 @@ package game.entities.fixture.decorator.decorations
     import game.GameStarter;
 
     import game.entities.fixture.IFixtureEntity;
-    import game.entities.fixture.WorldManager;
+    import game.entities.fixture.WorldFactory;
     import game.entities.fixture.decorator.AFixtureDecorator;
 
     public class RapidFire extends AFixtureDecorator
     {
         private var controls:Controls;
-        private var worldManager:WorldManager;
+        private var worldManager:WorldFactory;
         
         private var fireStarted:Boolean = false;
         private var rateCounter:int = 0; 
@@ -19,7 +19,7 @@ package game.entities.fixture.decorator.decorations
         private var _game:GameStarter;
         private var speed:Number = 7.5/2;
 
-        public function RapidFire(controls:Controls, worldManager:WorldManager, game:GameStarter)
+        public function RapidFire(controls:Controls, worldManager:WorldFactory, game:GameStarter)
         {
             this.controls = controls;
             this.worldManager = worldManager;

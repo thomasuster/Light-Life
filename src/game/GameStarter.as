@@ -10,7 +10,7 @@ package game
 
     import game.entities.camera.decorator.LeanRenderedBackground;
     import game.entities.fixture.IFixtureEntity;
-    import game.entities.fixture.WorldManager;
+    import game.entities.fixture.WorldFactory;
 
     import render.Assets;
     import render.CameraComposite;
@@ -29,7 +29,7 @@ package game
         public var starlingStage:StarlingStageProxy;
         public var flashStage:FlashStageProxy;
         public var renderer:StarlingRenderer = new StarlingRenderer();
-        public var worldManager:WorldManager = new WorldManager();
+        public var worldManager:WorldFactory = new WorldFactory();
 
         private var controls:Controls = new Controls();
         private var hero:IFixtureEntity;
@@ -162,7 +162,7 @@ package game
 
         public function cameraToWorld(x:Number, y:Number):b2Vec2
         {
-            return new b2Vec2((x + camera.x - LightLife.WIDTH/2) / (WorldManager.SCALE * camera.zoom), (y + camera.y - LightLife.HEIGHT/2) / (WorldManager.SCALE * camera.zoom));
+            return new b2Vec2((x + camera.x - LightLife.WIDTH/2) / (WorldFactory.SCALE * camera.zoom), (y + camera.y - LightLife.HEIGHT/2) / (WorldFactory.SCALE * camera.zoom));
         }
     }
 }

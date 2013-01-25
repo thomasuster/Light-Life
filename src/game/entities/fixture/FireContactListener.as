@@ -10,10 +10,10 @@ package game.entities.fixture
 
     public class FireContactListener extends b2ContactListener implements IEntity
     {
-        private var worldManager:WorldManager;
+        private var worldManager:WorldFactory;
         private var fixturesToCull:Dictionary = new Dictionary();
         
-        public function FireContactListener(worldManager:WorldManager)
+        public function FireContactListener(worldManager:WorldFactory)
         {
             this.worldManager = worldManager;
             super();
@@ -24,7 +24,7 @@ package game.entities.fixture
             var fixtures:Array = [contact.GetFixtureA(), contact.GetFixtureB()];
             for each (var fixture:b2Fixture in fixtures)
             {
-                if(fixture.GetUserData() == WorldManager.FIRE)
+                if(fixture.GetUserData() == WorldFactory.FIRE)
                 {
                     fixturesToCull[fixture] = fixture;
                 }

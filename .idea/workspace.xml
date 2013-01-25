@@ -5,10 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea8edbe3-0547-4df4-85ea-c23de337193d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/game/entities/fixture/FireContactListenerTest.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/game/entities/fixture/WorldFactoryTest.as" />
+      <change type="DELETED" beforePath="C:\flash\projects\LightLife\test\game\entities\fixture\WorldManagerTest.as" afterPath="" />
+      <change type="MOVED" beforePath="C:\flash\projects\LightLife\src\game\entities\fixture\WorldManager.as" afterPath="$PROJECT_DIR$/src/game/entities/fixture/WorldFactory.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/entities/fixture/decorator/decorations/CameraFollow.as" afterPath="$PROJECT_DIR$/src/game/entities/fixture/decorator/decorations/CameraFollow.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/entities/fixture/decorator/decorations/CullEventually.as" afterPath="$PROJECT_DIR$/src/game/entities/fixture/decorator/decorations/CullEventually.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/entities/fixture/FireContactListener.as" afterPath="$PROJECT_DIR$/src/game/entities/fixture/FireContactListener.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/game/entities/fixture/FireContactListenerTest.as" afterPath="$PROJECT_DIR$/test/game/entities/fixture/FireContactListenerTest.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/GameStarter.as" afterPath="$PROJECT_DIR$/src/game/GameStarter.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/entities/fixture/decorator/decorations/MoveToward.as" afterPath="$PROJECT_DIR$/src/game/entities/fixture/decorator/decorations/MoveToward.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/game/GameStarterTest.as" afterPath="$PROJECT_DIR$/test/game/GameStarterTest.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/entities/fixture/decorator/decorations/RapidFire.as" afterPath="$PROJECT_DIR$/src/game/entities/fixture/decorator/decorations/RapidFire.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/render/starling/decorator/SimpleQuadDecorator.as" afterPath="$PROJECT_DIR$/src/render/starling/decorator/SimpleQuadDecorator.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/render/starling/decorator/StarlingRenderer.as" afterPath="$PROJECT_DIR$/src/render/starling/decorator/StarlingRenderer.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="LightLife.iws" />
@@ -16,7 +24,7 @@
     <file path="/Dummy.txt" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1359007533883" ignored="false" />
     <file path="/StarlingRendererTest.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355727914604" ignored="false" />
     <file path="/StarlingRenderer.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355727840370" ignored="false" />
-    <file path="/fragment.js2" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1359010444291" ignored="false" />
+    <file path="/fragment.js2" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1359011804408" ignored="false" />
     <file path="/DynamicBackgroundTest.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355721796023" ignored="false" />
     <file path="/Assets.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355472003619" ignored="false" />
     <file path="/StarlingDisplayObjectTest.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355078105826" ignored="false" />
@@ -25,7 +33,7 @@
     <file path="/a.dummy" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1359010197067" ignored="false" />
     <file path="/Starling.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355215967797" ignored="false" />
     <file path="/TextureProxy.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355466889634" ignored="false" />
-    <file path="/WorldManager.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1359009034996" ignored="false" />
+    <file path="/WorldManager.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1359011422387" ignored="false" />
     <file path="/BackgroundFactory.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355722685354" ignored="false" />
     <file path="/LeanRenderedBackground.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355725292918" ignored="false" />
     <file path="/LeanRenderedBackgroundTest.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1355723848312" ignored="false" />
@@ -37,11 +45,14 @@
     <file path="/FlashStageProxyTest.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1358913049707" ignored="false" />
     <file path="/FlashStageProxy.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1358913309507" ignored="false" />
     <file path="/Controls.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1358913280602" ignored="false" />
-    <file path="/WorldManagerTest.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1358925817208" ignored="false" />
+    <file path="/WorldManagerTest.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1359011471601" ignored="false" />
     <file path="$PROJECT_DIR$/sources/PrimaryFeather-Starling-Framework-4ee83c1/samples/scaffold_mobile/src/Scaffold_Android.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1358926524944" ignored="false" />
     <file path="$PROJECT_DIR$/sources/PrimaryFeather-Starling-Framework-4ee83c1/samples/scaffold_mobile/src/Scaffold_iOS.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1358926524944" ignored="false" />
     <file path="/a.dart" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1358926817213" ignored="false" />
     <file path="/FireContactListenerTest.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1359010517424" ignored="false" />
+    <file path="/GameStarter.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1359011349746" ignored="false" />
+    <file path="/WorldFactory.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1359011595455" ignored="false" />
+    <file path="/GameStarterTest.as" changelist="ea8edbe3-0547-4df4-85ea-c23de337193d" time="1359011769581" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +110,19 @@
     <favorites_list name="LightLife" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="GameStarter.as" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/game/GameStarter.as">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="146" column="0" selection-start="5077" selection-end="5077" vertical-scroll-proportion="0.49209487">
+              <folding>
+                <element signature="e#19#51#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -117,22 +140,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/test/game/StageProxyTest.as" />
-        <option value="$PROJECT_DIR$/src/Game.as" />
         <option value="$PROJECT_DIR$/test/GameTest.as" />
         <option value="$PROJECT_DIR$/test/game/FlashStageProxyTest.as" />
         <option value="$PROJECT_DIR$/src/Controls.as" />
         <option value="$PROJECT_DIR$/src/game/FlashStageProxy.as" />
         <option value="$PROJECT_DIR$/src/game/StarlingStageProxy.as" />
         <option value="$PROJECT_DIR$/src/game/Game.as" />
-        <option value="$PROJECT_DIR$/test/game/entities/fixture/WorldManagerTest.as" />
         <option value="$PROJECT_DIR$/test/game/GameTest.as" />
-        <option value="$PROJECT_DIR$/test/game/GameStarterTest.as" />
-        <option value="$PROJECT_DIR$/src/game/GameStarter.as" />
         <option value="$PROJECT_DIR$/src/game/entities/fixture/decorator/decorations/MoveToward.as" />
-        <option value="$PROJECT_DIR$/src/game/entities/fixture/WorldManager.as" />
         <option value="$PROJECT_DIR$/test/game/entities/fixture/FireContactListenerTest.as" />
         <option value="$PROJECT_DIR$/src/game/entities/fixture/FireContactListener.as" />
+        <option value="$PROJECT_DIR$/src/game/entities/fixture/WorldManager.as" />
+        <option value="$PROJECT_DIR$/test/game/entities/fixture/WorldManagerTest.as" />
+        <option value="$PROJECT_DIR$/test/game/entities/fixture/WorldFactoryTest.as" />
+        <option value="$PROJECT_DIR$/test/game/GameStarterTest.as" />
+        <option value="$PROJECT_DIR$/src/game/entities/fixture/WorldFactory.as" />
+        <option value="$PROJECT_DIR$/src/game/GameStarter.as" />
       </list>
     </option>
   </component>
@@ -335,21 +358,6 @@
       <ConfigurationWrapper RunnerId="FlexDebugRunner" />
       <method />
     </configuration>
-    <configuration default="false" name="WorldManagerTest.name()" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" temporary="true" appDescriptorForEmulator="Android" class_name="game.entities.fixture.WorldManagerTest" emulatorAdlOptions="" method_name="name" output_log_level="null" package_name="" scope="Method">
-      <option name="BCName" value="localhost" />
-      <option name="launcherParameters">
-        <LauncherParameters>
-          <option name="browserFamily" value="FIREFOX" />
-          <option name="launcherType" value="Browser" />
-          <option name="playerPath" value="FlashPlayerDebugger.exe" />
-        </LauncherParameters>
-      </option>
-      <option name="moduleName" value="LightLife" />
-      <option name="trusted" value="true" />
-      <RunnerSettings RunnerId="FlexDebugRunner" />
-      <ConfigurationWrapper RunnerId="FlexDebugRunner" />
-      <method />
-    </configuration>
     <configuration default="false" name="LightLife" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" temporary="true" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" output_log_level="null" package_name="" scope="Package">
       <option name="BCName" value="localhost" />
       <option name="launcherParameters">
@@ -381,6 +389,21 @@
       <method />
     </configuration>
     <configuration default="false" name="FireContactListenerTest.onFireContactShouldCullAllFiresOnUpdate()" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" temporary="true" appDescriptorForEmulator="Android" class_name="game.entities.fixture.FireContactListenerTest" emulatorAdlOptions="" method_name="onFireContactShouldCullAllFiresOnUpdate" output_log_level="null" package_name="" scope="Method">
+      <option name="BCName" value="localhost" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browserFamily" value="FIREFOX" />
+          <option name="launcherType" value="Browser" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="moduleName" value="LightLife" />
+      <option name="trusted" value="true" />
+      <RunnerSettings RunnerId="FlexDebugRunner" />
+      <ConfigurationWrapper RunnerId="FlexDebugRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="GameStarterTest" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" temporary="true" appDescriptorForEmulator="Android" class_name="game.GameStarterTest" emulatorAdlOptions="" method_name="" output_log_level="null" package_name="" scope="Class">
       <option name="BCName" value="localhost" />
       <option name="launcherParameters">
         <LauncherParameters>
@@ -532,18 +555,18 @@
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Flash App.localhost" />
       <item index="1" class="java.lang.String" itemvalue="FlexUnit.GameStarterTest.onAddedToStageGameShouldCreateBadGuys()" />
-      <item index="2" class="java.lang.String" itemvalue="FlexUnit.WorldManagerTest.name()" />
-      <item index="3" class="java.lang.String" itemvalue="FlexUnit.LightLife" />
-      <item index="4" class="java.lang.String" itemvalue="FlexUnit.FireContactListenerTest.name()" />
-      <item index="5" class="java.lang.String" itemvalue="FlexUnit.FireContactListenerTest.onFireContactShouldCullAllFiresOnUpdate()" />
+      <item index="2" class="java.lang.String" itemvalue="FlexUnit.LightLife" />
+      <item index="3" class="java.lang.String" itemvalue="FlexUnit.FireContactListenerTest.name()" />
+      <item index="4" class="java.lang.String" itemvalue="FlexUnit.FireContactListenerTest.onFireContactShouldCullAllFiresOnUpdate()" />
+      <item index="5" class="java.lang.String" itemvalue="FlexUnit.GameStarterTest" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="FlexUnit.LightLife" />
-        <item index="1" class="java.lang.String" itemvalue="FlexUnit.FireContactListenerTest.onFireContactShouldCullAllFiresOnUpdate()" />
-        <item index="2" class="java.lang.String" itemvalue="FlexUnit.FireContactListenerTest.name()" />
-        <item index="3" class="java.lang.String" itemvalue="FlexUnit.GameStarterTest.onAddedToStageGameShouldCreateBadGuys()" />
-        <item index="4" class="java.lang.String" itemvalue="FlexUnit.WorldManagerTest.name()" />
+        <item index="1" class="java.lang.String" itemvalue="FlexUnit.GameStarterTest" />
+        <item index="2" class="java.lang.String" itemvalue="FlexUnit.FireContactListenerTest.onFireContactShouldCullAllFiresOnUpdate()" />
+        <item index="3" class="java.lang.String" itemvalue="FlexUnit.FireContactListenerTest.name()" />
+        <item index="4" class="java.lang.String" itemvalue="FlexUnit.GameStarterTest.onAddedToStageGameShouldCreateBadGuys()" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="JUnit" default="true" selected="false">
@@ -701,13 +724,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/game/entities/fixture/WorldManagerTest.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="45" selection-start="117" selection-end="117" vertical-scroll-proportion="0.13555992">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/LightLife.as">
       <provider selected="true" editor-type-id="text-editor">
         <state line="100" column="37" selection-start="3415" selection-end="3415" vertical-scroll-proportion="0.50098234">
@@ -725,18 +741,6 @@
         <state line="11" column="33" selection-start="266" selection-end="266" vertical-scroll-proportion="0.4745098" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sources/Box2DFlashAS3 2.1a/Source/Box2D/Dynamics/b2World.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="622" column="0" selection-start="14337" selection-end="14337" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/game/GameStarterTest.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="58" selection-start="1431" selection-end="1431" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/game/entities/fixture/decorator/decorations/RapidFire.as">
       <provider selected="true" editor-type-id="text-editor">
         <state line="74" column="59" selection-start="2339" selection-end="2339" vertical-scroll-proportion="0.0">
@@ -748,15 +752,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="361" column="19" selection-start="8975" selection-end="8975" vertical-scroll-proportion="0.0">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/GameStarter.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="25" selection-start="2256" selection-end="2256" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#19#51#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -774,15 +769,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/entities/fixture/WorldManager.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="175" column="57" selection-start="7065" selection-end="7065" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#36#81#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/game/entities/fixture/FireContactListener.as">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -797,6 +783,45 @@
         <state line="30" column="36" selection-start="901" selection-end="901" vertical-scroll-proportion="0.23699422">
           <folding>
             <element signature="e#36#77#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/Box2DFlashAS3 2.1a/Source/Box2D/Dynamics/b2World.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="698" column="28" selection-start="15992" selection-end="15992" vertical-scroll-proportion="0.28853756">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/game/entities/fixture/WorldFactoryTest.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="22" selection-start="341" selection-end="341" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/game/GameStarterTest.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="47" selection-start="1652" selection-end="1652" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/entities/fixture/WorldFactory.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="141" column="34" selection-start="5248" selection-end="5258" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#36#81#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/GameStarter.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="146" column="0" selection-start="5077" selection-end="5077" vertical-scroll-proportion="0.49209487">
+          <folding>
+            <element signature="e#19#51#0" expanded="true" />
           </folding>
         </state>
       </provider>

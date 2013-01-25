@@ -4,7 +4,7 @@ package render.starling.decorator
     import Box2D.Dynamics.b2Fixture;
 
     import game.entities.fixture.IFixtureEntity;
-    import game.entities.fixture.WorldManager;
+    import game.entities.fixture.WorldFactory;
     import game.entities.fixture.decorator.IFixtureEntityDecorator;
 
     import render.IDisplayObject;
@@ -63,8 +63,8 @@ package render.starling.decorator
         private function position():void
         {
             var position:b2Vec2 = fixture.GetBody().GetPosition();
-            x = position.x * WorldManager.SCALE; 
-            y = position.y * WorldManager.SCALE;
+            x = position.x * WorldFactory.SCALE;
+            y = position.y * WorldFactory.SCALE;
             var rotation:Number= fixture.GetBody().GetAngle();
             this.rotation = rotation;
         }

@@ -27,7 +27,7 @@ package game.entities.fixture
     import render.ICamera;
     import render.starling.decorator.StarlingRenderer;
 
-    public class WorldManager
+    public class WorldFactory
     {
         public var renderer:StarlingRenderer;
         public var sprite2D:Sprite;
@@ -53,10 +53,15 @@ package game.entities.fixture
             var gravity:b2Vec2 = new b2Vec2(0, 0);
             var doSleep:Boolean = true;
             world = new b2World(gravity, doSleep);
+            createFireContact();
+            toggleDebug();
+        }
+
+        private function createFireContact():void
+        {
             var fireContactListener:b2ContactListener = new FireContactListener(this);
             world.SetContactListener(fireContactListener);
             entities[fireContactListener] = fireContactListener;
-            toggleDebug();
         }
         
         public function toggleDebug():void
@@ -98,9 +103,7 @@ package game.entities.fixture
         
         public function update():void
         {
-            var physStart:uint = getTimer();
             world.Step(timeStep, velocityIterations, positionIterations);
-            //world.ClearForces();
             world.DrawDebugData();
             
             for each (var entity:IEntity in fixtureEntitys) 
